@@ -1,0 +1,278 @@
+/********************************BORDER COLOR****************************/
+.border-color,
+.sc-network li a:hover{
+	border:1px solid #a44ec4;
+}
+#what-client-say .item-cus .cus-image-box:hover{
+	border:5px solid #a44ec4;
+}
+/********************************BACKGROUND****************************/
+
+.bg_color,
+.right-content-header .btn-toggle .cart-icon .amount-i,
+.button:hover,
+.link-compare:hover,
+.link-wishlist:hover,
+.respl-item .item-inner .item-image .link-wishlist:hover,
+.sort-by .btn-sortby:hover,
+.yt-product-detail .tab-product-detail .yt-tab-navi > li.active,
+.yt-product-detail .tab-product-detail .yt-tab-navi > li:hover,
+.container-slider-detail .control-button li:hover,
+#yt_main .yt-product-detail .block-related .related-page > li.active,
+#yt_main .yt-product-detail .block-related .related-page > li:hover,
+#confirmbox .button.btn-cart:hover > span, #btcancel:hover, #btccart:hover span, #btcshop:hover span,
+.promotional-popup .btn-newsletter:hover,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li a.sm_megamenu_top_actived,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li a.sm_megamenu_actived,
+.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li.sm_megamenu_lv1:hover > a,
+.btn_slide a:hover,
+#checkoutSteps .active .step-title,
+.cms-home .nav-home-active > a,
+#nav > li.active > a,
+#nav > li.active > a:hover,
+#nav > li:hover > a,
+#yt-totop:hover,
+.sm_quickview_handler:hover,
+.dropdow-nav li.parent .toggle:hover,
+.dropdow-nav li .touch-item:hover,
+.sc-network li a:hover,
+.sm-deal-wrap .view-detail:hover,
+.blog-list-left .item-bl:hover .date-blog-left,
+.newlt-left,
+.cms-home-left .mega-home-item-parent > a,
+.header-style-1 .cat-wrapper:hover,
+.header-style-4 .btn-ver-menu.active,
+.header-style-4 .btn-ver-menu:hover,
+.header-style-2 .i-block-hd2:hover,
+.header-style-2 .i-block-hd2.compare-hd2 > a .c-item,
+.header-style-2 .wishlist-hd2 .links li > a .c-item,
+.header-style-2 .i-block-hd2.minicart-hd2 .amount-i,
+.header-style-2 .i-block-hd2.login-hd2.active_block,
+.header-style-3 .yt-header-under,
+.header-style-3 .btn-cart-hd3,
+.cms-index-index #nav .nav-home-active > a{
+	background-color:#a44ec4;
+}
+.tab-home-left .respl-tabs-wrap h2.cat-name-tab{
+	border-left:5px solid #a44ec4;
+}
+
+.carousel-indicators > li:hover,
+.carousel-indicators > li.active,
+.sm-serachbox-pro .sm-searbox-content .form-button.button,
+.submit-login .submit-repl:hover{
+/* .cur-lang-block .jqTransformSelectWrapper div span:hover,
+.cur-lang-block .language-switcher:hover .jqTransformSelectWrapper div span,
+.cur-lang-block .block-currency:hover .jqTransformSelectWrapper div span{ */
+	background-color:#a44ec4!important;
+}
+.header-style-2 .sm-serachbox-pro .sm-searbox-content .form-button.button{
+	background-color:transparent!important;
+}
+/********************************BACKGROUND + BORDER****************************/
+
+.bg_border_color,
+.pagination-wrap .pagination .pages ol li a:hover,
+.pagination-wrap .pagination .pages ol li.current a,
+.container-slider .page-button.style2 .control-button > li:hover,
+.slider-tab-listing .control-button .prev_tablist:hover,
+.slider-tab-listing .control-button .next_tablist:hover,
+.yt-product-detail .more-views.slide-gallery .next:hover,
+.yt-product-detail .more-views.slide-gallery .prev:hover,
+.container-slider-best .control-button li:hover,
+.sm-deal-wrap .next_deal:hover,
+.sm-deal-wrap .prev_deal:hover,
+.yt-tab-listing .carousel-control-tab:hover{
+	background-color:#a44ec4!important;
+	border-color:#a44ec4!important;
+}
+.yt-tab-listing .respl-tabs-wrap ul li.respl-tab.tab-sel,
+.yt-tab-listing .respl-tabs-wrap ul li.respl-tab:hover{
+	border-bottom:1px solid #a44ec4;
+}
+.yt-tab-listing .respl-tabs-wrap ul li.respl-tab .moc-tab-item{
+	background:url(../../resources/images/violet/moc-tab-item.png);
+}
+/********************************COLOR****************************/
+
+.color, 
+body a:hover,
+#yt_main .products-list .product-info .price,
+#yt_main .products-list .product-info .special-price,
+.yt-product-detail .yt-detail-right .price-box,
+.yt-product-detail .yt-detail-right .availability > span,
+.dropdow-nav .more-view:hover,
+.text_big2 .color-text,
+.mini-cartpro .block-content .mini-products-list li.item .price,
+.mini-cartpro .price-total .price-total-w,
+#nav > li > ul li:hover > a,
+.respl-item .item-info .item-price .price,
+.respl-item .item-info .special-price,
+.left-product-base .special-price .special-price, .left-product-base .regular-price .price,
+.block.block-currency:hover .jqTransformSelectWrapper div span, .language-switcher:hover .jqTransformSelectWrapper div span,
+.dropdown-link a:hover,
+.header-top .links-account > li:hover > a,
+.yt-tab-listing .respl-tabs-wrap ul li.tab-sel,
+.yt-tab-listing .respl-tabs-wrap ul li.respl-tab:hover,
+.newletter-home .new-static > h2 span,
+.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .more-view,
+.login-dopdown .active_link,
+.header-style-3 .header-top .links li a:hover,
+.header-style-3 .wishlist-compare .links a:hover,
+.header-style-3 .wishlist-compare a:hover{
+	color:#a44ec4;
+}
+.reg-account a:hover{
+	color:#a44ec4!important;
+}
+
+.header-top .links-account > li > a:hover,
+.header-top .links > li > a:hover,
+.header-top .links-account li a.clicked{
+	/* border-bottom:2px solid #a44ec4; */
+}
+
+.mini-cartpro .block-content,
+.link-mobile-wrapper{
+	border-top:5px solid #a44ec4;
+}
+
+.more-views.slide-gallery .jCarouselLite .selected  img,
+.more-views.slide-gallery .jCarouselLite   img:hover{
+	border:1px solid #a44ec4;
+}
+
+
+/**********************************************************************/
+.static-banner-center-homev1 .dt-static-homev1 .detail-homev1 span:before{
+	background:url(../../resources/images/violet/icon-detail-homev1.png) no-repeat top left;
+}
+.header-style-3 .header-top .links-account > li{
+	background-image:url(../../resources/images/violet/account-hd3.png);
+}
+.header-style-3 .header-top .links li a{
+	background-image:url(../../resources/images/violet/checkout-hd3.png);
+}
+.header-style-4 .btn-ver-menu {
+	background-image:url(../../resources/images/violet/btn-ver-menu.png);
+}
+.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .more-view{
+	background-image:url(../../resources/images/violet/more-item-left-menu.png);
+}
+.static-top-home .free-shipping .content-banner-top{
+	background-image:url(../../resources/images/violet/free-shipping.png);
+}
+.static-top-home .free-return .content-banner-top{
+	background-image:url(../../resources/images/violet/day-return.png);
+}
+.static-top-home .cash-on-delivery .content-banner-top{
+	background-image:url(../../resources/images/violet/cash-on-delivery.png);
+}
+.static-top-home .free-call .content-banner-top{
+	background-image:url(../../resources/images/violet/free-call.png);
+}
+.respl-item .item-inner .item-time .item-timer{
+	background:url(../../resources/images/violet/bg-timer.png) no-repeat top right;	
+}
+.respl-item .item-inner  .item-time .item-timer:after{
+	content:"";
+	width:33px;
+	height:75px;
+	position:absolute;
+	left:-33px;
+	top:0px;
+	background:url(../../resources/images/violet/after-left.png) no-repeat top left;	
+}
+.right-content-header .btn-toggle .cart-icon {
+	background:url(../../resources/images/violet/icon-mini-cart-red.png) no-repeat top left;
+}
+
+.view-mode .grid{
+	background-image:url(../../resources/images/violet/grid-icon-red.png);
+}
+.view-mode .list{
+	background-image:url(../../resources/images/violet/list-icon-red.png);
+	border-right: 1px solid #FFFFFF;
+}
+
+#yt_left .block .block-title, #yt_right .block .block-title,
+.related-header .block-title,
+.block-right-nav .block-title,
+.home-products .block-title,
+#yt_main .page-title h1 {
+	background:url(../../resources/images/violet/bg-title-strong.png) no-repeat bottom left;
+}
+
+.salamy-logo{
+	background:url(../../resources/images/violet/logo-about.png) no-repeat center center;
+}
+
+.wishlist-compare .links a{
+	background:url(../../resources/images/violet/wishlist-header-icon.png) no-repeat 0px 5px;
+}
+
+.wishlist-compare  a.block-compare{
+	background:url(../../resources/images/violet/compare-header-icon.png) no-repeat 0px 5px;
+}
+.wishlist-compare a:hover {
+    background-position: 0 -79px;
+}
+
+.list-cat li a{
+	background:url(../../resources/images/violet/bl-list-megamenu.png) no-repeat 0px 6px;
+}
+.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .active-i .more-view {
+    background-image: url("../../resources/images/violet/close-more-item.png");
+}
+.header-style-4 .ct-list li.email-header a{
+	background-image: url("../../resources/images/violet/mail-header.png");
+}
+.header-style-4 .ct-list li.phone-header a{
+	background-image: url("../../resources/images/violet/phone-header.png");
+	padding-bottom:1px;
+}
+@media (max-width: 767px) {
+	.cur-lang-block .jqTransformSelectWrapper div span:hover,
+	.cur-lang-block .language-switcher:hover .jqTransformSelectWrapper div span,
+	.cur-lang-block .block-currency:hover .jqTransformSelectWrapper div span{
+		background-color:transparent!important;
+	}
+	.cur-lang-block .jqTransformSelectWrapper > div:hover .jqTransformSelectOpen, .cur-lang-block .language-switcher:hover .jqTransformSelectOpen, .cur-lang-block .block-currency:hover .jqTransformSelectOpen{
+		background-position:left top;
+	}
+	.cur-lang-block .language-switcher:hover .jqTransformSelectWrapper div span, .cur-lang-block .block-currency:hover .jqTransformSelectWrapper div span{
+		color:inherit;
+	}
+	.sm-serachbox-pro,
+	#yt_resmenu_collapse{
+		border-top:5px solid #a44ec4;
+	}
+}
+/*================================================================================================================*/
+.header-style-3 .cur-lang-hd3,
+.header-style-3 .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li a.sm_megamenu_head:hover,
+.header-style-3 .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li:hover > a,
+.header-style-3 #nav > li:hover > a,
+.cms-index-index .header-style-3 #nav .nav-home-active > a,
+.header-style-3  #nav > li.active > a{
+	background-color:#9a2dc3;
+}
+.cms-index-index .mega-home-item-parent > a,
+.header-style-3  #yt-responsivemenu .btn.btn-navbar,
+.header-style-3 .menu-selectbox .icon-reorder{
+	background-color:#9a2dc3!important;
+}
+.btn_slide a{
+	background:#b375c8;
+}
+.respl-item .item-inner  .item-time .item-timer:before{
+    border: 5px solid transparent;
+    border-left: 5px solid #7a179f;
+    border-bottom: 5px solid #7a179f;
+}
+.quick-info .inner:after{
+	background: url("../../resources/images/icon_3d_login.png") no-repeat -1px -56px;
+}
+.quick-info .inner, .quick-info .inner:before{
+	background: #a44ec4;
+}

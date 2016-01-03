@@ -1,0 +1,119 @@
+.bps {
+	display: block;
+	margin: 20px 0;
+	padding: 0;
+}
+
+.bps .products{
+	display: block;
+}
+
+.bps .view-grid .item{
+	float: left;
+	margin: 0 1%;
+	margin-bottom: 1em;
+	padding: 0;
+}
+
+/*.bps .cols-2 .item { width: 47.9999%; }
+.bps .cols-3 .item { width: 31.3332%; }
+.bps .cols-4 .item { width: 22.9999%; }
+.bps .cols-5 .item { width: 17.9999%; }
+.bps .cols-6 .item { width: 14.6665%; }*/
+
+/* For Menu */
+.for-menu .products-grid .item-inner,
+.for-menu .products-grid .item-inner .item-box, 
+.for-menu .products-grid .item-inner .item-box-hover{
+	width:140px;
+	padding:0 0;
+}
+.for-menu .products-grid li.item:hover,
+.for-menu .products-grid li.item{
+	width:140px;
+	margin:0 5px !important;
+}
+.for-menu .products-grid .item-inner .item-box .price-box {
+	height:20px;
+    bottom: 0px;
+	padding:0 10px;
+	line-height:20px;
+}
+.for-menu .item-box-hover{
+	text-indent:-999em;
+}
+.for-menu .products-grid .item-inner .item-box-hover a.btn-cart, 
+.for-menu .products-grid .item-inner .item-box-hover .actions .add-to-links li a.link-compare, 
+.for-menu .products-grid .item-inner .item-box-hover .actions .add-to-links li a.link-wishlist{
+	height:22px;
+	width:26px;
+	display:block;
+	padding:0 0;
+	margin:3px auto;
+}
+.for-menu .products-grid .item-inner .item-box-hover a.btn-cart{
+	margin:30px auto 0;
+}
+.for-menu .products-grid .item-inner{
+	height:auto;
+}
+.for-menu .products-grid .item-inner .item-box, 
+.for-menu .products-grid .item-inner .item-box-hover{
+	height:150px;
+}
+.for-menu .products-grid .item-inner h2.product-name{
+	background:none;
+	height:auto;
+	line-height:normal;
+	padding:5px 0;
+	font-size:100%;
+	border:none;
+	text-align:center;
+}
+.for-menu .products-grid .rating-box{
+	margin:0 auto;
+}
+.for-menu .products-grid .item-inner h2.product-name a{
+	margin:0 0;
+}
+.bps .view-grid .item .item-wrap{
+	display: block;
+}
+.bps .view-grid .item .item-wrap .item-image{
+	border: 0;
+	margin: 0 12px 12px 0;
+	padding: 0;
+	max-width: 100%;
+	float: left;
+}
+.bps .view-grid .item .item-wrap .item-image a,
+.bps .view-grid .item .item-wrap .item-image img{
+	max-width: 100%;
+}
+
+
+.bps .view-list .item{
+	display: block;
+	float: none;
+	margin: 0;
+	padding: 0;
+	/*
+	float: left;
+	width: 100%;
+	clear: both;
+	*/
+}
+
+
+/*clearfix*/
+.view-grid:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+}
+.view-grid {
+	display: block;
+}

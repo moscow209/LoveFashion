@@ -1,0 +1,140 @@
+/* Using CSS3 for some visual enhancements. (Will be degraded nicely for non-CSS3 browsers.)*/
+#yt_footer .block-content-info li,
+#yt_footer .block-content-info li:hover,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-img:hover .addto-wrap,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-img .addto-wrap,
+.container-slider .btn-cart:hover,
+.container-slider .btn-wishlist:hover,
+.container-slider .btn-compare:hover,
+.container-slider .btn-cart,
+.container-slider .btn-wishlist,
+.container-slider .btn-compare,
+.yt-tab-listing .item-addto-wrap,
+.yt-tab-listing .item-image:hover .item-addto-wrap,
+/* .yt-tab-listing .item-addto-wrap .item-addcart,
+.yt-tab-listing .item-addto-wrap .item-wishlist,
+.yt-tab-listing .item-addto-wrap .item-compare,
+.yt-tab-listing .item-addto-wrap .item-addcart:hover,
+.yt-tab-listing .item-addto-wrap .item-wishlist:hover,
+.yt-tab-listing .item-addto-wrap .item-compare:hover, */
+#yt_main .products-grid .product-image .product-addto-wrap,
+#yt_main .products-grid .product-image:hover .product-addto-wrap,
+#yt_main .products-grid .product-addcart,
+#yt_main .products-grid .product-wishlist,
+#yt_main .products-grid .product-compare,
+#yt_main .products-list .product-addcart,
+#yt_main .products-list .product-wishlist,
+#yt_main .products-list .product-compare,
+#yt_main .products-grid .product-addcart:hover,
+#yt_main .products-grid .product-wishlist:hover,
+#yt_main .products-grid .product-compare:hover,
+#yt_main .products-list .product-addcart:hover,
+#yt_main .products-list .product-wishlist:hover,
+#yt_main .products-list .product-compare:hover,
+.sm_quickview_handler,
+.yt-tab-listing .respl-items .respl-item .item-image:hover .sm_quickview_handler,
+#yt_main .products-grid .product-image:hover .sm_quickview_handler,
+#yt_main .products-list .product-image:hover .sm_quickview_handler,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-img .sm_quickview_handler,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-img:hover .sm_quickview_handler,
+.yt-product-detail .yt-detail-right .add-to-cart,
+.yt-product-detail .yt-detail-right .add-to-cart:hover,
+.fashon-logo-center,
+.free-shipping-car,
+.banner-center-wrapper a,
+#yt_main .products-list .w-image-box .product-image,
+.sm-deal-wrap .view-detail,
+.respl-item .item-inner .item-time,
+.item-social,
+.home-products .item-lb-image img,
+.blog-list-left .item-bl .date-blog-left,
+.banner-wrapper-s  .banner-ct a img,
+.banner-under-content a img,
+.static-image-left img,
+.list-image li a img,
+.women-left-item a img,
+.img-sale-product img,
+.header-style-1 .cat-wrapper,
+.header-style-4 .login-quick.active,
+.header-style-4 .btn-ver-menu,
+.header-style-2 .login-quick,
+.header-style-3 .cur-lang-hd3,
+.static-homev1 img,
+.static-banner-center-homev1 .img-static-homev1 img,
+.static-banner-homev2 a img{
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+#confirmbox .button.btn-cart > span, #btcancel, #btccart span, #btcshop span,
+.sc-network li a,
+.sc-network li a  img,
+#what-client-say .item-cus .cus-image-box,
+.banner-right a img,
+.banner-bottom a img,
+.tp-bullets.simplebullets.round .bullet,
+.yt-tab-listing .respl-tabs-wrap ul li.respl-tab,
+.btn-toggle.show-cart-button,
+.sm_megamenu_wrapper_horizontal_menu img,
+.cur-lang-block .jqTransformSelectWrapper div span,
+.block-layered-nav .currently ol li .btn-remove,
+.dropdow-nav li a{
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+}
+.yt-product-detail .yt-detail-right .product-add-box .wishlist,
+.yt-product-detail .yt-detail-right .product-add-box .compare{
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-o-transition: all 0.4s ease-in-out 0s;
+	-ms-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+}
+.respl-item .item-inner .item-image:hover img,
+.respl-item .item-inner .item-image img,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-img:hover img,
+.container-slider .slider .vpo-wrap .vp .item .item-wrap .item-img img,
+/* #yt_footer .yt-footer-bottom .block-payment  img:hover,
+#yt_footer .yt-footer-bottom .block-payment img, */
+.mega-bestsale .list-items .item .product-image:hover img,
+.mega-bestsale .list-items .item .product-image img,
+.mg-menu-image .mg-menu-image-item:hover img,
+.mg-menu-image .mg-menu-image-item img,
+#yt_main .products-grid .product-image:hover img,
+#yt_main .products-grid .product-image img,
+#yt_wrapper #yt_left .left-banner:hover img,
+#yt_wrapper #yt_left .left-banner img,
+.members .member .member-img:hover img,
+.members .member .member-img img,
+.onpen-sidebar #yt_wrapper,
+#yt_wrapper,
+.yt_ressidebar_screennav,
+ul.nav-menu li.parent > .res-wrapnav,
+ul.nav-menu li.parent.open > .res-wrapnav,
+.container-slider .slider .vpo-wrap:hover .item,
+.yt_ressidebar_screennav #yt_screennav{
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+}
+
+
+/* .container-slider .slider .vpo-wrap .vp .item .item-wrap .item-img:hover img, */
+/* #yt_footer .yt-footer-bottom .block-payment img:hover, */
+.mega-bestsale .list-items .item .product-image:hover img,
+.mg-menu-image .mg-menu-image-item:hover img,
+#yt_wrapper #yt_left .left-banner:hover img,
+.members .member .member-img:hover img{
+	transform: scale(1.2) rotate(0deg);
+	-ms-transform: scale(1.2) rotate(0deg);
+	-moz-transform: scale(1.2) rotate(0deg);
+	-webkit-transform: scale(1.2) rotate(0deg);
+	-o-transform: scale(1.2) rotate(0deg);	
+}

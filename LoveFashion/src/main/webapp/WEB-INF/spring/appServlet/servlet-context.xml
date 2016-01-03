@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:beans="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <annotation-driven />
+
+    <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources 
+        directory -->
+    <resources mapping="/resources/**" location="/resources/" />
+
+    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/" />
+        <beans:property name="suffix" value=".jsp" />
+    </beans:bean>
+
+    <context:component-scan base-package="com.example.controller" />
+    <context:component-scan base-package="com.example.listener" />
+    <context:component-scan base-package="com.example.repository" />
+    <context:component-scan base-package="com.example.service" />
+    <context:component-scan base-package="com.example.validator" />
+
+    <!-- DataSource database -->
+    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/lovefashion" />
+        <beans:property name="username" value="root" />
+        <beans:property name="password" value="123456" />
+    </beans:bean>
+    
+    <!-- Session factory -->
+    <beans:bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <beans:property name="dataSource" ref="dataSource" />
+        <beans:property name="annotatedClasses">
+            <beans:list>
+                <beans:value>com.example.entity.AdminRole</beans:value>
+                <beans:value>com.example.entity.AdminRule</beans:value>
+                <beans:value>com.example.entity.AdminUser</beans:value>
+                <beans:value>com.example.entity.CatalogCategoryEntity</beans:value>
+                <beans:value>com.example.entity.CataloginventoryStock</beans:value>
+                <beans:value>com.example.entity.CataloginventoryStockItem</beans:value>
+                <beans:value>com.example.entity.CataloginventoryStockStatus</beans:value>
+                <beans:value>com.example.entity.CataloginventoryStockStatusId</beans:value>
+                <beans:value>com.example.entity.CatalogProductEntity</beans:value>
+                <beans:value>com.example.entity.Manufacturer</beans:value>
+                <beans:value>com.example.entity.CatalogProductEntityGallery</beans:value>
+                <beans:value>com.example.entity.CmsBlock</beans:value>
+                <beans:value>com.example.entity.CmsPage</beans:value>
+                <beans:value>com.example.entity.CoreConfigData</beans:value>
+                <beans:value>com.example.entity.CustomerAddressEntity</beans:value>
+                <beans:value>com.example.entity.CustomerEntity</beans:value>
+                <beans:value>com.example.entity.CustomerGroup</beans:value>
+                <beans:value>com.example.entity.EavAttribute</beans:value>
+                <beans:value>com.example.entity.EavAttributeOption</beans:value>
+                <beans:value>com.example.entity.EavAttributeOptionValue</beans:value>
+                <beans:value>com.example.entity.EavEntityType</beans:value>
+                <beans:value>com.example.entity.EmailTemplate</beans:value>
+                <beans:value>com.example.entity.LogCustomer</beans:value>
+                <beans:value>com.example.entity.LogVisitor</beans:value>
+                <beans:value>com.example.entity.SalesBestsellersAggregatedDaily</beans:value>
+                <beans:value>com.example.entity.SalesBestsellersAggregatedMonthly</beans:value>
+                <beans:value>com.example.entity.SalesBestsellersAggregatedYearly</beans:value>
+                <beans:value>com.example.entity.SalesCreditmemo</beans:value>
+                <beans:value>com.example.entity.SalesCreditmemoItem</beans:value>
+                <beans:value>com.example.entity.SalesInvoice</beans:value>
+                <beans:value>com.example.entity.SalesInvoiceItem</beans:value>
+                <beans:value>com.example.entity.SalesOrder</beans:value>
+                <beans:value>com.example.entity.SalesOrderAddress</beans:value>
+                <beans:value>com.example.entity.SalesOrderItem</beans:value>
+                <beans:value>com.example.entity.SalesOrderPayment</beans:value>
+                <beans:value>com.example.entity.SalesOrderStatusHistory</beans:value>
+                <beans:value>com.example.entity.SalesPaymentTransaction</beans:value>
+                <beans:value>com.example.entity.Salesrule</beans:value>
+                <beans:value>com.example.entity.SalesruleCoupon</beans:value>
+                <beans:value>com.example.entity.SalesruleCouponUsage</beans:value>
+                <beans:value>com.example.entity.SalesruleCouponUsageId</beans:value>
+                <beans:value>com.example.entity.SalesruleCustomer</beans:value>
+                <beans:value>com.example.entity.SalesShipment</beans:value>
+                <beans:value>com.example.entity.SalesShipmentItem</beans:value>
+                <beans:value>com.example.entity.Sitemap</beans:value>
+                <beans:value>com.example.entity.Store</beans:value>
+                <beans:value>com.example.entity.StoreGroup</beans:value>
+                <beans:value>com.example.entity.TaxCalculation</beans:value>
+                <beans:value>com.example.entity.TaxCalculationRate</beans:value>
+                <beans:value>com.example.entity.TaxCalculationRule</beans:value>
+                <beans:value>com.example.entity.TaxClass</beans:value>
+                <beans:value>com.example.entity.VerificationToken</beans:value>
+                <beans:value>com.example.entity.Wishlist</beans:value>
+                <beans:value>com.example.entity.WishlistItem</beans:value>
+            </beans:list>
+        </beans:property>
+        <beans:property name="hibernateProperties">
+            <beans:props>
+                <beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</beans:prop>
+                <beans:prop key="hibernate.show_sql">true</beans:prop>
+            </beans:props>
+        </beans:property>
+    </beans:bean>
+    <!-- Transaction -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <beans:property name="sessionFactory" ref="sessionFactory" />
+    </beans:bean>
+
+    <beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <beans:property name="basenames">
+            <beans:list>
+                <beans:value>classpath:messages_en</beans:value>
+                <beans:value>classpath:email</beans:value>
+            </beans:list>
+        </beans:property>
+        <beans:property name="defaultEncoding" value="UTF-8" />
+    </beans:bean>
+
+    <!-- <beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"> <beans:property 
+        name="validationMessageSource" ref="messageSource"></beans:property> </beans:bean> -->
+
+    <!-- <beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <beans:property name="defaultLocale" value="en" />
+        <beans:property name="cookieName" value="myAppLocaleCookie"></beans:property>
+        <beans:property name="cookieMaxAge" value="3600"></beans:property>
+    </beans:bean> -->
+
+    <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <beans:property name="host" value="smtp.gmail.com" />
+        <beans:property name="port" value="587" />
+        <beans:property name="username" value="moskva209@gmail.com" />
+        <beans:property name="password" value="Thienduong123@" />
+
+        <!-- The name of the property, following JavaBean naming conventions -->
+        <beans:property name="javaMailProperties">
+            <beans:props>
+                <beans:prop key="mail.transport.protocol">smtp</beans:prop>
+                <beans:prop key="mail.smtp.auth">true</beans:prop>
+                <beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+            </beans:props>
+        </beans:property>
+    </beans:bean>
+
+    <!-- <interceptors>
+        <beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <beans:property name="paramName" value="locale" />
+        </beans:bean>
+    </interceptors> -->
+
+    <interceptors>
+        <interceptor>
+            <mapping path="/**" />
+            <beans:bean class="com.example.interceptor.RequestMenuInterceptor"></beans:bean>
+        </interceptor>
+    </interceptors>
+    
+    <beans:bean
+        class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <beans:property name="exceptionMappings">
+            <beans:props>
+                <beans:prop key="java.lang.Exception">exception</beans:prop>
+            </beans:props>
+        </beans:property>
+    </beans:bean>
+</beans:beans>

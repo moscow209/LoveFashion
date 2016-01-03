@@ -1,0 +1,167 @@
+
+/* Css of js enfinity*/
+
+.pix_slideshow {
+    float: left;
+    width: 100%;
+    position: relative;
+	margin-bottom:20px;
+}
+
+.cms-home-v1 .pix_slideshow,
+.slideshow-homev2 .pix_slideshow{
+	margin-bottom:0;
+}
+
+.pix_slideshow img {
+    max-width: none!important;
+}
+.pix_slideshow [data-use="simple"] img,
+.pix_slideshow [data-use="simple"] .filmore_rotate_wrap {
+    max-width: 100%!important;
+}
+.pix_slideshow_until_image {
+    display: none;
+}
+
+.pix_slideshow_target {
+    display: block;
+}
+.pix_slideshow_target {
+    overflow: hidden;
+    position: relative;
+    visibility: hidden;
+}
+
+.film_slide {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.filmoreSlide {
+    bottom: 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+.filmoreSlide > div {
+    position: absolute;
+}
+
+.filmoreBgs {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.filmore_loader {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.filmore_command {
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    display: inline-block;
+    width: 40px;
+    height:40px;
+    margin-top:-20px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.filmore_command:hover{
+    opacity: 0.9;
+}
+
+.filmore_prev.filmore_command{
+    left:0;
+}
+
+.filmore_next.filmore_command{
+    right:0;
+}
+
+.filmore_pause {
+    background: url("../images/icons_sprite.png") no-repeat -6px -266px;
+    display: none;
+    right: 5px;
+    position: absolute;
+    top: 60px;
+}
+
+.filmore_autoadv .filmore_play {
+    display: none;
+}
+.filmore_autoadv .filmore_pause {
+    display: block;
+}
+
+.filmore_prev {
+    background-image: url("../images/icons_sprite.png");
+    background-position: -93px -266px;
+}
+
+.filmore_next {
+    background-image: url("../images/icons_sprite.png");
+    background-position: -226px -266px;
+}
+
+.filmore_pagination {
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.filmore_pag {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+    text-indent: -9999px;
+    margin:0 3px;
+    transition: .1s;
+    -webkit-transition: .1s;
+}
+
+.filmore_pag:hover,
+.filmore_pag.filmore_current_pag {
+    background-color: #3b3b3b;
+}
+
+
+.pix_slideshow [data-use="simple"] img,
+.pix_slideshow [data-use="simple"] .filmore_rotate_wrap {
+    max-width: 100%!important;
+}
+
+.cms-home-v1 .filmore_pagination{
+    text-align: left;
+    padding:0 20px;
+}

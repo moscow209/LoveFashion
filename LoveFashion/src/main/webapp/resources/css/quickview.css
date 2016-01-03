@@ -1,0 +1,69 @@
+
+.sm_quickview_handler {
+	background:url(../../resources/images/quick-view-icon.png) no-repeat center center #868686;
+	border-radius:4px;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: normal;
+	height:50px;
+    vertical-align: middle;
+    white-space: nowrap;
+	text-decoration:none;
+	margin:10px 0;
+	width:50px;
+	position:absolute;
+	z-index:99;
+	left:50%;
+	margin-left:-25px;
+	bottom:50%;
+	margin-bottom:-25px;
+	border-radius:50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	transform:scale(0);
+	-ms-transform: scale(0);
+	-moz-transform: scale(0);
+	-webkit-transform: scale(0);
+	-o-transform: scale(0);
+	opacity:0;
+	filter: alpha(opacity = 0);
+	overflow:hidden;
+	text-indent:-9999px;
+	box-shadow:0 0 0 3px rgba(255,255,255,0.2);
+	-webkit-box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+	-moz-box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+}
+
+.sm_quickview_handler:hover,
+.sm_quickview_handler:focus
+{
+    color: #FFFFFF;
+	text-decoration:none;	
+	cursor:pointer;
+}
+
+.sm_quickview_handler:focus{
+	outline:none outline;
+}
+
+.fancybox-lock .zoomContainer{
+	-webkit-transform:none!important;
+}
+
+.fancybox-lock .zoomContainer .zoomLens,
+.fancybox-lock .zoomContainer .zoomWindow {
+	z-index:8021!important;
+}
+
+.quickview-main .product-image-thumbs li:first-child{
+	margin-left:0;
+}
+
+
+.quickview-main .product-collateral{
+	display:none;
+}
+
+.products-list li.item .f-fix .sm_quickview_handler{
+	float:left;
+}

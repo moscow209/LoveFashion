@@ -1,0 +1,290 @@
+.serachbox-pro-pretext, 
+.serachbox-pro-posttext{
+	margin: 10px 0;
+	width: 100%;
+}
+
+.header-style-default .sm-serachbox-pro{
+	position: relative;
+	float:right;
+	margin-top: 20px;
+}
+.sm-serachbox-pro .sm-searchbox-popular{
+	margin-top:5px;
+}
+.sm-serachbox-pro .sm-searchbox-advanced{
+	clear:both;
+}
+.sm-serachbox-pro .sm-searchbox-advanced a{
+	text-decoration: none;
+	color: #4A629F;
+	font-size: 12px;
+}
+.header-style-3 .sm-serachbox-pro .cat-wrapper .selector{
+	background:url(../../resources/images/dropdow-search-box.png) no-repeat right center;
+}
+.sm-serachbox-pro .sm-searchbox-advanced a:hover{
+	text-decoration: underline;
+}
+.sm-serachbox-pro .sm-searchbox-popular .sm-searchbox-popular-title{
+	display: inline-block;
+	vertical-align: top;
+}
+.sm-serachbox-pro .sm-searchbox-keyword {
+    display: inline-block;
+}
+.sm-serachbox-pro .sm-searchbox-keyword-list {
+    float: left;
+}
+.sm-serachbox-pro .sm-searchbox-keyword-list > li{
+	float: left;
+}
+.sm-serachbox-pro .sm-searchbox-keyword-list > li a {
+    float: left;
+	margin-right: 10px;
+	color:#686868;
+}
+.sm-serachbox-pro .sm-searchbox-keyword-list > li a:hover {
+	text-decoration: underline;
+}
+
+.sm-serachbox-pro .sm-searchbox-keyword-list > li a.sm-searchbox-more {
+    float: left;
+	margin-right: 10px;
+	color:#4A629F;
+	font-size:12px;
+	text-decoration: none;
+}
+.sm-serachbox-pro .sm-searchbox-keyword-list > li a.sm-searchbox-more:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.sm-serachbox-pro .sm-searbox-content {
+    display: inline-block;
+	font-size:91.67%;
+	color:#909090;
+}
+.header-style-4 .sm-serachbox-pro .sm-searbox-content{
+	margin-top:10px;
+}
+.sm-serachbox-pro .sm-searbox-content .form-search{
+	height:42px;
+	background:#ededed;
+	padding:5px 0px 5px 0px;
+	border-radius:3px;
+}
+.header-style-4 .sm-serachbox-pro .sm-searbox-content .form-search{
+	height:36px;
+	background:#fff;
+	border-radius:18px;
+	-webkit-border-radius:18px;
+	-moz-border-radius:18px;
+	padding:0px;
+	position:relative;
+}
+.header-style-4 .sm-serachbox-pro .cat-wrapper {
+    border-right: 1px solid #dfdfdf;
+    float: left;
+    width: 115px;
+    margin-top: 2px;
+    height: 32px;
+    line-height: 32px;
+}
+.header-style-4 .sm-serachbox-pro .cat-wrapper .selector{
+	width:105px!important;
+	position:relative;
+	overflow:hidden;
+	background:url(../../resources/images/dropdow-se.png) no-repeat right center;
+	height:32px;
+}
+.header-style-4 .sm-serachbox-pro .input-search {
+    float: left;
+}
+.header-style-1 .sm-serachbox-pro .sm-searbox-content .form-search{
+	position:relative;
+	margin-top:20px;
+}
+.header-style-default .sm-searbox-content .cat-wrapper{
+	position:relative;
+	float:left;
+	background:url(../../resources/images/dropdow-search-box.png) no-repeat right center;
+	width:115px;
+}
+
+.header-style-1 .sm-searbox-content .cat-wrapper{
+	position:relative;
+	float:left;
+	background:url(../images/btn-cat-hd1.png) no-repeat center center #a1a1a1;
+	width:44px;
+	height:42px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	margin-top:-5px;
+	overflow: hidden;
+    text-indent: -9999px;
+}
+
+.header-style-default .sm-searbox-content .input-search {
+    border-left: 1px solid #DEDEDE;
+    float: left;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+.header-style-1 .sm-searbox-content .input-search {
+	float:left;
+}
+.sm-searbox-content .input-search .input-text{
+	border:none;
+	background:none;
+	height:33px;
+	line-height:33px;
+	padding-top:0px;
+	padding-bottom:0px;
+	color:#909090;
+	padding-right:50px;
+}
+.sm-searbox-content .input-search .input-text{
+	height:36px;
+	line-height:36px;
+}
+.header-style-4 .header-style-default .sm-searbox-content .input-search .input-text{
+	width:300px;
+}
+.header-style-1 .sm-searbox-content .input-search .input-text{
+	width:182px;
+	padding-left:15px;
+}
+.header-style-4 .sm-searbox-content .input-search .input-text{
+	width:334px;
+}
+.sm-searbox-content .cat-wrapper span{
+	display: inline-block;
+    height: 28px;
+    line-height: 34px;
+    overflow: hidden;
+    padding-left: 15px;
+    width: 110px !important;
+	color:#909090;
+}
+.header-style-4 .sm-searbox-content .cat-wrapper span{
+	height:34px;
+	line-height:33px;
+	padding-right:22px;
+	overflow:hidden;
+}
+.sm-searbox-content .cat-wrapper select{
+	height:37px;
+	opacity:0;
+	filter:alpha(opacity = 0);
+	width:100%;
+	cursor: pointer;
+	position:absolute; top:0px;left:0px;
+}
+.header-style-2 .sm-searbox-content .cat-wrapper select{
+	height:35px;
+}
+.header-style-4 .sm-searbox-content .cat-wrapper select{
+	height:34px;
+}
+.header-style-1 .sm-searbox-content .cat-wrapper select{
+	height:42px;
+}
+.sm-serachbox-pro .sm-searbox-content .form-button.button{
+	width:42px;
+	height:42px!important;
+	background-image:url(../../resources/images/btn-search.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	overflow:hidden;
+	text-indent:-9999px;
+	margin-top:-5px;
+	position:absolute;
+	right:0px;
+}
+.header-style-4 .sm-serachbox-pro .sm-searbox-content .form-button.button{
+	background-image:url(../images/btn-search-hd4.png);
+	background-color:transparent!important;
+	right: -2px !important;
+    top: 1px;
+}
+.sm-serachbox-pro .sm-searbox-content .form-button.button:hover{
+	 box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.sm-serachbox-pro .sm-searbox-content .form-button.button span {
+	background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+    display: block;
+    font-family: Arial;
+    font-size: 16px;
+    font-variant: normal;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-align: center;
+    white-space: nowrap;
+	text-transform: none;
+}
+
+.sm-serachbox-pro select option {
+    padding: 5px 10px;
+}
+.sm-serachbox-pro input.input-text, .sm-serachbox-pro select, .sm-serachbox-pro textarea {
+   
+}
+
+.header-style-2 .cat-wrapper {
+    width: 115px;
+	position:relative;
+	border-right:1px solid #dfdfdf;
+	float:left;
+	padding-right:10px;
+	height:32px;
+	margin-top:2px;
+}
+.header-style-2 .input-search {
+    float: left;
+}
+.header-style-2 .selector {
+	background:url(../../resources/images/dropdow-search-box.png) no-repeat right center;
+	width:100%!important;
+}
+.header-style-2 .sm-serachbox-pro .sm-searbox-content .form-search{
+	height:36px;
+	border-radius:18px;
+	padding-top:0px;
+	padding-bottom:0px;
+	position:relative;
+	background:#fff;
+}
+.header-style-2 .sm-serachbox-pro{
+	margin-top:8px;
+}
+.header-style-2 .sm-searbox-content .cat-wrapper span{
+	padding-left:11px;
+	width:85px!important;
+	overflow:hidden;
+	white-space: nowrap;
+	line-height:33px;
+}
+.header-style-2 .sm-searbox-content .input-search .input-text{
+	width:320px;
+}
+.header-style-2 .sm-serachbox-pro .sm-searbox-content .form-button.button{
+	background:url(../images/btn-search-hd2.png) no-repeat center center!important;
+	width:32px;
+	top:1px;
+}
+@media all and (max-width: 640px){
+	.sm-serachbox-pro .sm-searbox-content .form-search > input {
+		width: 63%;
+		border-radius: 5px;
+		border: 1px solid #C1CCD1 !important;
+		height: 38px;
+	}
+	.sm-serachbox-pro .sm-searbox-content .form-search > select {
+		display: none;
+	}
+	
+}
