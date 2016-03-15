@@ -25,6 +25,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "wishlist", catalog = "lovefashion1", uniqueConstraints = @UniqueConstraint(columnNames = "customer_id") )
 public class Wishlist implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer wishlistId;
 	private CustomerEntity customerEntity;
 	private Date updatedAt;

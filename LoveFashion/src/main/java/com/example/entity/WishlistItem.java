@@ -21,6 +21,10 @@ import javax.persistence.TemporalType;
 @Table(name = "wishlist_item", catalog = "lovefashion1")
 public class WishlistItem implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer wishlistItemId;
 	private ProductEntity productEntity;
 	private Wishlist wishlist;

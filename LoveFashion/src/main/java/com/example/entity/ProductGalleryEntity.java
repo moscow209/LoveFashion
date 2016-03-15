@@ -18,6 +18,10 @@ import javax.persistence.Table;
 @Table(name = "product_gallery_entity", catalog = "lovefashion1")
 public class ProductGalleryEntity implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer valueId;
 	private GeneralEntity generalEntity;
 	private int position;

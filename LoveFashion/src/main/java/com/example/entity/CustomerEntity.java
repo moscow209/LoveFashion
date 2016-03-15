@@ -4,11 +4,14 @@ package com.example.entity;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+
 import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -24,6 +27,10 @@ import javax.persistence.TemporalType;
 @Table(name = "customer_entity", catalog = "lovefashion1")
 public class CustomerEntity implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private CustomerGroup customerGroup;
 	private String firstname;
@@ -53,6 +60,11 @@ public class CustomerEntity implements java.io.Serializable {
 			0);
 
 	public CustomerEntity() {
+	}
+	
+	public CustomerEntity(Integer entityId) {
+		super();
+		this.entityId = entityId;
 	}
 
 	public CustomerEntity(CustomerGroup customerGroup, Date createdAt, Date updatedAt, short isActive, short lognum) {

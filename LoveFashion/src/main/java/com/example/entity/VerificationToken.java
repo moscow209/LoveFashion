@@ -22,6 +22,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "verification_token", catalog = "lovefashion1", uniqueConstraints = @UniqueConstraint(columnNames = "token") )
 public class VerificationToken implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private AdminUser adminUser;
 	private CustomerEntity customerEntity;

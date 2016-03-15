@@ -8,7 +8,7 @@
 (function ($) {
 
     // $(document).ready(function () {
-		// $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+		// $('.cloud-zoom, .cloud-zoom-gallery').CloudZoomDetail();
     // });
 
     function format(str) {
@@ -18,7 +18,7 @@
         return str;
     }
 
-    function CloudZoom(jWin, opts) {
+    function CloudZoomDetail(jWin, opts) {
         var sImg = $('img', jWin);
 		var	img1;
 		var	img2;
@@ -330,7 +330,7 @@
         img2.src = jWin.attr('href');
     }
 
-    $.fn.CloudZoom = function (options) {
+    $.fn.CloudZoomDetail = function (options) {
         // IE6 background image flicker fix
         try {
             document.execCommand("BackgroundImageCache", false, true);
@@ -353,9 +353,9 @@
                 if ($(this).parent().attr('id') != 'wrap') {
                     $(this).wrap('<div id="wrap" style="top:0px;z-index:9999;position:relative;"></div>');
                 }
-                opts = $.extend({}, $.fn.CloudZoom.defaults, options);
+                opts = $.extend({}, $.fn.CloudZoomDetail.defaults, options);
                 opts = $.extend({}, opts, relOpts);
-                $(this).data('zoom', new CloudZoom($(this), opts));
+                $(this).data('zoom', new CloudZoomDetail($(this), opts));
 
             } else if ($(this).is('.cloud-zoom-gallery')) {
                 opts = $.extend({}, relOpts, options);
@@ -369,7 +369,7 @@
                     // Change the small image to point to the new small image.
                     $('#' + data.useZoom + ' img').attr('src', event.data.data('relOpts').smallImage);
                     // Init a new zoom with the new images.				
-                    $('#' + event.data.data('relOpts').useZoom).CloudZoom();
+                    $('#' + event.data.data('relOpts').useZoom).CloudZoomDetail();
                     return false;
                 });
             }
@@ -377,7 +377,7 @@
         return this;
     };
 
-    $.fn.CloudZoom.defaults = {
+    $.fn.CloudZoomDetail.defaults = {
         zoomWidth: 'auto',
         zoomHeight: 'auto',
         position: 'right',

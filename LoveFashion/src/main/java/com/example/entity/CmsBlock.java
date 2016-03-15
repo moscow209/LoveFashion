@@ -18,6 +18,10 @@ import javax.persistence.TemporalType;
 @Table(name = "cms_block", catalog = "lovefashion1")
 public class CmsBlock implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Short blockId;
 	private String title;
 	private String identifier;

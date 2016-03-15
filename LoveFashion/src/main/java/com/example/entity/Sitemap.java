@@ -21,6 +21,10 @@ import javax.persistence.TemporalType;
 @Table(name = "sitemap", catalog = "lovefashion1")
 public class Sitemap implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer sitemapId;
 	private Store store;
 	private String sitemapType;

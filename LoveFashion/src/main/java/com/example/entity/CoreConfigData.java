@@ -17,6 +17,10 @@ import javax.persistence.UniqueConstraint;
 		"scope", "scope_id", "path" }) )
 public class CoreConfigData implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer configId;
 	private String scope;
 	private int scopeId;

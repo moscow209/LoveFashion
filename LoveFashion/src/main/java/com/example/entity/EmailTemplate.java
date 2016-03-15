@@ -19,6 +19,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "email_template", catalog = "lovefashion1", uniqueConstraints = @UniqueConstraint(columnNames = "template_code") )
 public class EmailTemplate implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer templateId;
 	private String templateCode;
 	private String templateText;

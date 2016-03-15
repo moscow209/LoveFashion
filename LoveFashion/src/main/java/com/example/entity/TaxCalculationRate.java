@@ -19,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "tax_calculation_rate", catalog = "lovefashion1")
 public class TaxCalculationRate implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer taxCalculationRateId;
 	private String zipCode;
 	private String taxCountryId;

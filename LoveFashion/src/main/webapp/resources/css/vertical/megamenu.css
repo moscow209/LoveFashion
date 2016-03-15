@@ -797,7 +797,7 @@ TABLE OF CONTENTS
 }
 .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_content ul li a span {
 	padding-left:13px;
-	background:url("../../resources/images/li_normal.png") no-repeat scroll 0 50% transparent;
+	background:url("../../resources/images/li_normal") no-repeat scroll 0 50% transparent;
 }
 .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_content ul li a:hover span {
 	background:url("../../resources/images/li_active.png") no-repeat scroll 0 50% transparent;

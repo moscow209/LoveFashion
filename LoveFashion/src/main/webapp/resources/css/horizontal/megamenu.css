@@ -1103,7 +1103,7 @@ TABLE OF CONTENTS
 }
 .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_lv1.parent > a:before{
 	content:"";
-	background-image:url("../../resources/images/dropdown-icon.png");
+	background-image:url("http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/sm/megamenu/css/horizontal/black/img/dropdown-icon.png");
 	background-repeat:no-repeat;
 	width:9px;
 	height:5px;
@@ -1113,7 +1113,7 @@ TABLE OF CONTENTS
 	margin-top:-2px;
 }
 .header-style-3 .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_lv1.parent > a:before{
-	background-image:url(../../resources/images/dropdown-icon-h3.png);
+	background-image:url("../../resources/images/dropdown-icon-h3.png");
 	background-position:left bottom;
 }
 .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu .sm_megamenu_lv1.parent:hover a:before,
@@ -1123,7 +1123,7 @@ TABLE OF CONTENTS
 
 .shop-item-parent > div,
 .men-item-parent > div {
-    width: 420px !important;
+    width: 681px !important;
 }
 
 /* @media (min-width: 992px) and (max-width: 1199px) {

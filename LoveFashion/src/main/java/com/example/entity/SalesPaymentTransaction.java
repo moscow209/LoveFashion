@@ -23,6 +23,10 @@ import javax.persistence.UniqueConstraint;
 		"order_id", "txn_id", "payment_id" }) )
 public class SalesPaymentTransaction implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer transactionId;
 	private SalesOrder salesOrder;
 	private SalesOrderPayment salesOrderPayment;

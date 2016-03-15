@@ -21,6 +21,10 @@ import javax.persistence.TemporalType;
 @Table(name = "customer_address_entity", catalog = "lovefashion1")
 public class CustomerAddressEntity implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private CustomerEntity customerEntity;
 	private Date createdAt;
@@ -32,7 +36,6 @@ public class CustomerAddressEntity implements java.io.Serializable {
 	private String regionId;
 	private String country;
 	private String countryId;
-	private String zipCode;
 	private String firstname;
 	private String lastname;
 	private String phone;
@@ -48,7 +51,7 @@ public class CustomerAddressEntity implements java.io.Serializable {
 
 	public CustomerAddressEntity(CustomerEntity customerEntity, Date createdAt, Date updatedAt, short isActive,
 			String street, String city, String region, String regionId, String country, String countryId,
-			String zipCode, String firstname, String lastname, String phone) {
+			String firstname, String lastname, String phone) {
 		this.customerEntity = customerEntity;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
@@ -59,7 +62,6 @@ public class CustomerAddressEntity implements java.io.Serializable {
 		this.regionId = regionId;
 		this.country = country;
 		this.countryId = countryId;
-		this.zipCode = zipCode;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.phone = phone;
@@ -168,15 +170,6 @@ public class CustomerAddressEntity implements java.io.Serializable {
 
 	public void setCountryId(String countryId) {
 		this.countryId = countryId;
-	}
-
-	@Column(name = "zip_code", length = 10)
-	public String getZipCode() {
-		return this.zipCode;
-	}
-
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
 	}
 
 	@Column(name = "firstname", length = 100)

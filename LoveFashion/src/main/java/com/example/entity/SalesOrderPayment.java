@@ -21,6 +21,10 @@ import javax.persistence.Table;
 @Table(name = "sales_order_payment", catalog = "lovefashion1")
 public class SalesOrderPayment implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private SalesOrder salesOrder;
 	private Double amountCanceled;

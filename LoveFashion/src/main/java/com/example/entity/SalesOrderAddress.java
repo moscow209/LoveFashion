@@ -18,6 +18,10 @@ import javax.persistence.Table;
 @Table(name = "sales_order_address", catalog = "lovefashion1")
 public class SalesOrderAddress implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private SalesOrder salesOrder;
 	private Integer regionId;

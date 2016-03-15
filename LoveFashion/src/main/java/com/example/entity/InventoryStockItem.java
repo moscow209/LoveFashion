@@ -20,6 +20,10 @@ import javax.persistence.UniqueConstraint;
 		"product_id", "stock_id" }) )
 public class InventoryStockItem implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer itemId;
 	private InventoryStock inventoryStock;
 	private ProductEntity productEntity;

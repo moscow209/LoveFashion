@@ -20,6 +20,10 @@ import javax.persistence.Table;
 @Table(name = "customer_group", catalog = "lovefashion1")
 public class CustomerGroup implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Short customerGroupId;
 	private String customerGroupCode;
 	private Integer limitScore;
@@ -29,8 +33,8 @@ public class CustomerGroup implements java.io.Serializable {
 	public CustomerGroup() {
 	}
 
-	public CustomerGroup(String customerGroupCode) {
-		this.customerGroupCode = customerGroupCode;
+	public CustomerGroup(Short customerGroupId) {
+		this.customerGroupId = customerGroupId;
 	}
 
 	public CustomerGroup(String customerGroupCode, Integer limitScore, Set<CustomerEntity> customerEntities,

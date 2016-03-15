@@ -22,6 +22,10 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "customer_bestbuy_aggregated_daily", catalog = "lovefashion1", uniqueConstraints = @UniqueConstraint(columnNames = "period") )
 public class CustomerBestbuyAggregatedDaily implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private CustomerEntity customerEntity;
 	private Date period;

@@ -18,6 +18,10 @@ import javax.persistence.Table;
 @Table(name = "inventory_stock_status", catalog = "lovefashion1")
 public class InventoryStockStatus implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private InventoryStockStatusId id;
 	private InventoryStock inventoryStock;
 	private ProductEntity productEntity;

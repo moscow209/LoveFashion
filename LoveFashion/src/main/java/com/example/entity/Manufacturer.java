@@ -18,6 +18,10 @@ import javax.persistence.TemporalType;
 @Table(name = "manufacturer", catalog = "lovefashion1")
 public class Manufacturer implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private String manufacturer;
 	private String metaDescription;

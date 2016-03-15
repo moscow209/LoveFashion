@@ -23,6 +23,10 @@ import javax.persistence.UniqueConstraint;
 		"period", "store_id" }) )
 public class SalesRevenuesellersAggregatedDaily implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Store store;
 	private Date period;

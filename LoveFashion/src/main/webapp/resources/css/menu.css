@@ -6,7 +6,9 @@
 	width: 100%;
 }
 /************** ALL LEVELS  *************/
-
+.megamenu-hd3 .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li a.sm_megamenu_head .sm_megamenu_title{
+	font-size: 120%;
+}
 #nav li.over {
 	z-index: 999;
 }
@@ -38,7 +40,7 @@
 	position: relative;
 }
 #nav > li.parent > a:before {
-    background-image: url("../../resources/images/dropdown-icon.png");
+    background-image: url("http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/sm/megamenu/css/horizontal/black/img/dropdown-icon.png");
     background-repeat: no-repeat;
     content: "";
     height: 5px;

@@ -1,4 +1,5 @@
 package com.example.entity;
+
 // Generated Jan 4, 2016 1:12:11 AM by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
@@ -18,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "admin_rule", catalog = "lovefashion1")
 public class AdminRule implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer ruleId;
 	private AdminRole adminRole;
 	private String resourceId;
@@ -32,7 +37,8 @@ public class AdminRule implements java.io.Serializable {
 		this.resourceId = resourceId;
 	}
 
-	public AdminRule(AdminRole adminRole, String resourceId, String privileges, String permission) {
+	public AdminRule(AdminRole adminRole, String resourceId, String privileges,
+			String permission) {
 		this.adminRole = adminRole;
 		this.resourceId = resourceId;
 		this.privileges = privileges;
@@ -41,7 +47,6 @@ public class AdminRule implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "rule_id", unique = true, nullable = false)
 	public Integer getRuleId() {
 		return this.ruleId;

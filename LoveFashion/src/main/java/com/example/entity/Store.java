@@ -19,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "store", catalog = "lovefashion1")
 public class Store implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Short storeId;
 	private String name;
 	private short sortOrder;

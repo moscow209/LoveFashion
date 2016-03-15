@@ -14,7 +14,7 @@
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 }
 #cpanel_btn {
-	background: url(../../resources/images/cpanel/bg-cpanel-head.png) repeat left center #666 ;
+	background: url(../../resources/images/cpanel/bg-cpanel-head.png repeat left center #666 ;
 	width: 40px;
 	border-right: none;
 	position: absolute;

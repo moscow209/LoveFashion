@@ -19,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "inventory_stock", catalog = "lovefashion1")
 public class InventoryStock implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Short stockId;
 	private String stockName;
 	private Set<InventoryStockStatus> inventoryStockStatuses = new HashSet<InventoryStockStatus>(0);

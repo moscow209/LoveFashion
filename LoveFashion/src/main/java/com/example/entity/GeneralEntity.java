@@ -22,6 +22,10 @@ import javax.persistence.TemporalType;
 @Table(name = "general_entity", catalog = "lovefashion1")
 public class GeneralEntity implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private Integer taxClassId;
 	private String material;

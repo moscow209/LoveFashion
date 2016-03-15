@@ -26,6 +26,10 @@ import javax.persistence.UniqueConstraint;
 		@UniqueConstraint(columnNames = "code"), @UniqueConstraint(columnNames = { "rule_id", "is_primary" }) })
 public class SalesruleCoupon implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer couponId;
 	private Salesrule salesrule;
 	private String code;

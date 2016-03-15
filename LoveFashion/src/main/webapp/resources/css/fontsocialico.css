@@ -12,7 +12,7 @@
 /*   General style    */
 
 
-.block-social li{ font-family: "Socialico";	}
+.block-social li{ font-family: "Socialico"; }
 .block-social li a:before {
     content: attr(data-icon);
     font-family: 'Socialico';
@@ -21,7 +21,7 @@
     line-height: 34px;
 }
 .block-social li a:hover:before {
-	font-size:30px;	
+    font-size:30px; 
 }
 .block-social li a {
     display: inline-block;

@@ -18,6 +18,10 @@ import javax.persistence.Table;
 @Table(name = "sales_creditmemo_item", catalog = "lovefashion1")
 public class SalesCreditmemoItem implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private SalesCreditmemo salesCreditmemo;
 	private Double taxAmount;

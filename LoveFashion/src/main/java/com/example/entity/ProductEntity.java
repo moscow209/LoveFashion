@@ -23,6 +23,10 @@ import javax.persistence.Table;
 @Table(name = "product_entity", catalog = "lovefashion1")
 public class ProductEntity implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer entityId;
 	private GeneralEntity generalEntity;
 	private String name;
