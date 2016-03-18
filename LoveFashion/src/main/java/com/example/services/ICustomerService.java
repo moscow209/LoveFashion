@@ -8,13 +8,13 @@ public interface ICustomerService {
 
 	public CustomerEntity findCustomerByEmail(String email, String password);
 
-	public Integer registerCustomer(CustomerEntity customer);
+	public CustomerEntity registerCustomer(CustomerEntity customer);
 
 	public CustomerEntity getCustomer(Integer customerId);
 
 	public Integer deleteCustomer(Integer customerId);
 
-	public CustomerEntity updateCustomer(CustomerEntity customer, Integer customerId);
+	public CustomerEntity updateCustomer(CustomerEntity customer);
 
 	public List<CustomerEntity> getListCustomer(Integer limit, Integer page);
 

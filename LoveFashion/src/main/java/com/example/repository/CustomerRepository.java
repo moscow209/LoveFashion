@@ -14,8 +14,7 @@ public class CustomerRepository extends AbstractRepository<CustomerEntity>
 	public CustomerEntity findCustomerByEmail(String email, String password) {
 		// TODO Auto-generated method stub
 		Query query = getSession()
-				.createQuery(
-						"from CustomerEntity where email=:email and password=:password");
+				.createQuery("from CustomerEntity where email=:email and password=:password and isActive = 1");
 		query.setString("email", email);
 		query.setString("password", password);
 		return (CustomerEntity) query.uniqueResult();

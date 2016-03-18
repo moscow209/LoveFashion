@@ -116,9 +116,8 @@ a {
                 <div class="col-md-12">
                   <div class="account-login">
                     <div class="page-title">
-                      <h1>Login or Create an Account</h1>
+                      <h1><spring:message code="login.title"></spring:message></h1>
                     </div>
-                    <%--Show error --%>
                     <c:if test="${not empty error_login}">
                       <ul class="messages">
                         <li class="error-msg"><ul>
@@ -131,13 +130,12 @@ a {
                         <div class="col-md-6 new-users">
                           <div class="cus-wrapper-login">
                             <div class="content">
-                              <h2>New Customers</h2>
-                              <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders
-                                in your account and more.</p>
+                              <h2><spring:message code="login.intro.title"></spring:message></h2>
+                              <p><spring:message code="login.intro.content"></spring:message></p>
                             </div>
                             <div class="buttons-set">
                               <button type="button" title="Create an Account" class="button" onclick="window.location='/customer/account/register';">
-                                <span><span>Create an Account</span></span>
+                                <span><span><spring:message code="login.form.account.create"></spring:message></span></span>
                               </button>
                             </div>
                           </div>
@@ -145,30 +143,30 @@ a {
                         <div class="col-md-6 registered-users">
                           <div class="cus-wrapper-login">
                             <div class="content">
-                              <h2>Login Customers</h2>
-                              <p>If you have an account with us, please log in.</p>
+                              <h2><spring:message code="login.form.title"></spring:message></h2>
+                              <p><spring:message code="login.form.remired"></spring:message></p>
                               <ul class="form-list">
-                                <li><label for="email" class="required"><em>*</em>Email Address</label>
+                                <li><label for="email" class="required"><em>*</em><spring:message code="login.form.email"></spring:message></label>
                                   <div class="input-box">
                                     <input type="text" name="login[username]" id="email" class="input-text required-entry validate-email" title="Email Address">
                                     <c:if test="${not empty email }">
-                                      <div class="validation-advice">${email}</div>
+                                      <div class="validation-advice">${error_email}</div>
                                     </c:if>
                                   </div></li>
-                                <li><label for="pass" class="required"><em>*</em>Password</label>
+                                <li><label for="pass" class="required"><em>*</em><spring:message code="login.form.password"></spring:message></label>
                                   <div class="input-box">
                                     <input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="Password">
                                     <c:if test="${not empty password }">
-                                      <div class="validation-advice">${password}</div>
+                                      <div class="validation-advice">${error_password}</div>
                                     </c:if>
                                   </div></li>
                               </ul>
                             </div>
                             <div class="buttons-set">
                               <button type="submit" class="button" title="Login" name="send" id="send2">
-                                <span><span>Login</span></span>
+                                <span><span><spring:message code="login.form.account.login"></spring:message></span></span>
                               </button>
-                              <a href="/customer/account/forgotpassword/" class="f-left">Forgot Your Password?</a>
+                              <a href="/customer/account/forgotpassword/" class="f-left"><spring:message code="login.form.account.forgot"></spring:message></a>
                             </div>
                           </div>
                         </div>

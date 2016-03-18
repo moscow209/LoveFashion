@@ -33,9 +33,9 @@ public abstract class AbstractRepository<T extends Object> implements
 		return getDomainClass().getName();
 	}
 
-	public Integer save(T t) {
+	public void presist(T t) {
 		// TODO Auto-generated method stub
-		return (Integer) getSession().save(t);
+		getSession().persist(t);;
 
 	}
 

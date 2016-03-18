@@ -16,83 +16,63 @@
 <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<!-- Style -->
-<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap/bootstrap.min.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap/bootstrap-theme.min.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/font-awesome.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/fontsocialico.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/docs.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/addons.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/theme.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/menu.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/css3.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/colorbox.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/widgets.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/yt-responsive.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/jquery.fancybox.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/quickview/jquery.fancybox.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/cloudzoom.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/new_cpanel.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/style.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/basicproducts.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/cartpro.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/sm_deal.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/sm-dynamicslideshow.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/sm-dynamicslideshow-settings.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/vertical/megamenu.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/horizontal/megamenu.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/quickview.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/quickview/jquery.fancybox.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/searchboxpro.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/slider.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/tablisting.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/print.css" media="print">
-<link rel="stylesheet" href="/resources/css/violet.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/bootstrap/bootstrap.min.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/bootstrap/bootstrap-theme.min.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/font-awesome.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/fontsocialico.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/docs.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/addons.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/theme.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/menu.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/css3.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/colorbox.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/widgets.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/yt-responsive.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/jquery.fancybox.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/cloudzoom.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/new_cpanel.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/style.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/basicproducts.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/cameraslide.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/cartpro.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/sm_deal.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/horizontal/megamenu.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/vertical/megamenu.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/quickview/quickview.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/quickview/jquery.fancybox.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/searchboxpro.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/slider.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/tablisting.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/print.css"></c:url>' media="print" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/red.css"></c:url>' type="text/css" />
 
-<!-- js -->
-<script type="text/javascript" src="/resources/js/prototype.js"></script>
-<script type="text/javascript" src="/resources/js/ccard.js"></script>
-<script type="text/javascript" src="/resources/js/validation.js"></script>
-<script type="text/javascript" src="/resources/js/builder.js"></script>
-<script type="text/javascript" src="/resources/js/effects.js"></script>
-<script type="text/javascript" src="/resources/js/dragdrop.js"></script>
-<script type="text/javascript" src="/resources/js/controls.js"></script>
-<script type="text/javascript" src="/resources/js/slider.js"></script>
-<script type="text/javascript" src="/resources/js/js.js"></script>
-<script type="text/javascript" src="/resources/js/form.js"></script>
-<script type="text/javascript" src="/resources/js/menu.js"></script>
-<script type="text/javascript" src="/resources/js/translate.js"></script>
-<script type="text/javascript" src="/resources/js/cookies.js"></script>
-<script type="text/javascript" src="/resources/js/product.js"></script>
-<script type="text/javascript" src="/resources/js/calendar.js"></script>
-<script type="text/javascript" src="/resources/js/calendar-setup.js"></script>
-<script type="text/javascript" src="/resources/js/weee.js"></script>
-<script type="text/javascript" src="/resources/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.noconflict.js"></script>
-<script type="text/javascript" src="/resources/js/jsmart.noconflict.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.session.js"></script>
-<script type="text/javascript" src="/resources/js/popuplogin.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.jqtransform.js"></script>
-<script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/resources/js/cloud-zoom.1.0.2.js"></script>
-<script type="text/javascript" src="/resources/js/jcarousellite_1.0.1.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.easing.js"></script>
-<script type="text/javascript" src="/resources/js/yt-script.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.accordion.js"></script>
-<script type="text/javascript" src="/resources/js/ytcpanel.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.cookie.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.accordion_snyderplace.js"></script>
-<script type="text/javascript" src="/resources/js/yt-extend.js"></script>
-<script type="text/javascript" src="/resources/js/respond.src.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.fancybox.js"></script>
-<script type="text/javascript" src="/resources/js/fancybox-buttons.js"></script>
-<script type="text/javascript" src="/resources/js/sm-slider.js"></script>
-<script type="text/javascript" src="/resources/js/bundle.js"></script>
-<script type="text/javascript" src="/resources/js/cartpro/effects.js"></script>
-<script type="text/javascript" src="/resources/js/msrp.js"></script>
+<script type="text/javascript" src='<c:url value="/resources/js/prototype.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/validation.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/effects.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/slider.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/form.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/menu.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery-2.1.3.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery-noconflict.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/camera.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/enfinity.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.easing.1.3.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.mobile.customized.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jsmart.noconflict.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.uniform.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.jqtransform.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/bootstrap.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/cloud-zoom.1.0.2.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jcarousellite_1.0.1.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.easing.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/yt-script.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.accordion.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/yt-extend.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.fancybox.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/fancybox-buttons.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/sm-slider.js"></c:url>'></script>
 
-<style>
+<style type="text/css">
 @font-face {
 	font-family: "Roboto Condensed Regular";
 	font-style: normal;
@@ -122,53 +102,6 @@ a {
 }
 </style>
 
-<script type="text/javascript">
-	if (typeof isShow == 'undefined')
-		isShow = false;
-	if (typeof isEffect == 'undefined')
-		isEffect = false;
-	if (typeof overEffect == 'undefined')
-		overEffect = false;
-	if (typeof outEffect == 'undefined')
-		outEffect = false;
-
-	$jsmart(document).ready(function($) {
-		$('.link-wishlist').each(function() {
-			var href = $(this).attr('href');
-			href = href.replace('https:', 'http:');
-			$(this).attr('href', href);
-		});
-		/* show-hidden login form */
-		$(".header-login .login-quick").hide();
-		$('.header-login a.login').click(function() {
-			$this = $(this);
-			$this.toggleClass("actived");
-			$(".login-quick").slideToggle("fast");
-		});
-		/*show-hidden account user*/
-		$(".header-user .links").hide();
-		$('.header-user span.icon-user').click(function() {
-			$this = $(this);
-			$this.toggleClass("actived");
-			$(".header-user .links").slideToggle("fast");
-		});
-	});
-	//]]>
-</script>
-
-<script type="text/javascript">
-	$jsmart(function($) {
-		//style for select option, radio...
-		$("#chk_remember").uniform();
-		$("#dont-show-again").uniform();
-		$("#poll-answers .radio").uniform();
-		$("#product-options-wrapper select").uniform();
-		$("#toolbar-limit select").uniform();
-		$(".toolbar .select-inner select").uniform();
-		$(".sm-searbox-content .cat-wrapper select").uniform();
-	});
-</script>
-
 </head>
 <body id="bd" class="sm_lovefashion">
   <div id="yt_wrapper">
@@ -183,19 +116,9 @@ a {
             <div class="row">
               <div class="">
                 <div class="col-md-12">
-                  <noscript>&lt;div class="global-site-notice noscript"&gt; &lt;div class="notice-inner"&gt; &lt;p&gt; &lt;strong&gt;JavaScript seems to be disabled in your
-                    browser.&lt;/strong&gt;&lt;br /&gt; You must have JavaScript enabled in your browser to utilize the functionality of this website. &lt;/p&gt; &lt;/div&gt; &lt;/div&gt;</noscript>
-                  <div class="global-site-notice demo-notice">
-                    <div class="notice-inner">
-                      <p>This is a demo store. Any orders placed through this store will not be honored or fulfilled.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-12">
                   <div class="account-create">
                     <div class="page-title">
-                      <h1>Create an Account</h1>
+                      <h1><spring:message code="register.title"></spring:message></h1>
                     </div>
                     <c:if test="${not empty error_register}">
                       <ul class="messages">
@@ -206,16 +129,16 @@ a {
                         </li>
                       </ul>
                     </c:if>
-                    <form:form action="/customer/account/register" method="post" id="form-validate" commandName="account">
+                    <form:form action="/customer/account/register" method="post" id="form-validate" commandName="register">
                       <div class="row">
                         <div class="fieldset col-md-6">
                           <div class="reg-container">
-                            <h2 class="legend">Personal Information</h2>
+                            <h2 class="legend"><spring:message code="register.form.preson.title"></spring:message></h2>
                             <ul class="form-list">
                               <li class="fields">
                                 <div class="customer-name row">
                                   <div class="field name-firstname col-md-6">
-                                    <label for="firstname" class="required"><em>*</em>First Name</label>
+                                    <label for="firstname" class="required"><em>*</em><spring:message code="register.form.firstname"></spring:message></label>
                                     <div class="input-box">
                                       <form:input path="firstName" value="" title="First Name" maxlength="255" class="input-text required-entry" />
                                       <div class="validation-advice">
@@ -224,7 +147,7 @@ a {
                                     </div>
                                   </div>
                                   <div class="field name-lastname col-md-6">
-                                    <label for="lastname" class="required"><em>*</em>Last Name</label>
+                                    <label for="lastname" class="required"><em>*</em><spring:message code="register.form.lastname"></spring:message></label>
                                     <div class="input-box">
                                       <form:input path="lastName" value="" title="Last Name" maxlength="255" class="input-text required-entry" />
                                       <div class="validation-advice">
@@ -234,7 +157,7 @@ a {
                                   </div>
                                 </div>
                               </li>
-                              <li><label for="email_address" class="required"><em>*</em>Email Address</label>
+                              <li><label for="email_address" class="required"><em>*</em><spring:message code="register.form.email"></spring:message></label>
                                 <div class="input-box">
                                   <form:input path="email" value="" title="Email Address" class="input-text validate-email required-entry" />
                                   <div class="validation-advice">
@@ -250,7 +173,7 @@ a {
                             <ul class="form-list">
                               <li class="fields">
                                 <div class="field" style="margin-bottom: 5px;">
-                                  <label for="password" class="required"><em>*</em>Password</label>
+                                  <label for="password" class="required"><em>*</em><spring:message code="register.form.password"></spring:message></label>
                                   <div class="input-box">
                                     <form:password path="password" title="Password" class="input-text required-entry validate-password" />
                                     <div class="validation-advice">
@@ -259,7 +182,7 @@ a {
                                   </div>
                                 </div>
                                 <div class="field">
-                                  <label for="confirmation" class="required"><em>*</em>Confirm Password</label>
+                                  <label for="confirmation" class="required"><em>*</em><spring:message code="register.form.confirm.password"></spring:message></label>
                                   <div class="input-box">
                                     <form:password path="confirmPassword" title="Confirm Password" id="confirmation" class="input-text required-entry validate-cpassword" />
                                     <div class="validation-advice">
@@ -273,12 +196,11 @@ a {
                         </div>
                       </div>
                       <div class="buttons-set">
-                        <p class="required">* Required Fields</p>
                         <p class="back-link">
-                          <a href="/customer/account/login" class="back-link"><small>« </small>Back</a>
+                          <a href="/customer/account/login" class="back-link"><small>« </small><spring:message code="common.back"></spring:message></a>
                         </p>
                         <button type="submit" title="Submit" class="button">
-                          <span><span>Submit</span></span>
+                          <span><span><spring:message code="register.form.submit"></spring:message></span></span>
                         </button>
                       </div>
                     </form:form>
@@ -295,7 +217,7 @@ a {
     <jsp:include page="footer.jsp"></jsp:include>
     <!-- END: Footer -->
   </div>
-    <script type="text/javascript">
+  <script type="text/javascript">
         var dataForm = new VarienForm('form-validate', true);
     </script>
 </body>

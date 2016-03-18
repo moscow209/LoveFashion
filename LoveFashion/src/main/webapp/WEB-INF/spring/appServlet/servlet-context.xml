@@ -25,20 +25,34 @@
 
     <context:component-scan base-package="com.example.controller" />
     <context:component-scan base-package="com.example.repository" />
-    <context:component-scan base-package="com.example.service" />
+    <context:component-scan base-package="com.example.services" />
+    <context:component-scan base-package="com.example.validator" />
+    
+    <beans:bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <beans:property name="location">
+            <beans:value>classpath:config.properties</beans:value>
+        </beans:property>
+    </beans:bean>
+    
+    <beans:bean id="modelMapper" class="org.modelmapper.ModelMapper"></beans:bean>
+
+    <beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <beans:property name="basename" value="classpath:messages" />
+        <beans:property name="defaultEncoding" value="UTF-8" />
+    </beans:bean>
 
     <!-- DataSource database -->
     <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <beans:property name="driverClassName" value="${database.driver_class_name}" />
-        <beans:property name="url" value="${database.url}" />
-        <beans:property name="username" value="${database.username}" />
-        <beans:property name="password" value="${database.password}" />
+        <beans:property name="driverClassName" value="${jdbc.driverClassName}" />
+        <beans:property name="url" value="${jdbc.url}" />
+        <beans:property name="username" value="${jdbc.username}" />
+        <beans:property name="password" value="${jdbc.password}" />
     </beans:bean>
 
     <!-- Session factory -->
     <beans:bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <beans:property name="dataSource" ref="dataSource" />
-        <beans:property name="packagesToScan" value="com.your.bean.package" />
+        <beans:property name="packagesToScan" value="com.example.entity" />
         <beans:property name="hibernateProperties">
             <beans:props>
                 <beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</beans:prop>
@@ -51,16 +65,6 @@
     <tx:annotation-driven transaction-manager="transactionManager" />
     <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <beans:property name="sessionFactory" ref="sessionFactory" />
-    </beans:bean>
-
-    <beans:bean id="messageSources" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <beans:property name="basenames">
-            <beans:list>
-                <beans:value>classpath:messages</beans:value>
-                <beans:value>classpath:config</beans:value>
-            </beans:list>
-        </beans:property>
-        <beans:property name="defaultEncoding" value="UTF-8" />
     </beans:bean>
 
     <beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">

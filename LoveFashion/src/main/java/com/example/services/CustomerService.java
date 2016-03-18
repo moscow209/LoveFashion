@@ -25,7 +25,7 @@ public class CustomerService implements ICustomerService {
 	}
 
 	@Transactional
-	public Integer registerCustomer(CustomerEntity customer) {
+	public CustomerEntity registerCustomer(CustomerEntity customer) {
 		// TODO Auto-generated method stub
 		if (!customerRepository.existEmail(customer.getEmail())) {
 			customer.setCreatedAt(new Date());
@@ -33,7 +33,8 @@ public class CustomerService implements ICustomerService {
 			customer.setLognum((short) 0);
 			customer.setIsActive((short) 1);
 			customer.setCustomerGroup(new CustomerGroup((short) 1));
-			return customerRepository.save(customer);
+			customerRepository.presist(customer);
+			return customer;
 		}
 		return null;
 	}
@@ -56,10 +57,9 @@ public class CustomerService implements ICustomerService {
 	}
 
 	@Transactional
-	public CustomerEntity updateCustomer(CustomerEntity update,
-			Integer customerId) {
+	public CustomerEntity updateCustomer(CustomerEntity update){
 		// TODO Auto-generated method stub
-		CustomerEntity customer = customerRepository.get(customerId);
+		CustomerEntity customer = customerRepository.get(update.getEntityId());
 		if (customer != null) {
 			update.setUpdatedAt(new Date());
 			return customerRepository.merge(update);

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public interface IRepository<T extends Object> {
-	public Integer save(T t);
+	public void presist(T t);
 
 	public T get(Serializable id);
 
