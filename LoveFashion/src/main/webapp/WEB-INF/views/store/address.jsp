@@ -233,6 +233,10 @@ a {
                             </li>
                           </ol>
                         </div>
+                        <c:if test="${status.index < listAddress.size() - 2}">
+                            <div class="under-border"></div>
+                        </c:if>
+                        
                       </c:if>
                     </c:forEach>
                     <c:if test="${listAddress.size() == 0}">

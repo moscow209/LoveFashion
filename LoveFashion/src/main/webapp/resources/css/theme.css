@@ -6450,3 +6450,10 @@ input.input-text.qty{
 .category-image{
 	margin-bottom:20px;
 }
+
+.under-border{
+	border-bottom: 1px dashed #E9E9E9;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    clear: both;
+}
