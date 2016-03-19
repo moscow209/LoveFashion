@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib uri='http://www.springframework.org/tags' prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,82 +14,63 @@
 <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<!-- Style -->
-<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap/bootstrap.min.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/bootstrap/bootstrap-theme.min.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/font-awesome.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/fontsocialico.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/docs.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/addons.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/theme.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/menu.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/css3.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/colorbox.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/widgets.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/yt-responsive.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/jquery.fancybox.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/quickview/jquery.fancybox.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/cloudzoom.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/new_cpanel.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/style.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/basicproducts.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/cartpro.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/sm_deal.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/sm-dynamicslideshow.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/sm-dynamicslideshow-settings.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/vertical/megamenu.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/horizontal/megamenu.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/quickview.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/quickview/jquery.fancybox.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/searchboxpro.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/slider.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/tablisting.css" media="all">
-<link rel="stylesheet" type="text/css" href="/resources/css/print.css" media="print">
-<link rel="stylesheet" href="/resources/css/violet.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/bootstrap/bootstrap.min.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/bootstrap/bootstrap-theme.min.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/font-awesome.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/fontsocialico.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/docs.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/addons.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/theme.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/menu.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/css3.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/colorbox.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/widgets.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/yt-responsive.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/jquery.fancybox.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/cloudzoom.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/new_cpanel.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/style.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/basicproducts.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/cameraslide.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/cartpro.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/sm_deal.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/horizontal/megamenu.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/vertical/megamenu.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/quickview/quickview.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/quickview/jquery.fancybox.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/searchboxpro.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/slider.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/tablisting.css"></c:url>' media="all" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/print.css"></c:url>' media="print" />
+<link rel="stylesheet" type="text/css" href='<c:url value="/resources/css/red.css"></c:url>' type="text/css" />
 
-<!-- js -->
-<script type="text/javascript" src="/resources/js/prototype.js"></script>
-<script type="text/javascript" src="/resources/js/ccard.js"></script>
-<script type="text/javascript" src="/resources/js/validation.js"></script>
-<script type="text/javascript" src="/resources/js/builder.js"></script>
-<script type="text/javascript" src="/resources/js/effects.js"></script>
-<script type="text/javascript" src="/resources/js/dragdrop.js"></script>
-<script type="text/javascript" src="/resources/js/controls.js"></script>
-<script type="text/javascript" src="/resources/js/slider.js"></script>
-<script type="text/javascript" src="/resources/js/js.js"></script>
-<script type="text/javascript" src="/resources/js/form.js"></script>
-<script type="text/javascript" src="/resources/js/menu.js"></script>
-<script type="text/javascript" src="/resources/js/translate.js"></script>
-<script type="text/javascript" src="/resources/js/cookies.js"></script>
-<script type="text/javascript" src="/resources/js/product.js"></script>
-<script type="text/javascript" src="/resources/js/calendar.js"></script>
-<script type="text/javascript" src="/resources/js/calendar-setup.js"></script>
-<script type="text/javascript" src="/resources/js/weee.js"></script>
-<script type="text/javascript" src="/resources/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.noconflict.js"></script>
-<script type="text/javascript" src="/resources/js/jsmart.noconflict.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.session.js"></script>
-<script type="text/javascript" src="/resources/js/popuplogin.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.jqtransform.js"></script>
-<script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/resources/js/cloud-zoom.1.0.2.js"></script>
-<script type="text/javascript" src="/resources/js/jcarousellite_1.0.1.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.easing.js"></script>
-<script type="text/javascript" src="/resources/js/yt-script.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.accordion.js"></script>
-<script type="text/javascript" src="/resources/js/ytcpanel.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.cookie.min.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.accordion_snyderplace.js"></script>
-<script type="text/javascript" src="/resources/js/yt-extend.js"></script>
-<script type="text/javascript" src="/resources/js/respond.src.js"></script>
-<script type="text/javascript" src="/resources/js/jquery.fancybox.js"></script>
-<script type="text/javascript" src="/resources/js/fancybox-buttons.js"></script>
-<script type="text/javascript" src="/resources/js/sm-slider.js"></script>
-<script type="text/javascript" src="/resources/js/bundle.js"></script>
-<script type="text/javascript" src="/resources/js/cartpro/effects.js"></script>
-<script type="text/javascript" src="/resources/js/msrp.js"></script>
-<style>
+<script type="text/javascript" src='<c:url value="/resources/js/prototype.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/validation.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/effects.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/slider.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/form.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/menu.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery-2.1.3.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery-noconflict.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/camera.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/enfinity.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.easing.1.3.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.mobile.customized.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jsmart.noconflict.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.uniform.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.jqtransform.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/bootstrap.min.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/cloud-zoom.1.0.2.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jcarousellite_1.0.1.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.easing.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/yt-script.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.accordion.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/yt-extend.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/jquery.fancybox.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/fancybox-buttons.js"></c:url>'></script>
+<script type="text/javascript" src='<c:url value="/resources/js/sm-slider.js"></c:url>'></script>
+
+<style type="text/css">
 @font-face {
 	font-family: "Roboto Condensed Regular";
 	font-style: normal;
@@ -118,41 +100,6 @@ a {
 }
 </style>
 
-<script type="text/javascript">
-	$jsmart(document).ready(function($) {
-		$('.link-wishlist').each(function() {
-			var href = $(this).attr('href');
-			href = href.replace('https:', 'http:');
-			$(this).attr('href', href);
-		});
-		/* show-hidden login form */
-		$(".header-login .login-quick").hide();
-		$('.header-login a.login').click(function() {
-			$this = $(this);
-			$this.toggleClass("actived");
-			$(".login-quick").slideToggle("fast");
-		});
-		/*show-hidden account user*/
-		$(".header-user .links").hide();
-		$('.header-user span.icon-user').click(function() {
-			$this = $(this);
-			$this.toggleClass("actived");
-			$(".header-user .links").slideToggle("fast");
-		});
-	});
-</script>
-<script type="text/javascript">
-	$jsmart(function($) {
-		//style for select option, radio...
-		$("#chk_remember").uniform();
-		$("#dont-show-again").uniform();
-		$("#poll-answers .radio").uniform();
-		$("#product-options-wrapper select").uniform();
-		$("#toolbar-limit select").uniform();
-		$(".toolbar .select-inner select").uniform();
-		$(".sm-searbox-content .cat-wrapper select").uniform();
-	});
-</script>
 </head>
 <body id="bd" class="sm_lovefashion">
   <div id="yt_wrapper">
@@ -168,16 +115,15 @@ a {
               <div class="yt-left-wrap">
                 <div class="block block-account">
                   <div class="block-title">
-                    <strong><span>My Account</span></strong>
+                    <strong><span><spring:message code="customer.dashboard.title.e1"></spring:message></span></strong>
                   </div>
                   <div class="block-content">
                     <ul>
-                      <li class="current"><strong>Account Dashboard</strong></li>
-                      <li><a href="/customer/account/edit">Account Information</a></li>
-                      <li><a href="/customer/account/address">Address Book</a></li>
-                      <li><a href="/customer/account/myorder">My Orders</a></li>
-                      <li><a href="#">Billing Agreements</a></li>
-                      <li><a href="#">My Wishlist</a></li>
+                      <li class="current"><strong><spring:message code="customer.dashboard.title.e8"></spring:message></strong></li>
+                      <li><a href="/customer/account/edit"><spring:message code="customer.dashboard.title.e9"></spring:message></a></li>
+                      <li><a href="/customer/account/address"><spring:message code="customer.dashboard.title.e10"></spring:message></a></li>
+                      <li><a href="/customer/account/myorder"><spring:message code="customer.dashboard.title.e11"></spring:message></a></li>
+                      <li><a href="#"><spring:message code="customer.dashboard.title.e12"></spring:message></a></li>
                     </ul>
                   </div>
                 </div>
@@ -188,28 +134,27 @@ a {
                 <div class="my-account">
                   <div class="dashboard">
                     <div class="page-title">
-                      <h1>My Dashboard</h1>
+                      <h1><spring:message code="customer.dashboard.title.e2"></spring:message></h1>
                     </div>
                     <div class="welcome-msg">
                       <p class="hello">
-                        <strong>Hello, ${customer.firstname} ${customer.lastname}!</strong>
+                        <strong><spring:message code="common.hello"></spring:message>, ${customer.firstname} ${customer.lastname}!</strong>
                       </p>
-                      <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or
-                        edit information.</p>
+                      <p><spring:message code="customer.dashboard.content"></spring:message></p>
                     </div>
                     <div class="box-account box-info">
                       <div class="box-head">
-                        <h2>Account Information</h2>
+                        <h2><spring:message code="customer.dashboard.title.e3"></spring:message></h2>
                       </div>
                       <div class="col2-set">
                         <div class="box">
                           <div class="box-title">
-                            <h3>Contact Information</h3>
-                            <a href="/customer/account/edit">Edit</a>
+                            <h3><spring:message code="customer.dashboard.title.e4"></spring:message></h3>
+                            <a href="/customer/account/edit"><spring:message code="common.edit"></spring:message></a>
                           </div>
                           <div class="box-content">
                             <p>
-                              Name: ${customer.lastname} ${customer.firstname}<br> Email: ${customer.email}<br> <a href="/customer/account/edit?changePassword=1">ChangePassword</a>
+                              <spring:message code="common.name"></spring:message>: ${customer.lastname} ${customer.firstname}<br> <spring:message code="common.email"></spring:message>: ${customer.email}<br> <a href="/customer/account/edit?changePassword=1"><spring:message code="common.password.change"></spring:message></a>
                             </p>
                           </div>
                         </div>
@@ -217,12 +162,12 @@ a {
                       <div class="col2-set">
                         <div class="box">
                           <div class="box-title">
-                            <h3>Address Book</h3>
-                            <a href="/customer/account/address/">Manage Addresses</a>
+                            <h3><spring:message code="customer.dashboard.title.e10"></spring:message></h3>
+                            <a href="/customer/account/address/"><spring:message code="customer.dashboard.address.manager"></spring:message></a>
                           </div>
                           <div class="box-content">
                             <div class="col-1">
-                              <h4>Default Billing Address</h4>
+                              <h4><spring:message code="customer.dashboard.title.e6"></spring:message></h4>
                               <c:if test="${not empty defaultBilling}">
                                 <address>
                                   Name: ${defaultBilling.firstname} ${defaultBilling.lastname} </br> Address: ${defaultBilling.street}, ${defaultBilling.region} </br> Country: ${defaultBilling.country} </br> Phone:
@@ -232,9 +177,12 @@ a {
                                   <a href="/customer/account/address/edit/id/${defaultBilling.entityId}">Change Billing Address</a>
                                 </p>
                               </c:if>
+                              <c:if test="${empty defaultBilling}">
+                                <address><spring:message code="customer.dashboard.billing.content"></spring:message></address>
+                              </c:if>
                             </div>
                             <div class="col-2">
-                              <h4>Default Shipping Address</h4>
+                              <h4><spring:message code="customer.dashboard.title.e7"></spring:message></h4>
                               <c:if test="${not empty defaultShipping}">
                                 <address>
                                   Name: ${defaultShipping.firstname} ${defaultShipping.lastname} </br> Address: ${defaultShipping.street}, ${defaultShipping.region} </br> Country: ${defaultShipping.country} </br>
@@ -243,6 +191,9 @@ a {
                                 <p>
                                   <a href="/customer/account/address/edit/id/${defaultShipping.entityId}">Change Billing Address</a>
                                 </p>
+                              </c:if>
+                              <c:if test="${empty defaultShipping}">
+                                <address><spring:message code="customer.dashboard.shipping.content"></spring:message></address>
                               </c:if>
                             </div>
                           </div>
@@ -261,5 +212,6 @@ a {
       <jsp:include page="footer.jsp"></jsp:include>
       <!-- END: Footer -->
     </div>
+  </div>
 </body>
 </html>

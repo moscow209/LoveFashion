@@ -25,4 +25,6 @@ public interface IRepository<T extends Object> {
 	public long count();
 
 	public boolean exists(Serializable id);
+	
+	public Integer save(T t);
 }

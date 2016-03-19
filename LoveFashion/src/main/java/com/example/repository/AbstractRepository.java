@@ -38,6 +38,12 @@ public abstract class AbstractRepository<T extends Object> implements
 		getSession().persist(t);;
 
 	}
+	
+	public Integer save(T t) {
+		// TODO Auto-generated method stub
+		return (Integer) getSession().save(t);
+
+	}
 
 	@SuppressWarnings("unchecked")
 	public T get(Serializable id) {

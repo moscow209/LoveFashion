@@ -138,26 +138,26 @@ a {
                               <li class="fields">
                                 <div class="customer-name row">
                                   <div class="field name-firstname col-md-6">
-                                    <label for="firstname" class="required"><em>*</em><spring:message code="register.form.firstname"></spring:message></label>
+                                    <label for="firstname" class="required"><em>*</em><spring:message code="common.fristname"></spring:message></label>
                                     <div class="input-box">
-                                      <form:input path="firstName" value="" title="First Name" maxlength="255" class="input-text required-entry" />
+                                      <form:input path="firstname" value="" title="First Name" maxlength="255" class="input-text required-entry" />
                                       <div class="validation-advice">
-                                        <form:errors path="firstName" />
+                                        <form:errors path="firstname" />
                                       </div>
                                     </div>
                                   </div>
                                   <div class="field name-lastname col-md-6">
-                                    <label for="lastname" class="required"><em>*</em><spring:message code="register.form.lastname"></spring:message></label>
+                                    <label for="lastname" class="required"><em>*</em><spring:message code="common.lastname"></spring:message></label>
                                     <div class="input-box">
-                                      <form:input path="lastName" value="" title="Last Name" maxlength="255" class="input-text required-entry" />
+                                      <form:input path="lastname" value="" title="Last Name" maxlength="255" class="input-text required-entry" />
                                       <div class="validation-advice">
-                                        <form:errors path="lastName" />
+                                        <form:errors path="lastname" />
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </li>
-                              <li><label for="email_address" class="required"><em>*</em><spring:message code="register.form.email"></spring:message></label>
+                              <li><label for="email_address" class="required"><em>*</em><spring:message code="common.address.email"></spring:message></label>
                                 <div class="input-box">
                                   <form:input path="email" value="" title="Email Address" class="input-text validate-email required-entry" />
                                   <div class="validation-advice">
@@ -173,7 +173,7 @@ a {
                             <ul class="form-list">
                               <li class="fields">
                                 <div class="field" style="margin-bottom: 5px;">
-                                  <label for="password" class="required"><em>*</em><spring:message code="register.form.password"></spring:message></label>
+                                  <label for="password" class="required"><em>*</em><spring:message code="common.password"></spring:message></label>
                                   <div class="input-box">
                                     <form:password path="password" title="Password" class="input-text required-entry validate-password" />
                                     <div class="validation-advice">
@@ -182,7 +182,7 @@ a {
                                   </div>
                                 </div>
                                 <div class="field">
-                                  <label for="confirmation" class="required"><em>*</em><spring:message code="register.form.confirm.password"></spring:message></label>
+                                  <label for="confirmation" class="required"><em>*</em><spring:message code="common.password.confirm"></spring:message></label>
                                   <div class="input-box">
                                     <form:password path="confirmPassword" title="Confirm Password" id="confirmation" class="input-text required-entry validate-cpassword" />
                                     <div class="validation-advice">

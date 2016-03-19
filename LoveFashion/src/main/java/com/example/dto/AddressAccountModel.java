@@ -1,11 +1,9 @@
 package com.example.dto;
 
-public class CustomerAddressModel {
+public class AddressAccountModel {
 
 	private Integer entityId;
-	private short isActive;
 	private String street;
-	private String city;
 	private String region;
 	private String regionId;
 	private String country;
@@ -13,42 +11,8 @@ public class CustomerAddressModel {
 	private String firstname;
 	private String lastname;
 	private String phone;
-
-	public CustomerAddressModel() {
-	}
-
-	public CustomerAddressModel(Integer entityId, short isActive,
-			String street, String city, String region, String regionId,
-			String country, String countryId, String firstname,
-			String lastname, String phone) {
-		this.entityId = entityId;
-		this.isActive = isActive;
-		this.street = street;
-		this.city = city;
-		this.region = region;
-		this.regionId = regionId;
-		this.country = country;
-		this.countryId = countryId;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.phone = phone;
-	}
-
-	public Integer getEntityId() {
-		return entityId;
-	}
-
-	public void setEntityId(Integer entityId) {
-		this.entityId = entityId;
-	}
-
-	public short getIsActive() {
-		return isActive;
-	}
-
-	public void setIsActive(short isActive) {
-		this.isActive = isActive;
-	}
+	private boolean defaultBillingAddress;
+	private boolean defaultShippingAddress;
 
 	public String getStreet() {
 		return street;
@@ -56,14 +20,6 @@ public class CustomerAddressModel {
 
 	public void setStreet(String street) {
 		this.street = street;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
 	}
 
 	public String getRegion() {
@@ -120,6 +76,30 @@ public class CustomerAddressModel {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public boolean isDefaultBillingAddress() {
+		return defaultBillingAddress;
+	}
+
+	public void setDefaultBillingAddress(boolean defaultBillingAddress) {
+		this.defaultBillingAddress = defaultBillingAddress;
+	}
+
+	public boolean isDefaultShippingAddress() {
+		return defaultShippingAddress;
+	}
+
+	public void setDefaultShippingAddress(boolean defaultShippingAddress) {
+		this.defaultShippingAddress = defaultShippingAddress;
+	}
+
+	public Integer getEntityId() {
+		return entityId;
+	}
+
+	public void setEntityId(Integer entityId) {
+		this.entityId = entityId;
 	}
 
 }

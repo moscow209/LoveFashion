@@ -146,14 +146,14 @@ a {
                               <h2><spring:message code="login.form.title"></spring:message></h2>
                               <p><spring:message code="login.form.remired"></spring:message></p>
                               <ul class="form-list">
-                                <li><label for="email" class="required"><em>*</em><spring:message code="login.form.email"></spring:message></label>
+                                <li><label for="email" class="required"><em>*</em><spring:message code="common.address.email"></spring:message></label>
                                   <div class="input-box">
                                     <input type="text" name="login[username]" id="email" class="input-text required-entry validate-email" title="Email Address">
                                     <c:if test="${not empty email }">
                                       <div class="validation-advice">${error_email}</div>
                                     </c:if>
                                   </div></li>
-                                <li><label for="pass" class="required"><em>*</em><spring:message code="login.form.password"></spring:message></label>
+                                <li><label for="pass" class="required"><em>*</em><spring:message code="common.password"></spring:message></label>
                                   <div class="input-box">
                                     <input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="Password">
                                     <c:if test="${not empty password }">

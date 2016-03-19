@@ -1,12 +1,16 @@
 package com.example.dto;
 
-public class RegisterModel {
+public class UpdateAccountModel {
 
 	private String email;
 
 	private String firstname;
 
 	private String lastname;
+
+	private boolean changePassword;
+
+	private String currentPassword;
 
 	private String password;
 
@@ -36,12 +40,28 @@ public class RegisterModel {
 		this.lastname = lastname;
 	}
 
+	public String getCurrentPassword() {
+		return currentPassword;
+	}
+
+	public void setCurrentPassword(String currentPassword) {
+		this.currentPassword = currentPassword;
+	}
+
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public boolean isChangePassword() {
+		return changePassword;
+	}
+
+	public void setChangePassword(boolean changePassword) {
+		this.changePassword = changePassword;
 	}
 
 	public String getConfirmPassword() {
@@ -51,5 +71,4 @@ public class RegisterModel {
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
 	}
-
 }

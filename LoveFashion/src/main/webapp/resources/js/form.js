@@ -311,7 +311,7 @@ RegionUpdater.prototype = {
             this.setMarkDisplay(this.regionSelectEl, false);
         }
 
-        this._checkRegionRequired();
+        //this._checkRegionRequired();
         // Make Zip and its label required/optional
         var zipUpdater = new ZipUpdater(this.countryEl.value, this.zipEl);
         zipUpdater.update();
