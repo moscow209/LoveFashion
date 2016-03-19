@@ -271,26 +271,33 @@ public class CustomerController {
 		}
 	}
 	
-	/*@RequestMapping(value = "/address/edit/id/{entityId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/address/edit/id/{entityId}", method = RequestMethod.POST)
 	public String updateCustomerAddress(
-			@ModelAttribute("address") @Validated AddressAccount address,
-			Model model, HttpSession session, BindingResult result) {
+			@ModelAttribute("address") @Validated AddressAccountModel address,
+			Model model, HttpSession session, BindingResult result, Locale locale) {
 		if (result.hasErrors()) {
-			return "update-address";
+			return "/store/edit-address";
 		} else {
 			CustomerEntity customer = (CustomerEntity) session.getAttribute("customer");
 			if (customer != null) {
-				address.setRegion(regionList.get(address.getRegionId()));
-				address.setCountry(countryList.get(address.getCountryId()));
-				customerService.updateAdress(address, customer);
-				model.addAttribute("message", "The address has been update.");
+				Integer id = customerService.saveCustomerAddress(convertToEntity(address), customer);
+				if(id != null){
+					if(address.isDefaultBillingAddress()){
+						customer.setDefaultBilling(id);
+					}
+					if(address.isDefaultShippingAddress()){
+						customer.setDefaultShipping(id);
+					}
+				}
+				customerService.updateCustomer(customer);
+				model.addAttribute("message", messageSource.getMessage("customer.address.add.message", null, locale));
 				return "redirect:/customer/account/address";
 			} else {
 				return "redirect:/customer/account/login";
 			}
 
 		}
-	}*/
+	}
 	
 	@RequestMapping(value = "/address/delete/id/{entityId}", method = RequestMethod.GET)
 	public String deleteAddress(Model model, @PathVariable("entityId") Integer id,

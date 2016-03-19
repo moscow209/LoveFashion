@@ -136,7 +136,7 @@ a {
                   <div class="page-title block-title title-create-address">
                     <h1><spring:message code="customer.address.add.title.e1"></spring:message></h1>
                   </div>
-                  <form:form action="/customer/account/address/new" method="post" id="form-validate" commandName="address">
+                  <form:form action="/address/edit/id/${entityId}" method="post" id="form-validate" commandName="address">
                     <div class="fieldset">
                       <h2 class="legend"><spring:message code="customer.address.add.title.e2"></spring:message></h2>
                       <ul class="form-list edit-address-form">
