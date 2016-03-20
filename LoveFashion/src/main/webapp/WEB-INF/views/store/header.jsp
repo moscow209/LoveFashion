@@ -21,132 +21,6 @@
               <div class="mobile-menu-wrapper">
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
                 <div id="yt_resmenu_collapse" style="height: 0;" class="nav-collapse collapse">
-                  <ul class="nav-menu clearfix">
-                    <li class="nav-home active"><a class="nav-home active" href="#" title="Home"><span>Home</span></a></li>
-                    <li class="level0 nav-2 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens.html"> <span>Womens</span>
-                    </a>
-                      <ul class="level0">
-                        <li class="level1 nav-2-1 first parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                          href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses.html"> <span>Dresses</span>
-                        </a>
-                          <ul class="level1">
-                            <li class="level2 nav-2-1-1 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/cocktail.html"> <span>Cocktail</span>
-                            </a></li>
-                            <li class="level2 nav-2-1-2"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/day.html"> <span>Day</span>
-                            </a></li>
-                            <li class="level2 nav-2-1-3"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/evening.html"> <span>Evening</span>
-                            </a></li>
-                            <li class="level2 nav-2-1-4"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/sweater.html"> <span>Sweater</span>
-                            </a></li>
-                            <li class="level2 nav-2-1-5 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/belts.html"> <span>Belts</span>
-                            </a></li>
-                          </ul></li>
-                        <li class="level1 nav-2-2 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                          href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories.html"> <span>Accessories</span>
-                        </a>
-                          <ul class="level1">
-                            <li class="level2 nav-2-2-6 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/hair-accessories.html"> <span>Hair
-                                  Accessories</span>
-                            </a></li>
-                            <li class="level2 nav-2-2-7"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/hats-and-gloves.html"> <span>Hats and Gloves</span>
-                            </a></li>
-                            <li class="level2 nav-2-2-8"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/lifestyle.html"> <span>Lifestyle</span>
-                            </a></li>
-                            <li class="level2 nav-2-2-9"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/bras.html"> <span>Bras</span>
-                            </a></li>
-                            <li class="level2 nav-2-2-10 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/scarves.html"> <span>Scarves</span>
-                            </a></li>
-                          </ul></li>
-                        <li class="level1 nav-2-3 last parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                          href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops.html"> <span>Tops</span>
-                        </a>
-                          <ul class="level1">
-                            <li class="level2 nav-2-3-11 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/evening-top.html"> <span>Evening</span>
-                            </a></li>
-                            <li class="level2 nav-2-3-12"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/long-sleeve.html"> <span>Long Sleeve</span>
-                            </a></li>
-                            <li class="level2 nav-2-3-13"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/short-sleeve.html"> <span>Short Sleeve</span>
-                            </a></li>
-                            <li class="level2 nav-2-3-14"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/sleeveless.html"> <span>Sleeveless</span>
-                            </a></li>
-                            <li class="level2 nav-2-3-15 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/tanks-and-camis.html"> <span>Tanks and Camis</span>
-                            </a></li>
-                          </ul></li>
-                      </ul></li>
-                    <li class="level0 nav-3 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens.html"> <span>Mens</span>
-                    </a>
-                      <ul class="level0">
-                        <li class="level1 nav-3-1 first parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                          href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing.html"> <span>Clothing</span>
-                        </a>
-                          <ul class="level1">
-                            <li class="level2 nav-3-1-1 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing/coats-jackets.html"> <span>Coats &amp; Jackets </span>
-                            </a></li>
-                            <li class="level2 nav-3-1-2"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing/blazers.html"> <span>Blazers</span>
-                            </a></li>
-                            <li class="level2 nav-3-1-3"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing/jackets.html"> <span>Jackets</span>
-                            </a></li>
-                            <li class="level2 nav-3-1-4 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing/raincoats.html"> <span>Raincoats</span>
-                            </a></li>
-                          </ul></li>
-                        <li class="level1 nav-3-2 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                          href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans.html"> <span>Jeans</span>
-                        </a>
-                          <ul class="level1">
-                            <li class="level2 nav-3-2-5 first parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                              href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/ankle-boots.html"> <span>Ankle Boots</span>
-                            </a>
-                              <ul class="level2">
-                                <li class="level3 nav-3-2-5-1 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/ankle-boots/leather-ankle-boots.html"> <span>Leather
-                                      Ankle Boots</span>
-                                </a></li>
-                                <li class="level3 nav-3-2-5-2 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/ankle-boots/free-people-melly.html"> <span>Free
-                                      People Melly </span>
-                                </a></li>
-                              </ul></li>
-                            <li class="level2 nav-3-2-6"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/footwear.html"> <span>Footwear</span>
-                            </a></li>
-                            <li class="level2 nav-3-2-7"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/clog-sandals.html"> <span>Clog sandals</span>
-                            </a></li>
-                            <li class="level2 nav-3-2-8 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/combat-boots.html"> <span>Combat Boots</span>
-                            </a></li>
-                          </ul></li>
-                        <li class="level1 nav-3-3 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                          href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags.html"> <span>BAGS</span>
-                        </a>
-                          <ul class="level1">
-                            <li class="level2 nav-3-3-9 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags/bootees-bags.html"> <span>Bootees Bags</span>
-                            </a></li>
-                            <li class="level2 nav-3-3-10"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags/blazers.html"> <span>Blazers</span>
-                            </a></li>
-                            <li class="level2 nav-3-3-11"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags/louis-vuitton.html"> <span>Louis Vuitton</span>
-                            </a></li>
-                            <li class="level2 nav-3-3-12 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags/hermes.html"> <span>Hermes</span>
-                            </a></li>
-                          </ul></li>
-                        <li class="level1 nav-3-4 last parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                          href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie.html"> <span>LINGERIE</span>
-                        </a>
-                          <ul class="level1">
-                            <li class="level2 nav-3-4-13 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie/briefs.html"> <span>Briefs</span>
-                            </a></li>
-                            <li class="level2 nav-3-4-14"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie/camis.html"> <span>Camis</span>
-                            </a></li>
-                            <li class="level2 nav-3-4-15"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie/nightwear.html"> <span>Nightwear</span>
-                            </a></li>
-                            <li class="level2 nav-3-4-16 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie/shapewear.html"> <span>Shapewear</span>
-                            </a></li>
-                          </ul></li>
-                      </ul></li>
-                    <li class="level0 nav-4"><a href="http://demo.magentech.com/themes/sm_love_fashion/shoes.html"> <span>Shoes</span>
-                    </a></li>
-                    <li class="level0 nav-5"><a href="http://demo.magentech.com/themes/sm_love_fashion/blog.html"> <span>Blog</span>
-                    </a></li>
-                    <li class="level0 nav-6"><a href="http://demo.magentech.com/themes/sm_love_fashion/about.html"> <span>About Us</span>
-                    </a></li>
-                    <li class="level0 nav-7"><a href="http://demo.magentech.com/themes/sm_love_fashion/contact-us.html"> <span>Contact Us</span>
-                    </a></li>
-                  </ul>
                   <script type="text/javascript">
                        $jsmart(document).ready(function($) {
                     	    $('#yt_resmenu_collapse .nav-menu > li.parent').each(function() {
@@ -190,140 +64,39 @@
                   <div class="yt-menu">
                     <div class="yt-menu-container-home">
                       <div class="yt-menu-nav">
-                        <ul id="nav" class="clearfix">
-                          <li class="nav-home-active" class="nav-home active"><a class="nav-home active" href="http://demo.magentech.com/themes/sm_love_fashion/" title="Home"><span>Home</span></a>
-                          </li>
-                          <li class="level0 nav-1"><a href="http://demo.magentech.com/themes/sm_love_fashion/types.html"> <span>Types</span>
-                          </a></li>
-                          <li class="level0 nav-2 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens.html">
-                              <span>Womens</span>
-                          </a>
-                            <ul class="level0">
-                              <li class="level1 nav-2-1 first parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                                href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses.html"> <span>Dresses</span>
-                              </a>
-                                <ul class="level1">
-                                  <li class="level2 nav-2-1-1 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/cocktail.html"> <span>Cocktail</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-1-2"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/day.html"> <span>Day</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-1-3"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/evening.html"> <span>Evening</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-1-4"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/sweater.html"> <span>Sweater</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-1-5 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/dresses/belts.html"> <span>Belts</span>
-                                  </a></li>
-                                </ul></li>
-                              <li class="level1 nav-2-2 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                                href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories.html"> <span>Accessories</span>
-                              </a>
-                                <ul class="level1">
-                                  <li class="level2 nav-2-2-6 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/hair-accessories.html"> <span>Hair
-                                        Accessories</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-2-7"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/hats-and-gloves.html"> <span>Hats and Gloves</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-2-8"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/lifestyle.html"> <span>Lifestyle</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-2-9"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/bras.html"> <span>Bras</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-2-10 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/accessories/scarves.html"> <span>Scarves</span>
-                                  </a></li>
-                                </ul></li>
-                              <li class="level1 nav-2-3 last parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                                href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops.html"> <span>Tops</span>
-                              </a>
-                                <ul class="level1">
-                                  <li class="level2 nav-2-3-11 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/evening-top.html"> <span>Evening</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-3-12"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/long-sleeve.html"> <span>Long Sleeve</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-3-13"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/short-sleeve.html"> <span>Short Sleeve</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-3-14"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/sleeveless.html"> <span>Sleeveless</span>
-                                  </a></li>
-                                  <li class="level2 nav-2-3-15 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/womens/tops/tanks-and-camis.html"> <span>Tanks and Camis</span>
-                                  </a></li>
-                                </ul></li>
-                            </ul></li>
-                          <li class="level0 nav-3 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens.html">
-                              <span>Mens</span>
-                          </a>
-                            <ul class="level0">
-                              <li class="level1 nav-3-1 first parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                                href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing.html"> <span>Clothing</span>
-                              </a>
-                                <ul class="level1">
-                                  <li class="level2 nav-3-1-1 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing/coats-jackets.html"> <span>Coats &amp;
-                                        Jackets </span>
-                                  </a></li>
-                                  <li class="level2 nav-3-1-2"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing/blazers.html"> <span>Blazers</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-1-3"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing/jackets.html"> <span>Jackets</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-1-4 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/clothing/raincoats.html"> <span>Raincoats</span>
-                                  </a></li>
-                                </ul></li>
-                              <li class="level1 nav-3-2 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                                href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans.html"> <span>Jeans</span>
-                              </a>
-                                <ul class="level1">
-                                  <li class="level2 nav-3-2-5 first parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                                    href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/ankle-boots.html"> <span>Ankle Boots</span>
-                                  </a>
-                                    <ul class="level2">
-                                      <li class="level3 nav-3-2-5-1 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/ankle-boots/leather-ankle-boots.html"> <span>Leather
-                                            Ankle Boots</span>
-                                      </a></li>
-                                      <li class="level3 nav-3-2-5-2 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/ankle-boots/free-people-melly.html"> <span>Free
-                                            People Melly </span>
-                                      </a></li>
-                                    </ul></li>
-                                  <li class="level2 nav-3-2-6"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/footwear.html"> <span>Footwear</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-2-7"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/clog-sandals.html"> <span>Clog sandals</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-2-8 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jeans/combat-boots.html"> <span>Combat Boots</span>
-                                  </a></li>
-                                </ul></li>
-                              <li class="level1 nav-3-3 parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                                href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags.html"> <span>BAGS</span>
-                              </a>
-                                <ul class="level1">
-                                  <li class="level2 nav-3-3-9 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags/bootees-bags.html"> <span>Bootees Bags</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-3-10"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags/blazers.html"> <span>Blazers</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-3-11"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags/louis-vuitton.html"> <span>Louis Vuitton</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-3-12 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/bags/hermes.html"> <span>Hermes</span>
-                                  </a></li>
-                                </ul></li>
-                              <li class="level1 nav-3-4 last parent" onmouseover="toggleMenu(this,1)" onmouseout="toggleMenu(this,0)"><a
-                                href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie.html"> <span>LINGERIE</span>
-                              </a>
-                                <ul class="level1">
-                                  <li class="level2 nav-3-4-13 first"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie/briefs.html"> <span>Briefs</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-4-14"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie/camis.html"> <span>Camis</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-4-15"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie/nightwear.html"> <span>Nightwear</span>
-                                  </a></li>
-                                  <li class="level2 nav-3-4-16 last"><a href="http://demo.magentech.com/themes/sm_love_fashion/mens/lingerie/shapewear.html"> <span>Shapewear</span>
-                                  </a></li>
-                                </ul></li>
-                            </ul></li>
-                          <li class="level0 nav-4"><a href="http://demo.magentech.com/themes/sm_love_fashion/shoes.html"> <span>Shoes</span>
-                          </a></li>
-                          <li class="level0 nav-5"><a href="http://demo.magentech.com/themes/sm_love_fashion/blog.html"> <span>Blog</span>
-                          </a></li>
-                          <li class="level0 nav-6"><a href="http://demo.magentech.com/themes/sm_love_fashion/about.html"> <span>About Us</span>
-                          </a></li>
-                          <li class="level0 nav-7"><a href="http://demo.magentech.com/themes/sm_love_fashion/contact-us.html"> <span>Contact Us</span>
-                          </a></li>
-                        </ul>
                       </div>
-                    </div>
+                      <script type="text/javascript">
+                         var categories = JSON.parse('${sessionScope.categories}');
+                         var parentCats = JSON.parse('${sessionScope.parent_cats}');
+                         function buildCategory(parentId, level, level1, nav) {
+                        	    var menu = "";
+                        	    if (typeof parentCats[parentId] != 'undefined') {
+                        	        if(nav == true){
+                        	            menu = menu + "<ul id = 'nav' class='clearfix level" + level1 + "'>";
+                        	        } else{
+                        	            menu = menu + "<ul class='level" + level1 + "'>";
+                        	        }
+                        	        for(var i = 0; i < parentCats[parentId].length; i++) {
+                        	            if (typeof parentCats[parentCats[parentId][i].id] == 'undefined') {
+                        	                menu = menu + "<li class='level" + level + "'> <a href='#'><span>" + categories[parentCats[parentId][i].id].name + "</span></a></li>";
+                        	            }
+                        	            if (typeof parentCats[parentCats[parentId][i].id] != 'undefined') {
+                        	                menu = menu + "<li class='level" + level + " parent'> <a href='#'><span>" + categories[parentCats[parentId][i].id].name + "</span></a> \n";
+                        	                menu = menu + buildCategory(parentCats[parentId][i].id, level + 1, level, false);
+                        	                menu = menu + "</li>";
+                        	            }
+                        	        }
+                        	        menu = menu + "</ul>";
+                        	    }
+                        	    return menu;
+                        }
+                        var menu = buildCategory(1, 0, 0, true);
+                        jQuery('.yt-menu-nav').append(menu);
+                        jQuery('#yt_resmenu_collapse').append(menu);
+                        jQuery('#yt_resmenu_collapse > ul').addClass("nav-menu");
+                        jQuery('#yt_resmenu_collapse > ul').removeAttr('id');
+                   </script>
+                   </div>
                    <script>
                         $jsmart(document).ready(function($) {
                         	  $('#nav li ul li').has('ul').append('<span class="narrow"></span>');
@@ -518,11 +291,4 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
 </div>

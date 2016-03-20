@@ -21,17 +21,4 @@ public class CategoriesService implements ICategoriesService {
 		// TODO Auto-generated method stub
 		return categoriesRepository.getAllCategoriesByOrders();
 	}
-
-	@Transactional
-	public CategoryEntity getCategory(Integer id) {
-		// TODO Auto-generated method stub
-		return categoriesRepository.get(id);
-	}
-
-	@Transactional
-	public List<CategoryEntity> getSubCategories(Integer parent) {
-		// TODO Auto-generated method stub
-		return categoriesRepository.getSubCategories(parent);
-	}
-
 }

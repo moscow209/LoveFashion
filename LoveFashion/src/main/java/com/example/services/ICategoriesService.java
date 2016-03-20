@@ -7,9 +7,4 @@ import com.example.entity.CategoryEntity;
 public interface ICategoriesService {
 
 	public List<CategoryEntity> getAllCategoriesByOrders();
-
-	public CategoryEntity getCategory(Integer id);
-
-	public List<CategoryEntity> getSubCategories(Integer parent);
-
 }

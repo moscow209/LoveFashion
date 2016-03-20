@@ -6454,6 +6454,6 @@ input.input-text.qty{
 .under-border{
 	border-bottom: 1px dashed #E9E9E9;
     padding-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 5px;
     clear: both;
 }

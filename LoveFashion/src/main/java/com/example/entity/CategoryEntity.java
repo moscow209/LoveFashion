@@ -1,20 +1,20 @@
 package com.example.entity;
 // Generated Jan 6, 2016 11:27:06 PM by Hibernate Tools 4.3.1
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,7 +31,7 @@ public class CategoryEntity implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Integer entityId;
-	private CategoryEntity categoryEntity;
+	private Integer parentId;
 	private Date createdAt;
 	private Date updatedAt;
 	private String path;
@@ -50,7 +50,6 @@ public class CategoryEntity implements java.io.Serializable {
 	private String thumbnail;
 	private String urlKey;
 	private String urlPath;
-	private Set<CategoryEntity> categoryEntities = new HashSet<CategoryEntity>(0);
 	private Set<ProductEntity> productEntities = new HashSet<ProductEntity>(0);
 
 	public CategoryEntity() {
@@ -65,11 +64,11 @@ public class CategoryEntity implements java.io.Serializable {
 		this.childrenCount = childrenCount;
 	}
 
-	public CategoryEntity(CategoryEntity categoryEntity, Date createdAt, Date updatedAt, String path, int position,
+	public CategoryEntity(Integer parentId, Date createdAt, Date updatedAt, String path, int position,
 			int level, int childrenCount, String description, String image, Integer includeInMenu, Integer isActive,
 			String metaDescription, String metaKeywords, String metaTitle, String name, String nameEn, String thumbnail,
-			String urlKey, String urlPath, Set<CategoryEntity> categoryEntities, Set<ProductEntity> productEntities) {
-		this.categoryEntity = categoryEntity;
+			String urlKey, String urlPath, Set<ProductEntity> productEntities) {
+		this.parentId = parentId;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.path = path;
@@ -88,7 +87,6 @@ public class CategoryEntity implements java.io.Serializable {
 		this.thumbnail = thumbnail;
 		this.urlKey = urlKey;
 		this.urlPath = urlPath;
-		this.categoryEntities = categoryEntities;
 		this.productEntities = productEntities;
 	}
 
@@ -102,16 +100,6 @@ public class CategoryEntity implements java.io.Serializable {
 
 	public void setEntityId(Integer entityId) {
 		this.entityId = entityId;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "parent_id")
-	public CategoryEntity getCategoryEntity() {
-		return this.categoryEntity;
-	}
-
-	public void setCategoryEntity(CategoryEntity categoryEntity) {
-		this.categoryEntity = categoryEntity;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -278,13 +266,13 @@ public class CategoryEntity implements java.io.Serializable {
 		this.urlPath = urlPath;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoryEntity")
-	public Set<CategoryEntity> getCategoryEntities() {
-		return this.categoryEntities;
+	@Column(name = "parent_id", nullable=true)
+	public Integer getParentId() {
+		return parentId;
 	}
 
-	public void setCategoryEntities(Set<CategoryEntity> categoryEntities) {
-		this.categoryEntities = categoryEntities;
+	public void setParentId(Integer parentId) {
+		this.parentId = parentId;
 	}
 
 	@ManyToMany(fetch = FetchType.LAZY)

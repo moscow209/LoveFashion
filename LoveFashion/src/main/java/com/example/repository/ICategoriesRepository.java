@@ -8,6 +8,4 @@ public interface ICategoriesRepository extends IRepository<CategoryEntity> {
 
 	public List<CategoryEntity> getAllCategoriesByOrders();
 
-	public List<CategoryEntity> getSubCategories(Integer parent);
-
 }

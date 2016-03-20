@@ -80,6 +80,10 @@
         <beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
             <beans:property name="paramName" value="locale" />
         </beans:bean>
+        <interceptor>
+            <mapping path="/**" />
+            <beans:bean class="com.example.interceptor.RequestMenuInterceptor"></beans:bean>
+        </interceptor>
     </interceptors>
 
 </beans:beans>
