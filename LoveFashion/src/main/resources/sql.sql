@@ -5,165 +5,164 @@ create database lovefashion1;
 use lovefashion1;
 
 CREATE TABLE `admin_user` (
-	`user_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'User ID',
-	`firstname` varchar(32) DEFAULT NULL COMMENT 'User First Name',
-	`lastname` varchar(32) DEFAULT NULL COMMENT 'User Last Name',
-	`email` varchar(128) DEFAULT NULL COMMENT 'User Email',
-	`username` varchar(40) DEFAULT NULL COMMENT 'User Login',
-	`password` varchar(255) DEFAULT NULL COMMENT 'User Password',
-	`created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'User Created Time',
-	`logdate` timestamp NULL DEFAULT NULL COMMENT 'User Last Login Time',
-	`lognum` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'User Login Number',
-	`is_active` smallint(6) NOT NULL DEFAULT '1' COMMENT 'User Is Active',
-	PRIMARY KEY (`user_id`),
-	UNIQUE KEY `UNQ_ADMIN_USER_USERNAME` (`username`, `email`)
+    `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'User ID',
+    `firstname` varchar(32) DEFAULT NULL COMMENT 'User First Name',
+    `lastname` varchar(32) DEFAULT NULL COMMENT 'User Last Name',
+    `email` varchar(128) DEFAULT NULL COMMENT 'User Email',
+    `username` varchar(40) DEFAULT NULL COMMENT 'User Login',
+    `password` varchar(255) DEFAULT NULL COMMENT 'User Password',
+    `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'User Created Time',
+    `logdate` timestamp NULL DEFAULT NULL COMMENT 'User Last Login Time',
+    `lognum` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'User Login Number',
+    `is_active` smallint(6) NOT NULL DEFAULT '1' COMMENT 'User Is Active',
+    PRIMARY KEY (`user_id`),
+    UNIQUE KEY `UNQ_ADMIN_USER_USERNAME` (`username`, `email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Admin';
 
 
 CREATE TABLE `admin_role` (
-	`role_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Role ID',
-	`parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Parent Role ID',
-	`tree_level` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Role Tree Level',
-	`sort_order` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Role Sort Order',
-	`user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'User ID',
-	`role_name` varchar(50) DEFAULT NULL COMMENT 'Role Name',
-	PRIMARY KEY (`role_id`),
-	KEY `IDX_ADMIN_ROLE_PARENT_ID_SORT_ORDER` (`parent_id`,`sort_order`),
-	CONSTRAINT `FK_ADMIN_RULE_ROLE_ID_ADMIN_ROLE_ADMIN_USER` FOREIGN KEY (`user_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `role_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Role ID',
+    `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Parent Role ID',
+    `tree_level` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Role Tree Level',
+    `sort_order` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Role Sort Order',
+    `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'User ID',
+    `role_name` varchar(50) DEFAULT NULL COMMENT 'Role Name',
+    PRIMARY KEY (`role_id`),
+    KEY `IDX_ADMIN_ROLE_PARENT_ID_SORT_ORDER` (`parent_id`,`sort_order`),
+    CONSTRAINT `FK_ADMIN_RULE_ROLE_ID_ADMIN_ROLE_ADMIN_USER` FOREIGN KEY (`user_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Admin Role Table';
 
 
 CREATE TABLE `admin_rule` (
-	`rule_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Rule ID',
-	`role_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Role ID',
-	`resource_id` varchar(255) NOT NULL COMMENT 'Resource ID',
-	`privileges` varchar(20) DEFAULT NULL COMMENT 'Privileges',
-	`permission` varchar(10) DEFAULT NULL COMMENT 'Permission',
-	PRIMARY KEY (`rule_id`),
-	CONSTRAINT `FK_ADMIN_RULE_ROLE_ID_ADMIN_ROLE_ROLE_ID` FOREIGN KEY (`role_id`) REFERENCES `admin_role` (`role_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `rule_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Rule ID',
+    `role_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Role ID',
+    `resource_id` varchar(255) NOT NULL COMMENT 'Resource ID',
+    `privileges` varchar(20) DEFAULT NULL COMMENT 'Privileges',
+    `permission` varchar(10) DEFAULT NULL COMMENT 'Permission',
+    PRIMARY KEY (`rule_id`),
+    CONSTRAINT `FK_ADMIN_RULE_ROLE_ID_ADMIN_ROLE_ROLE_ID` FOREIGN KEY (`role_id`) REFERENCES `admin_role` (`role_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Admin Rule Table';
 
 
 CREATE TABLE `customer_group` (
-	`customer_group_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Customer Group Id',
-	`customer_group_code` varchar(32) NOT NULL COMMENT 'Customer Group Code',
-	`limit_score` int(10) unsigned  DEFAULT NULL  COMMENT 'Accumulate Score',
-	PRIMARY KEY (`customer_group_id`)
+    `customer_group_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Customer Group Id',
+    `customer_group_code` varchar(32) NOT NULL COMMENT 'Customer Group Code',
+    `limit_score` int(10) unsigned  DEFAULT NULL  COMMENT 'Accumulate Score',
+    PRIMARY KEY (`customer_group_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Customer Group';
 
 
 CREATE TABLE `customer_entity` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
-	`firstname` varchar(32) DEFAULT NULL COMMENT 'User First Name',
-	`lastname` varchar(32) DEFAULT NULL COMMENT 'User Last Name',
-	`gender` smallint(5) unsigned DEFAULT NULL COMMENT 'Gender',
-	`email` varchar(128) DEFAULT NULL COMMENT 'User Email',
-	`password` varchar(60) DEFAULT NULL COMMENT 'User Password',
-	`group_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Group Id',
-	`score` int(10) unsigned  DEFAULT NULL  COMMENT 'Accumulate Score',
-	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
-	`updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
-	`is_active` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Is Active',
-	`logdate` timestamp NULL DEFAULT NULL COMMENT 'User Last Login Time',
-	`lognum` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'User Login Number',
-	`default_billing` int(10) unsigned DEFAULT NULL COMMENT 'Billing Address Id',
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
+    `firstname` varchar(32) DEFAULT NULL COMMENT 'User First Name',
+    `lastname` varchar(32) DEFAULT NULL COMMENT 'User Last Name',
+    `gender` smallint(5) unsigned DEFAULT NULL COMMENT 'Gender',
+    `email` varchar(128) DEFAULT NULL COMMENT 'User Email',
+    `password` varchar(60) DEFAULT NULL COMMENT 'User Password',
+    `group_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Group Id',
+    `score` int(10) unsigned  DEFAULT NULL  COMMENT 'Accumulate Score',
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
+    `is_active` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Is Active',
+    `logdate` timestamp NULL DEFAULT NULL COMMENT 'User Last Login Time',
+    `lognum` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'User Login Number',
+    `default_billing` int(10) unsigned DEFAULT NULL COMMENT 'Billing Address Id',
     `default_shipping` int(10) unsigned DEFAULT NULL COMMENT 'Billing Shipping Id',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_CUSTOMER_ENTITY_EMAIL` (`email`),
-	KEY `IDX_CUSTOMER_ENTITY_CUSTOMER_GROUP` (`group_id`),
-	CONSTRAINT `FK_CUSTOMER_ENTITY_ID_CUSTOMER_GROUP` FOREIGN KEY (`group_id`) REFERENCES `customer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_CUSTOMER_ENTITY_EMAIL` (`email`),
+    KEY `IDX_CUSTOMER_ENTITY_CUSTOMER_GROUP` (`group_id`),
+    CONSTRAINT `FK_CUSTOMER_ENTITY_ID_CUSTOMER_GROUP` FOREIGN KEY (`group_id`) REFERENCES `customer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Customer Entity';
 
 
 CREATE TABLE `customer_address_entity` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
-	`parent_id` int(10) unsigned DEFAULT NULL COMMENT 'Parent Id',
-	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
-	`updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
-	`is_active` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Is Active',
-	`street` varchar(100) DEFAULT NULL COMMENT 'Street',
-	`city` varchar(100) DEFAULT NULL COMMENT 'City',
-	`region` varchar(100) DEFAULT NULL COMMENT 'Region',
-	`region_id` varchar(20) DEFAULT NULL COMMENT 'Region Id',
-	`country` varchar(100) DEFAULT NULL COMMENT 'Country',
-	`country_id` varchar(20) DEFAULT NULL COMMENT 'Country Id',
-	`zip_code` varchar(10) DEFAULT NULL COMMENT 'zip_code',
-	`firstname` varchar(100) DEFAULT NULL COMMENT 'First name',
-	`lastname` varchar(100) DEFAULT NULL COMMENT 'Last name',
-	`phone` varchar(20) DEFAULT NULL COMMENT 'Phone',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_CUSTOMER_ADDRESS_ENTITY_PARENT_ID` (`parent_id`),
-	CONSTRAINT `FK_CUSTOMER_ADDRESS_ENTITY_PARENT_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`parent_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
+    `parent_id` int(10) unsigned DEFAULT NULL COMMENT 'Parent Id',
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
+    `is_active` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Is Active',
+    `street` varchar(100) DEFAULT NULL COMMENT 'Street',
+    `city` varchar(100) DEFAULT NULL COMMENT 'City',
+    `region` varchar(100) DEFAULT NULL COMMENT 'Region',
+    `region_id` varchar(20) DEFAULT NULL COMMENT 'Region Id',
+    `country` varchar(100) DEFAULT NULL COMMENT 'Country',
+    `country_id` varchar(20) DEFAULT NULL COMMENT 'Country Id',
+    `zip_code` varchar(10) DEFAULT NULL COMMENT 'zip_code',
+    `firstname` varchar(100) DEFAULT NULL COMMENT 'First name',
+    `lastname` varchar(100) DEFAULT NULL COMMENT 'Last name',
+    `phone` varchar(20) DEFAULT NULL COMMENT 'Phone',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_CUSTOMER_ADDRESS_ENTITY_PARENT_ID` (`parent_id`),
+    CONSTRAINT `FK_CUSTOMER_ADDRESS_ENTITY_PARENT_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`parent_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Customer Address Entity';
 
 
 CREATE TABLE `verification_token` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity ID',
-	`admin_id` int(10) unsigned DEFAULT NULL COMMENT 'Admin user ID',
-	`customer_id` int(10) unsigned DEFAULT NULL COMMENT 'Customer user ID',
-	`type` varchar(16) NOT NULL COMMENT 'Token Type',
-	`token` varchar(255) NOT NULL COMMENT 'Token',
-	`verifier` varchar(32) DEFAULT NULL COMMENT 'Token Verifier',
-	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Token creation timestamp',
-	`expiry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Expiry token timestamp',
-	PRIMARY KEY (`entity_id`),
-	UNIQUE KEY `UNQ_OAUTH_TOKEN_TOKEN` (`token`),
-	KEY `FK_OAUTH_TOKEN_ADMIN_ID_ADMIN_USER_USER_ID` (`admin_id`),
-	KEY `FK_OAUTH_TOKEN_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` (`customer_id`),
-	CONSTRAINT `FK_OAUTH_TOKEN_ADMIN_ID_ADMIN_USER_USER_ID` FOREIGN KEY (`admin_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_OAUTH_TOKEN_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity ID',
+    `admin_id` int(10) unsigned DEFAULT NULL COMMENT 'Admin user ID',
+    `customer_id` int(10) unsigned DEFAULT NULL COMMENT 'Customer user ID',
+    `type` varchar(16) NOT NULL COMMENT 'Token Type',
+    `token` varchar(255) NOT NULL COMMENT 'Token',
+    `verifier` varchar(32) DEFAULT NULL COMMENT 'Token Verifier',
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Token creation timestamp',
+    `expiry_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Expiry token timestamp',
+    PRIMARY KEY (`entity_id`),
+    UNIQUE KEY `UNQ_OAUTH_TOKEN_TOKEN` (`token`),
+    KEY `FK_OAUTH_TOKEN_ADMIN_ID_ADMIN_USER_USER_ID` (`admin_id`),
+    KEY `FK_OAUTH_TOKEN_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` (`customer_id`),
+    CONSTRAINT `FK_OAUTH_TOKEN_ADMIN_ID_ADMIN_USER_USER_ID` FOREIGN KEY (`admin_id`) REFERENCES `admin_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_OAUTH_TOKEN_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='OAuth Tokens';
 
 
 
 CREATE TABLE `store` (
-	`store_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Store Id',
-	`name` varchar(255) NOT NULL COMMENT 'Store Name',
-	`sort_order` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Sort Order',
-	`is_active` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Activity',
-	PRIMARY KEY (`store_id`),
-	KEY `IDX_CORE_STORE_IS_ACTIVE_SORT_ORDER` (`is_active`,`sort_order`)
+    `store_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Store Id',
+    `name` varchar(255) NOT NULL COMMENT 'Store Name',
+    `sort_order` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Sort Order',
+    `is_active` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store Activity',
+    PRIMARY KEY (`store_id`),
+    KEY `IDX_CORE_STORE_IS_ACTIVE_SORT_ORDER` (`is_active`,`sort_order`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Stores';
 
 
 CREATE TABLE `sitemap` (
-	`sitemap_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Sitemap Id',
-	`sitemap_type` varchar(32) DEFAULT NULL COMMENT 'Sitemap Type',
-	`sitemap_filename` varchar(32) DEFAULT NULL COMMENT 'Sitemap Filename',
-	`sitemap_path` varchar(255) DEFAULT NULL COMMENT 'Sitemap Path',
-	`sitemap_time` timestamp NULL DEFAULT NULL COMMENT 'Sitemap Time',
-	`store_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store id',
-	PRIMARY KEY (`sitemap_id`),
-	KEY `IDX_SITEMAP_STORE_ID` (`store_id`),
-	CONSTRAINT `FK_SITEMAP_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `sitemap_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Sitemap Id',
+    `sitemap_type` varchar(32) DEFAULT NULL COMMENT 'Sitemap Type',
+    `sitemap_filename` varchar(32) DEFAULT NULL COMMENT 'Sitemap Filename',
+    `sitemap_path` varchar(255) DEFAULT NULL COMMENT 'Sitemap Path',
+    `sitemap_time` timestamp NULL DEFAULT NULL COMMENT 'Sitemap Time',
+    `store_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Store id',
+    PRIMARY KEY (`sitemap_id`),
+    KEY `IDX_SITEMAP_STORE_ID` (`store_id`),
+    CONSTRAINT `FK_SITEMAP_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Google Sitemap';
 
 
 CREATE TABLE `category_entity` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity ID',
-	`parent_id` int(10) unsigned NULL COMMENT 'parent_id',
-	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'created_at',
-	`updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'updated_at',
-	`path` varchar(255) NOT NULL DEFAULT '' COMMENT 'path',
-	`position` int(11) NOT NULL DEFAULT '0' COMMENT 'position',
-	`level` int(11) NOT NULL DEFAULT '0' COMMENT 'level',
-	`children_count` int(11) NOT NULL DEFAULT '0' COMMENT 'children_count',
-	`description` text COMMENT 'Description',
-	`image` varchar(255) DEFAULT NULL COMMENT 'Image',
-	`include_in_menu` int(11) DEFAULT NULL COMMENT 'Include in Navigation Menu',
-	`is_active` int(11) DEFAULT NULL COMMENT 'Is Active',
-	`meta_description` text COMMENT 'Meta Description',
-	`meta_keywords` text COMMENT 'Meta Keywords',
-	`meta_title` varchar(255) DEFAULT NULL COMMENT 'Page Title',
-	`name` varchar(255) DEFAULT NULL COMMENT 'Name',
-	`name_en` varchar(255) DEFAULT NULL COMMENT 'Name English',
-	`thumbnail` varchar(255) DEFAULT NULL COMMENT 'Thumbnail Image',
-	`url_key` varchar(255) DEFAULT NULL COMMENT 'Url Key',
-	`url_path` varchar(255) DEFAULT NULL COMMENT 'Url Path',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_CATALOG_CATEGORY_FLAT_PATH` (`path`),
-	KEY `IDX_CATALOG_CATEGORY_FLAT_URL_KEY` (`url_key`),
-	CONSTRAINT `FK_SITEMAP_STORE_ID_CORE_STORE_STORE_ID_1` FOREIGN KEY (`parent_id`) REFERENCES `category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity ID',
+    `parent_id` int(10) unsigned NULL COMMENT 'parent_id',
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'created_at',
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'updated_at',
+    `path` varchar(255) NOT NULL DEFAULT '' COMMENT 'path',
+    `position` int(11) NOT NULL DEFAULT '0' COMMENT 'position',
+    `level` int(11) NOT NULL DEFAULT '0' COMMENT 'level',
+    `children_count` int(11) NOT NULL DEFAULT '0' COMMENT 'children_count',
+    `description` text COMMENT 'Description',
+    `image` varchar(255) DEFAULT NULL COMMENT 'Image',
+    `include_in_menu` int(11) DEFAULT NULL COMMENT 'Include in Navigation Menu',
+    `is_active` int(11) DEFAULT NULL COMMENT 'Is Active',
+    `meta_description` text COMMENT 'Meta Description',
+    `meta_keywords` text COMMENT 'Meta Keywords',
+    `meta_title` varchar(255) DEFAULT NULL COMMENT 'Page Title',
+    `name` varchar(255) DEFAULT NULL COMMENT 'Name',
+    `name_en` varchar(255) DEFAULT NULL COMMENT 'Name English',
+    `thumbnail` varchar(255) DEFAULT NULL COMMENT 'Thumbnail Image',
+    `url_key` varchar(255) DEFAULT NULL COMMENT 'Url Key',
+    `url_path` varchar(255) DEFAULT NULL COMMENT 'Url Path',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_CATALOG_CATEGORY_FLAT_PATH` (`path`),
+    KEY `IDX_CATALOG_CATEGORY_FLAT_URL_KEY` (`url_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Category';
 
 
@@ -171,72 +170,72 @@ CREATE TABLE `manufacturer` (
     `entity_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Value ID',
     `manufacturer` varchar(255) DEFAULT NULL COMMENT 'manufacturer',
     `meta_description` varchar(255) DEFAULT NULL COMMENT 'meta_description',
-	`url_key` varchar(255) DEFAULT NULL COMMENT 'url_key',
-	`url_path` varchar(255) DEFAULT NULL COMMENT 'url_path',
-	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'created_at',
+    `url_key` varchar(255) DEFAULT NULL COMMENT 'url_key',
+    `url_path` varchar(255) DEFAULT NULL COMMENT 'url_path',
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'created_at',
     PRIMARY KEY (`entity_id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Manufacturer';
 
 
 CREATE TABLE `general_entity` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'entity_id',
-	`tax_class_id` int(10) unsigned DEFAULT NULL COMMENT 'tax_class_id',
-	`material` varchar(255) DEFAULT NULL COMMENT 'Material',
-	`climate` varchar(255) DEFAULT NULL COMMENT 'Climate',
-	`pattern` varchar(255) DEFAULT NULL COMMENT 'Pattern',
-	`collar` varchar(255) DEFAULT NULL COMMENT 'Collar',
-	`sleeve` varchar(255) DEFAULT NULL COMMENT 'Sleeve',
-	`active` varchar(255) DEFAULT NULL COMMENT 'Active',
-	`weight` double DEFAULT NULL COMMENT 'weight',
-	`meta_description` varchar(255) DEFAULT NULL COMMENT 'meta_description',
-	`meta_keyword` text COMMENT 'meta_keyword',
-	`meta_title` varchar(255) DEFAULT NULL COMMENT 'meta_title',
-	`description` text COMMENT 'description',
-	`url_key` varchar(255) DEFAULT NULL COMMENT 'url_key',
-	`url_path` varchar(255) DEFAULT NULL COMMENT 'url_path',
-	`created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'created_at',
-	`updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'updated_at',
-	`is_new` smallint(5) DEFAULT NULL COMMENT 'is_new',
-	`status` smallint(5) DEFAULT NULL COMMENT 'Status',
-	`news_from_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'news_from_date',
-	`news_to_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'news_to_date',
-	`image` varchar(255) DEFAULT NULL COMMENT 'image',
-	`sale` SMALLINT(5) NULL DEFAULT '0' COMMENT 'image_label',
-	`special_price` double DEFAULT NULL COMMENT 'sale',
-	`special_from_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'special_price',
-	`special_to_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'special_from_date',
-	PRIMARY KEY (`entity_id`)
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'entity_id',
+    `tax_class_id` int(10) unsigned DEFAULT NULL COMMENT 'tax_class_id',
+    `material` varchar(255) DEFAULT NULL COMMENT 'Material',
+    `climate` varchar(255) DEFAULT NULL COMMENT 'Climate',
+    `pattern` varchar(255) DEFAULT NULL COMMENT 'Pattern',
+    `collar` varchar(255) DEFAULT NULL COMMENT 'Collar',
+    `sleeve` varchar(255) DEFAULT NULL COMMENT 'Sleeve',
+    `active` varchar(255) DEFAULT NULL COMMENT 'Active',
+    `weight` double DEFAULT NULL COMMENT 'weight',
+    `meta_description` varchar(255) DEFAULT NULL COMMENT 'meta_description',
+    `meta_keyword` text COMMENT 'meta_keyword',
+    `meta_title` varchar(255) DEFAULT NULL COMMENT 'meta_title',
+    `description` text COMMENT 'description',
+    `url_key` varchar(255) DEFAULT NULL COMMENT 'url_key',
+    `url_path` varchar(255) DEFAULT NULL COMMENT 'url_path',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'created_at',
+    `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'updated_at',
+    `is_new` smallint(5) DEFAULT NULL COMMENT 'is_new',
+    `status` smallint(5) DEFAULT NULL COMMENT 'Status',
+    `news_from_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'news_from_date',
+    `news_to_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'news_to_date',
+    `image` varchar(255) DEFAULT NULL COMMENT 'image',
+    `sale` SMALLINT(5) NULL DEFAULT '0' COMMENT 'image_label',
+    `special_price` double DEFAULT NULL COMMENT 'sale',
+    `special_from_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'special_price',
+    `special_to_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'special_from_date',
+    PRIMARY KEY (`entity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='General Entity';
 
 
 CREATE TABLE `product_entity` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'entity_id',
-	`general_id` int(10) unsigned NOT NULL COMMENT 'general_id',
-	`name` varchar(255) DEFAULT NULL COMMENT 'Name',
-	`parentage` varchar(32) NOT NULL DEFAULT 'simple' COMMENT 'parentage',
-	`sku` varchar(64) DEFAULT NULL COMMENT 'SKU',
-	`parent_sku` varchar(64) DEFAULT NULL COMMENT 'parent_sku',
-	`price` double DEFAULT NULL COMMENT 'price',
-	`color` varchar(255) DEFAULT NULL COMMENT 'color_value',
-	`size` varchar(255) DEFAULT NULL COMMENT 'size_value',
-	`manufacturer` int(11) DEFAULT NULL COMMENT 'manufacturer',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_CATALOG_PRODUCT_ENTITY_SKU` (`sku`),
-	KEY `IDX_CATALOG_PRODUCT_FLAT_1_COLOR` (`color`),
-	KEY `IDX_CATALOG_PRODUCT_FLAT_1_SIZE` (`size`),
-	KEY `IDX_CATALOG_PRODUCT_FLAT_1_NAME` (`name`),
-	KEY `IDX_CATALOG_PRODUCT_FLAT_1_NANU` (`manufacturer`),
-	KEY `IDX_CATALOG_PRODUCT_FLAT_1_PRICE` (`price`),
-	CONSTRAINT `FK_PRO_GENE_ENTT_ID` FOREIGN KEY (`general_id`) REFERENCES `general_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'entity_id',
+    `general_id` int(10) unsigned NOT NULL COMMENT 'general_id',
+    `name` varchar(255) DEFAULT NULL COMMENT 'Name',
+    `parentage` varchar(32) NOT NULL DEFAULT 'simple' COMMENT 'parentage',
+    `sku` varchar(64) DEFAULT NULL COMMENT 'SKU',
+    `parent_sku` varchar(64) DEFAULT NULL COMMENT 'parent_sku',
+    `price` double DEFAULT NULL COMMENT 'price',
+    `color` varchar(255) DEFAULT NULL COMMENT 'color_value',
+    `size` varchar(255) DEFAULT NULL COMMENT 'size_value',
+    `manufacturer` int(11) DEFAULT NULL COMMENT 'manufacturer',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_CATALOG_PRODUCT_ENTITY_SKU` (`sku`),
+    KEY `IDX_CATALOG_PRODUCT_FLAT_1_COLOR` (`color`),
+    KEY `IDX_CATALOG_PRODUCT_FLAT_1_SIZE` (`size`),
+    KEY `IDX_CATALOG_PRODUCT_FLAT_1_NAME` (`name`),
+    KEY `IDX_CATALOG_PRODUCT_FLAT_1_NANU` (`manufacturer`),
+    KEY `IDX_CATALOG_PRODUCT_FLAT_1_PRICE` (`price`),
+    CONSTRAINT `FK_PRO_GENE_ENTT_ID` FOREIGN KEY (`general_id`) REFERENCES `general_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Product Entity';
 
 
 CREATE TABLE `category_product` (
-	`category_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Category ID',
-	`product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product ID',
-	PRIMARY KEY (`category_id`,`product_id`),
-	CONSTRAINT `FK_CAT_CTGR_PRD_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_CAT_CTGR_PRD_CTGR_ID_CAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`category_id`) REFERENCES `category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `category_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Category ID',
+    `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product ID',
+    PRIMARY KEY (`category_id`,`product_id`),
+    CONSTRAINT `FK_CAT_CTGR_PRD_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_CAT_CTGR_PRD_CTGR_ID_CAT_CTGR_ENTT_ENTT_ID` FOREIGN KEY (`category_id`) REFERENCES `category_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product To Category Linkage Table';
 
 
@@ -253,644 +252,644 @@ CREATE TABLE `product_gallery_entity` (
 
 
 CREATE TABLE `product_relation` (
-	`parent_id` int(10) unsigned NOT NULL COMMENT 'Parent ID',
-	`child_id` int(10) unsigned NOT NULL COMMENT 'Child ID',
-	PRIMARY KEY (`parent_id`,`child_id`),
-	KEY `IDX_CATALOG_PRODUCT_RELATION_CHILD_ID` (`child_id`),
-	CONSTRAINT `FK_CAT_PRD_RELATION_CHILD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`child_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_CAT_PRD_RELATION_PARENT_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `parent_id` int(10) unsigned NOT NULL COMMENT 'Parent ID',
+    `child_id` int(10) unsigned NOT NULL COMMENT 'Child ID',
+    PRIMARY KEY (`parent_id`,`child_id`),
+    KEY `IDX_CATALOG_PRODUCT_RELATION_CHILD_ID` (`child_id`),
+    CONSTRAINT `FK_CAT_PRD_RELATION_CHILD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`child_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_CAT_PRD_RELATION_PARENT_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Catalog Product Relation Table';
 
 
 CREATE TABLE `inventory_stock` (
-	`stock_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Stock Id',
-	`stock_name` varchar(255) DEFAULT NULL COMMENT 'Stock Name',
-	PRIMARY KEY (`stock_id`)
+    `stock_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Stock Id',
+    `stock_name` varchar(255) DEFAULT NULL COMMENT 'Stock Name',
+    PRIMARY KEY (`stock_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock';
 
 
 CREATE TABLE `inventory_stock_item` (
-	`item_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Item Id',
-	`product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Id',
-	`stock_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Stock Id',
-	`qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty',
-	`min_qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Min Qty',
-	`min_sale_qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Min Sale Qty',
-	`max_sale_qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Max Sale Qty',
-	`is_in_stock` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Is In Stock',
-	`notify_stock_qty` int(10) DEFAULT NULL COMMENT 'Notify Stock Qty',
-	PRIMARY KEY (`item_id`),
-	UNIQUE KEY `UNQ_CATALOGINVENTORY_STOCK_ITEM_PRODUCT_ID_STOCK_ID` (`product_id`,`stock_id`),
-	KEY `IDX_CATALOGINVENTORY_STOCK_ITEM_PRODUCT_ID` (`product_id`),
-	KEY `IDX_CATALOGINVENTORY_STOCK_ITEM_STOCK_ID` (`stock_id`),
-	CONSTRAINT `FK_CATINV_STOCK_ITEM_STOCK_ID_CATINV_STOCK_STOCK_ID` FOREIGN KEY (`stock_id`) REFERENCES `inventory_stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_CATINV_STOCK_ITEM_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `item_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Item Id',
+    `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Id',
+    `stock_id` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Stock Id',
+    `qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty',
+    `min_qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Min Qty',
+    `min_sale_qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Min Sale Qty',
+    `max_sale_qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Max Sale Qty',
+    `is_in_stock` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Is In Stock',
+    `notify_stock_qty` int(10) DEFAULT NULL COMMENT 'Notify Stock Qty',
+    PRIMARY KEY (`item_id`),
+    UNIQUE KEY `UNQ_CATALOGINVENTORY_STOCK_ITEM_PRODUCT_ID_STOCK_ID` (`product_id`,`stock_id`),
+    KEY `IDX_CATALOGINVENTORY_STOCK_ITEM_PRODUCT_ID` (`product_id`),
+    KEY `IDX_CATALOGINVENTORY_STOCK_ITEM_STOCK_ID` (`stock_id`),
+    CONSTRAINT `FK_CATINV_STOCK_ITEM_STOCK_ID_CATINV_STOCK_STOCK_ID` FOREIGN KEY (`stock_id`) REFERENCES `inventory_stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_CATINV_STOCK_ITEM_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Item';
 
 
 CREATE TABLE `inventory_stock_status` (
-	`product_id` int(10) unsigned NOT NULL COMMENT 'Product Id',
-	`stock_id` smallint(5) unsigned NOT NULL COMMENT 'Stock Id',
-	`qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty',
-	`stock_status` smallint(5) unsigned NOT NULL COMMENT 'Stock Status',
-	PRIMARY KEY (`product_id`,`stock_id`),
-	KEY `IDX_CATALOGINVENTORY_STOCK_STATUS_STOCK_ID` (`stock_id`),
-	CONSTRAINT `FK_CATINV_STOCK_STS_STOCK_ID_CATINV_STOCK_STOCK_ID` FOREIGN KEY (`stock_id`) REFERENCES `inventory_stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_CATINV_STOCK_STS_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `product_id` int(10) unsigned NOT NULL COMMENT 'Product Id',
+    `stock_id` smallint(5) unsigned NOT NULL COMMENT 'Stock Id',
+    `qty` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty',
+    `stock_status` smallint(5) unsigned NOT NULL COMMENT 'Stock Status',
+    PRIMARY KEY (`product_id`,`stock_id`),
+    KEY `IDX_CATALOGINVENTORY_STOCK_STATUS_STOCK_ID` (`stock_id`),
+    CONSTRAINT `FK_CATINV_STOCK_STS_STOCK_ID_CATINV_STOCK_STOCK_ID` FOREIGN KEY (`stock_id`) REFERENCES `inventory_stock` (`stock_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_CATINV_STOCK_STS_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cataloginventory Stock Status';
 
 
 CREATE TABLE `wishlist` (
-	`wishlist_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Wishlist ID',
-	`customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Customer ID',
-	`updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last updated date',
-	`created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create date',
-	PRIMARY KEY (`wishlist_id`),
-	UNIQUE KEY `UNQ_WISHLIST_CUSTOMER_ID` (`customer_id`),
-	CONSTRAINT `FK_WISHLIST_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `wishlist_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Wishlist ID',
+    `customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Customer ID',
+    `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last updated date',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create date',
+    PRIMARY KEY (`wishlist_id`),
+    UNIQUE KEY `UNQ_WISHLIST_CUSTOMER_ID` (`customer_id`),
+    CONSTRAINT `FK_WISHLIST_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Wishlist main Table';
 
 
 CREATE TABLE `wishlist_item` (
-	`wishlist_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Wishlist item ID',
-	`wishlist_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Wishlist ID',
-	`product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product ID',
-	`added_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Add date and time',
-	`description` text COMMENT 'Short description of wish list item',
-	PRIMARY KEY (`wishlist_item_id`),
-	KEY `IDX_WISHLIST_ITEM_WISHLIST_ID` (`wishlist_id`),
-	KEY `IDX_WISHLIST_ITEM_PRODUCT_ID` (`product_id`),
-	CONSTRAINT `FK_WISHLIST_ITEM_WISHLIST_ID_WISHLIST_WISHLIST_ID` FOREIGN KEY (`wishlist_id`) REFERENCES `wishlist` (`wishlist_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_WISHLIST_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `wishlist_item_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Wishlist item ID',
+    `wishlist_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Wishlist ID',
+    `product_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product ID',
+    `added_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Add date and time',
+    `description` text COMMENT 'Short description of wish list item',
+    PRIMARY KEY (`wishlist_item_id`),
+    KEY `IDX_WISHLIST_ITEM_WISHLIST_ID` (`wishlist_id`),
+    KEY `IDX_WISHLIST_ITEM_PRODUCT_ID` (`product_id`),
+    CONSTRAINT `FK_WISHLIST_ITEM_WISHLIST_ID_WISHLIST_WISHLIST_ID` FOREIGN KEY (`wishlist_id`) REFERENCES `wishlist` (`wishlist_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_WISHLIST_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Wishlist items';
 
 
 CREATE TABLE `tax_class` (
-	`class_id` smallint(6) NOT NULL AUTO_INCREMENT COMMENT 'Class Id',
-	`class_name` varchar(255) NOT NULL COMMENT 'Class Name',
-	PRIMARY KEY (`class_id`)
+    `class_id` smallint(6) NOT NULL AUTO_INCREMENT COMMENT 'Class Id',
+    `class_name` varchar(255) NOT NULL COMMENT 'Class Name',
+    PRIMARY KEY (`class_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='Tax Class';
 
 
 CREATE TABLE `tax_calculation_rate` (
-	`tax_calculation_rate_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Tax Calculation Rate Id',
-	`zip_code` varchar(20) NOT NULL COMMENT 'Zip code',
-	`tax_country_id` varchar(2) NOT NULL COMMENT 'Tax Country Id',
-	`tax_region_id` int(11) NOT NULL COMMENT 'Tax Region Id',
-	`code` varchar(255) NOT NULL COMMENT 'Code',
-	`rate` double NOT NULL COMMENT 'Rate',
-	PRIMARY KEY (`tax_calculation_rate_id`),
-	KEY `IDX_TAX_CALC_RATE_TAX_COUNTRY_ID_TAX_REGION_ID_TAX_POSTCODE` (`tax_country_id`,`tax_region_id`),
-	KEY `IDX_TAX_CALCULATION_RATE_CODE` (`code`)
+    `tax_calculation_rate_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Tax Calculation Rate Id',
+    `zip_code` varchar(20) NOT NULL COMMENT 'Zip code',
+    `tax_country_id` varchar(2) NOT NULL COMMENT 'Tax Country Id',
+    `tax_region_id` int(11) NOT NULL COMMENT 'Tax Region Id',
+    `code` varchar(255) NOT NULL COMMENT 'Code',
+    `rate` double NOT NULL COMMENT 'Rate',
+    PRIMARY KEY (`tax_calculation_rate_id`),
+    KEY `IDX_TAX_CALC_RATE_TAX_COUNTRY_ID_TAX_REGION_ID_TAX_POSTCODE` (`tax_country_id`,`tax_region_id`),
+    KEY `IDX_TAX_CALCULATION_RATE_CODE` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Tax Calculation Rate';
 
 
 CREATE TABLE `tax_calculation_rule` (
-	`tax_calculation_rule_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Tax Calculation Rule Id',
-	`code` varchar(255) NOT NULL COMMENT 'Code',
-	`priority` int(11) NOT NULL COMMENT 'Priority',
-	PRIMARY KEY (`tax_calculation_rule_id`),
-	KEY `IDX_TAX_CALCULATION_RULE_CODE` (`code`)
+    `tax_calculation_rule_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Tax Calculation Rule Id',
+    `code` varchar(255) NOT NULL COMMENT 'Code',
+    `priority` int(11) NOT NULL COMMENT 'Priority',
+    PRIMARY KEY (`tax_calculation_rule_id`),
+    KEY `IDX_TAX_CALCULATION_RULE_CODE` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Tax Calculation Rule';
 
 
 CREATE TABLE `tax_calculation` (
-	`tax_calculation_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Tax Calculation Id',
-	`tax_calculation_rate_id` int(11) NOT NULL COMMENT 'Tax Calculation Rate Id',
-	`tax_calculation_rule_id` int(11) NOT NULL COMMENT 'Tax Calculation Rule Id',
-	`tax_class_id` smallint(6) NOT NULL COMMENT 'Tax Class Id',
-	PRIMARY KEY (`tax_calculation_id`),
-	KEY `IDX_TAX_CALCULATION_TAX_CALCULATION_RULE_ID` (`tax_calculation_rule_id`),
-	KEY `IDX_TAX_CALCULATION_TAX_CALCULATION_RATE_ID` (`tax_calculation_rate_id`),
-	KEY `IDX_TAX_CALCULATION_PRODUCT_TAX_CLASS_ID` (`tax_class_id`),
-	CONSTRAINT `FK_TAX_CALCULATION_PRODUCT_TAX_CLASS_ID_TAX_CLASS_CLASS_ID` FOREIGN KEY (`tax_class_id`) REFERENCES `tax_class` (`class_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_TAX_CALC_TAX_CALC_RATE_ID_TAX_CALC_RATE_TAX_CALC_RATE_ID` FOREIGN KEY (`tax_calculation_rate_id`) REFERENCES `tax_calculation_rate` (`tax_calculation_rate_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_TAX_CALC_TAX_CALC_RULE_ID_TAX_CALC_RULE_TAX_CALC_RULE_ID` FOREIGN KEY (`tax_calculation_rule_id`) REFERENCES `tax_calculation_rule` (`tax_calculation_rule_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `tax_calculation_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Tax Calculation Id',
+    `tax_calculation_rate_id` int(11) NOT NULL COMMENT 'Tax Calculation Rate Id',
+    `tax_calculation_rule_id` int(11) NOT NULL COMMENT 'Tax Calculation Rule Id',
+    `tax_class_id` smallint(6) NOT NULL COMMENT 'Tax Class Id',
+    PRIMARY KEY (`tax_calculation_id`),
+    KEY `IDX_TAX_CALCULATION_TAX_CALCULATION_RULE_ID` (`tax_calculation_rule_id`),
+    KEY `IDX_TAX_CALCULATION_TAX_CALCULATION_RATE_ID` (`tax_calculation_rate_id`),
+    KEY `IDX_TAX_CALCULATION_PRODUCT_TAX_CLASS_ID` (`tax_class_id`),
+    CONSTRAINT `FK_TAX_CALCULATION_PRODUCT_TAX_CLASS_ID_TAX_CLASS_CLASS_ID` FOREIGN KEY (`tax_class_id`) REFERENCES `tax_class` (`class_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_TAX_CALC_TAX_CALC_RATE_ID_TAX_CALC_RATE_TAX_CALC_RATE_ID` FOREIGN KEY (`tax_calculation_rate_id`) REFERENCES `tax_calculation_rate` (`tax_calculation_rate_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_TAX_CALC_TAX_CALC_RULE_ID_TAX_CALC_RULE_TAX_CALC_RULE_ID` FOREIGN KEY (`tax_calculation_rule_id`) REFERENCES `tax_calculation_rule` (`tax_calculation_rule_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Tax Calculation';
 
 
 CREATE TABLE `salesrule` (
-	`rule_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Rule Id',
-	`name` varchar(255) DEFAULT NULL COMMENT 'Name',
-	`description` text COMMENT 'Description',
-	`from_date` date DEFAULT NULL,
-	`to_date` date DEFAULT NULL,
-	`uses_per_customer` int(11) NOT NULL DEFAULT '0' COMMENT 'Uses Per Customer',
-	`is_active` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Is Active',
-	`conditions_serialized` mediumtext COMMENT 'Conditions Serialized',
-	`actions_serialized` mediumtext COMMENT 'Actions Serialized',
-	`simple_action` varchar(32) DEFAULT NULL COMMENT 'Simple Action',
-	`discount_amount` double NOT NULL DEFAULT '0' COMMENT 'Discount Amount',
-	`discount_qty` int DEFAULT NULL COMMENT 'Discount Qty',
-	`discount_step` int(10) unsigned NOT NULL COMMENT 'Discount Step',
-	`simple_free_shipping` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Simple Free Shipping',
-	`apply_to_shipping` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Apply To Shipping',
-	`coupon_type` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Coupon Type',
-	PRIMARY KEY (`rule_id`),
-	KEY `IDX_SALESRULE_IS_ACTIVE_SORT_ORDER_TO_DATE_FROM_DATE` (`is_active`,`to_date`,`from_date`)
+    `rule_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Rule Id',
+    `name` varchar(255) DEFAULT NULL COMMENT 'Name',
+    `description` text COMMENT 'Description',
+    `from_date` date DEFAULT NULL,
+    `to_date` date DEFAULT NULL,
+    `uses_per_customer` int(11) NOT NULL DEFAULT '0' COMMENT 'Uses Per Customer',
+    `is_active` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Is Active',
+    `conditions_serialized` mediumtext COMMENT 'Conditions Serialized',
+    `actions_serialized` mediumtext COMMENT 'Actions Serialized',
+    `simple_action` varchar(32) DEFAULT NULL COMMENT 'Simple Action',
+    `discount_amount` double NOT NULL DEFAULT '0' COMMENT 'Discount Amount',
+    `discount_qty` int DEFAULT NULL COMMENT 'Discount Qty',
+    `discount_step` int(10) unsigned NOT NULL COMMENT 'Discount Step',
+    `simple_free_shipping` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Simple Free Shipping',
+    `apply_to_shipping` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Apply To Shipping',
+    `coupon_type` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT 'Coupon Type',
+    PRIMARY KEY (`rule_id`),
+    KEY `IDX_SALESRULE_IS_ACTIVE_SORT_ORDER_TO_DATE_FROM_DATE` (`is_active`,`to_date`,`from_date`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Salesrule';
 
 
 CREATE TABLE `salesrule_customer` (
-	`rule_customer_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Rule Customer Id',
-	`rule_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Rule Id',
-	`customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Customer Id',
-	`times_used` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Times Used',
-	PRIMARY KEY (`rule_customer_id`),
-	KEY `IDX_SALESRULE_CUSTOMER_RULE_ID_CUSTOMER_ID` (`rule_id`,`customer_id`),
-	CONSTRAINT `FK_SALESRULE_CUSTOMER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALESRULE_CUSTOMER_RULE_ID_SALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `salesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `rule_customer_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Rule Customer Id',
+    `rule_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Rule Id',
+    `customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Customer Id',
+    `times_used` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Times Used',
+    PRIMARY KEY (`rule_customer_id`),
+    KEY `IDX_SALESRULE_CUSTOMER_RULE_ID_CUSTOMER_ID` (`rule_id`,`customer_id`),
+    CONSTRAINT `FK_SALESRULE_CUSTOMER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALESRULE_CUSTOMER_RULE_ID_SALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `salesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Salesrule Customer';
 
 
 CREATE TABLE `salesrule_customer_group` (
-	`rule_id` int(10) unsigned NOT NULL COMMENT 'Rule Id',
-	`customer_group_id` smallint(5) unsigned NOT NULL COMMENT 'Customer Group Id',
-	PRIMARY KEY (`rule_id`,`customer_group_id`),
-	KEY `IDX_SALESRULE_CUSTOMER_GROUP_RULE_ID` (`rule_id`),
-	KEY `IDX_SALESRULE_CUSTOMER_GROUP_CUSTOMER_GROUP_ID` (`customer_group_id`),
-	CONSTRAINT `FK_SALESRULE_CUSTOMER_GROUP_RULE_ID_SALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `salesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALESRULE_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `customer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `rule_id` int(10) unsigned NOT NULL COMMENT 'Rule Id',
+    `customer_group_id` smallint(5) unsigned NOT NULL COMMENT 'Customer Group Id',
+    PRIMARY KEY (`rule_id`,`customer_group_id`),
+    KEY `IDX_SALESRULE_CUSTOMER_GROUP_RULE_ID` (`rule_id`),
+    KEY `IDX_SALESRULE_CUSTOMER_GROUP_CUSTOMER_GROUP_ID` (`customer_group_id`),
+    CONSTRAINT `FK_SALESRULE_CUSTOMER_GROUP_RULE_ID_SALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `salesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALESRULE_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID` FOREIGN KEY (`customer_group_id`) REFERENCES `customer_group` (`customer_group_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Rules To Customer Groups Relations';
 
 
 CREATE TABLE `salesrule_coupon` (
-	`coupon_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Coupon Id',
-	`rule_id` int(10) unsigned NOT NULL COMMENT 'Rule Id',
-	`code` varchar(255) DEFAULT NULL COMMENT 'Code',
-	`times_used` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Times Used',
-	`expiration_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Expiration Date',
-	`is_primary` smallint(5) unsigned DEFAULT NULL COMMENT 'Is Primary',
-	PRIMARY KEY (`coupon_id`),
-	UNIQUE KEY `UNQ_SALESRULE_COUPON_CODE` (`code`),
-	UNIQUE KEY `UNQ_SALESRULE_COUPON_RULE_ID_IS_PRIMARY` (`rule_id`,`is_primary`),
-	KEY `IDX_SALESRULE_COUPON_RULE_ID` (`rule_id`),
-	CONSTRAINT `FK_SALESRULE_COUPON_RULE_ID_SALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `salesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `coupon_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Coupon Id',
+    `rule_id` int(10) unsigned NOT NULL COMMENT 'Rule Id',
+    `code` varchar(255) DEFAULT NULL COMMENT 'Code',
+    `times_used` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Times Used',
+    `expiration_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Expiration Date',
+    `is_primary` smallint(5) unsigned DEFAULT NULL COMMENT 'Is Primary',
+    PRIMARY KEY (`coupon_id`),
+    UNIQUE KEY `UNQ_SALESRULE_COUPON_CODE` (`code`),
+    UNIQUE KEY `UNQ_SALESRULE_COUPON_RULE_ID_IS_PRIMARY` (`rule_id`,`is_primary`),
+    KEY `IDX_SALESRULE_COUPON_RULE_ID` (`rule_id`),
+    CONSTRAINT `FK_SALESRULE_COUPON_RULE_ID_SALESRULE_RULE_ID` FOREIGN KEY (`rule_id`) REFERENCES `salesrule` (`rule_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Salesrule Coupon';
 
 
 CREATE TABLE `salesrule_coupon_usage` (
-	`coupon_id` int(10) unsigned NOT NULL COMMENT 'Coupon Id',
-	`customer_id` int(10) unsigned NOT NULL COMMENT 'Customer Id',
-	`times_used` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Times Used',
-	PRIMARY KEY (`coupon_id`,`customer_id`),
-	KEY `IDX_SALESRULE_COUPON_USAGE_COUPON_ID` (`coupon_id`),
-	KEY `IDX_SALESRULE_COUPON_USAGE_CUSTOMER_ID` (`customer_id`),
-	CONSTRAINT `FK_SALESRULE_COUPON_USAGE_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALESRULE_COUPON_USAGE_COUPON_ID_SALESRULE_COUPON_COUPON_ID` FOREIGN KEY (`coupon_id`) REFERENCES `salesrule_coupon` (`coupon_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `coupon_id` int(10) unsigned NOT NULL COMMENT 'Coupon Id',
+    `customer_id` int(10) unsigned NOT NULL COMMENT 'Customer Id',
+    `times_used` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Times Used',
+    PRIMARY KEY (`coupon_id`,`customer_id`),
+    KEY `IDX_SALESRULE_COUPON_USAGE_COUPON_ID` (`coupon_id`),
+    KEY `IDX_SALESRULE_COUPON_USAGE_CUSTOMER_ID` (`customer_id`),
+    CONSTRAINT `FK_SALESRULE_COUPON_USAGE_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALESRULE_COUPON_USAGE_COUPON_ID_SALESRULE_COUPON_COUPON_ID` FOREIGN KEY (`coupon_id`) REFERENCES `salesrule_coupon` (`coupon_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Salesrule Coupon Usage';
 
 
 CREATE TABLE `sales_order` (
-	`entity_id` varchar(60) NOT NULL COMMENT 'Entity Id',
-	`status` varchar(32) DEFAULT NULL COMMENT 'Status',
-	`coupon_code` varchar(255) DEFAULT NULL COMMENT 'Coupon Code',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`customer_id` int(10) unsigned DEFAULT NULL COMMENT 'Customer Id',
-	`customer_email` varchar(255) DEFAULT NULL COMMENT 'Customer Email',
-	`customer_firstname` varchar(255) DEFAULT NULL COMMENT 'Customer Firstname',
-	`customer_lastname` varchar(255) DEFAULT NULL COMMENT 'Customer Lastname',
-	`total_weight` double DEFAULT NULL COMMENT 'Total Weight',
-	`discount_amount` double DEFAULT NULL COMMENT 'Discount Amount',
-	`discount_canceled` double DEFAULT NULL COMMENT 'Discount Canceled',
-	`discount_invoiced` double DEFAULT NULL COMMENT 'Discount Invoiced',
-	`discount_refunded` double DEFAULT NULL COMMENT 'Discount Refunded',
-	`grand_total` double DEFAULT NULL COMMENT 'Grand Total',
-	`shipping_amount` double DEFAULT NULL COMMENT 'Shipping Amount',
-	`shipping_canceled` double DEFAULT NULL COMMENT 'Shipping Canceled',
-	`shipping_invoiced` double DEFAULT NULL COMMENT 'Shipping Invoiced',
-	`shipping_refunded` double DEFAULT NULL COMMENT 'Shipping Refunded',
-	`subtotal` double DEFAULT NULL COMMENT 'Subtotal',
-	`subtotal_canceled` double DEFAULT NULL COMMENT 'Subtotal Canceled',
-	`subtotal_invoiced` double DEFAULT NULL COMMENT 'Subtotal Invoiced',
-	`subtotal_refunded` double DEFAULT NULL COMMENT 'Subtotal Refunded',
-	`tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
-	`tax_canceled` double DEFAULT NULL COMMENT 'Tax Canceled',
-	`tax_invoiced` double DEFAULT NULL COMMENT 'Tax Invoiced',
-	`tax_refunded` double DEFAULT NULL COMMENT 'Tax Refunded',
-	`total_canceled` double DEFAULT NULL COMMENT 'Total Canceled',
-	`total_invoiced` double DEFAULT NULL COMMENT 'Total Invoiced',
-	`total_offline_refunded` double DEFAULT NULL COMMENT 'Total Offline Refunded',
-	`total_online_refunded` double DEFAULT NULL COMMENT 'Total Online Refunded',
-	`total_paid` double DEFAULT NULL COMMENT 'Total Paid',
-	`total_qty_ordered` double DEFAULT NULL COMMENT 'Total Qty Ordered',
-	`total_refunded` double DEFAULT NULL COMMENT 'Total Refunded',
-	`billing_address_id` int(11) DEFAULT NULL COMMENT 'Billing Address Id',
-	`shipping_address_id` int(11) DEFAULT NULL COMMENT 'Shipping Address Id',
-	`shipping_method` varchar(255) DEFAULT NULL COMMENT 'Shipping Method',
-	`created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
-	`updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
-	`total_item_count` smallint(5) unsigned NOT NULL COMMENT 'Total Item Count',
-	`tax_percent` double DEFAULT NULL COMMENT 'tax_percent',
-	`tracking_numbers` int(10) NULL DEFAULT '0' COMMENT 'tracking_numbers',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_ORDER_STATUS` (`status`),
-	KEY `IDX_SALES_FLAT_ORDER_STORE_ID` (`store_id`),
-	KEY `IDX_SALES_FLAT_ORDER_CREATED_AT` (`created_at`),
-	KEY `IDX_SALES_FLAT_ORDER_CUSTOMER_ID` (`customer_id`),
-	KEY `IDX_SALES_FLAT_ORDER_UPDATED_AT` (`updated_at`),
-	CONSTRAINT `FK_SALES_FLAT_ORDER_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALES_FLAT_ORDER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE
+    `entity_id` varchar(60) NOT NULL COMMENT 'Entity Id',
+    `status` varchar(32) DEFAULT NULL COMMENT 'Status',
+    `coupon_code` varchar(255) DEFAULT NULL COMMENT 'Coupon Code',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `customer_id` int(10) unsigned DEFAULT NULL COMMENT 'Customer Id',
+    `customer_email` varchar(255) DEFAULT NULL COMMENT 'Customer Email',
+    `customer_firstname` varchar(255) DEFAULT NULL COMMENT 'Customer Firstname',
+    `customer_lastname` varchar(255) DEFAULT NULL COMMENT 'Customer Lastname',
+    `total_weight` double DEFAULT NULL COMMENT 'Total Weight',
+    `discount_amount` double DEFAULT NULL COMMENT 'Discount Amount',
+    `discount_canceled` double DEFAULT NULL COMMENT 'Discount Canceled',
+    `discount_invoiced` double DEFAULT NULL COMMENT 'Discount Invoiced',
+    `discount_refunded` double DEFAULT NULL COMMENT 'Discount Refunded',
+    `grand_total` double DEFAULT NULL COMMENT 'Grand Total',
+    `shipping_amount` double DEFAULT NULL COMMENT 'Shipping Amount',
+    `shipping_canceled` double DEFAULT NULL COMMENT 'Shipping Canceled',
+    `shipping_invoiced` double DEFAULT NULL COMMENT 'Shipping Invoiced',
+    `shipping_refunded` double DEFAULT NULL COMMENT 'Shipping Refunded',
+    `subtotal` double DEFAULT NULL COMMENT 'Subtotal',
+    `subtotal_canceled` double DEFAULT NULL COMMENT 'Subtotal Canceled',
+    `subtotal_invoiced` double DEFAULT NULL COMMENT 'Subtotal Invoiced',
+    `subtotal_refunded` double DEFAULT NULL COMMENT 'Subtotal Refunded',
+    `tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
+    `tax_canceled` double DEFAULT NULL COMMENT 'Tax Canceled',
+    `tax_invoiced` double DEFAULT NULL COMMENT 'Tax Invoiced',
+    `tax_refunded` double DEFAULT NULL COMMENT 'Tax Refunded',
+    `total_canceled` double DEFAULT NULL COMMENT 'Total Canceled',
+    `total_invoiced` double DEFAULT NULL COMMENT 'Total Invoiced',
+    `total_offline_refunded` double DEFAULT NULL COMMENT 'Total Offline Refunded',
+    `total_online_refunded` double DEFAULT NULL COMMENT 'Total Online Refunded',
+    `total_paid` double DEFAULT NULL COMMENT 'Total Paid',
+    `total_qty_ordered` double DEFAULT NULL COMMENT 'Total Qty Ordered',
+    `total_refunded` double DEFAULT NULL COMMENT 'Total Refunded',
+    `billing_address_id` int(11) DEFAULT NULL COMMENT 'Billing Address Id',
+    `shipping_address_id` int(11) DEFAULT NULL COMMENT 'Shipping Address Id',
+    `shipping_method` varchar(255) DEFAULT NULL COMMENT 'Shipping Method',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
+    `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
+    `total_item_count` smallint(5) unsigned NOT NULL COMMENT 'Total Item Count',
+    `tax_percent` double DEFAULT NULL COMMENT 'tax_percent',
+    `tracking_numbers` int(10) NULL DEFAULT '0' COMMENT 'tracking_numbers',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_ORDER_STATUS` (`status`),
+    KEY `IDX_SALES_FLAT_ORDER_STORE_ID` (`store_id`),
+    KEY `IDX_SALES_FLAT_ORDER_CREATED_AT` (`created_at`),
+    KEY `IDX_SALES_FLAT_ORDER_CUSTOMER_ID` (`customer_id`),
+    KEY `IDX_SALES_FLAT_ORDER_UPDATED_AT` (`updated_at`),
+    CONSTRAINT `FK_SALES_FLAT_ORDER_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALES_FLAT_ORDER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order';
 
 
 CREATE TABLE `sales_order_item` (
-	`item_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Item Id',
-	`order_id` varchar(60) NOT NULL DEFAULT '0' COMMENT 'Order Id',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT 'Created At',
-	`updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
-	`product_id` int(10) unsigned NOT NULL COMMENT 'Product Id',
-	`qty_invoiced` double DEFAULT '0.0000' COMMENT 'Qty Invoiced',
-	`qty_ordered` double DEFAULT '0.0000' COMMENT 'Qty Ordered',
-	`qty_refunded` double DEFAULT '0.0000' COMMENT 'Qty Refunded',
-	`qty_shipped` double DEFAULT '0.0000' COMMENT 'Qty Shipped',
-	`original_price` double DEFAULT NULL COMMENT 'Original Price',
-	`tax_percent` double DEFAULT '0.0000' COMMENT 'Tax Percent',
-	`tax_amount` double DEFAULT '0.0000' COMMENT 'Tax Amount',
-	`discount_percent` double DEFAULT '0.0000' COMMENT 'Discount Percent',
-	`discount_amount` double DEFAULT '0.0000' COMMENT 'Discount Amount',
-	`discount_invoiced` double DEFAULT '0.0000' COMMENT 'Discount Invoiced',
-	`amount_refunded` double DEFAULT '0.0000' COMMENT 'Amount Refunded',
-	`row_total` double NULL DEFAULT '0.0000' COMMENT 'Row Total',
-	PRIMARY KEY (`item_id`),
-	KEY `IDX_SALES_FLAT_ORDER_ITEM_ORDER_ID` (`order_id`),
-	KEY `IDX_SALES_FLAT_ORDER_ITEM_STORE_ID` (`store_id`),
-	CONSTRAINT `FK_SALES_FLAT_ORDER_ITEM_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_CATINV_STOCK_ITEM_PRD_ID_CAT_PRD_ENTT_ENTT_ID1` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`),
-	CONSTRAINT `FK_SALES_FLAT_ORDER_ITEM_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
+    `item_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Item Id',
+    `order_id` varchar(60) NOT NULL DEFAULT '0' COMMENT 'Order Id',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT 'Created At',
+    `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
+    `product_id` int(10) unsigned NOT NULL COMMENT 'Product Id',
+    `qty_invoiced` double DEFAULT '0.0000' COMMENT 'Qty Invoiced',
+    `qty_ordered` double DEFAULT '0.0000' COMMENT 'Qty Ordered',
+    `qty_refunded` double DEFAULT '0.0000' COMMENT 'Qty Refunded',
+    `qty_shipped` double DEFAULT '0.0000' COMMENT 'Qty Shipped',
+    `original_price` double DEFAULT NULL COMMENT 'Original Price',
+    `tax_percent` double DEFAULT '0.0000' COMMENT 'Tax Percent',
+    `tax_amount` double DEFAULT '0.0000' COMMENT 'Tax Amount',
+    `discount_percent` double DEFAULT '0.0000' COMMENT 'Discount Percent',
+    `discount_amount` double DEFAULT '0.0000' COMMENT 'Discount Amount',
+    `discount_invoiced` double DEFAULT '0.0000' COMMENT 'Discount Invoiced',
+    `amount_refunded` double DEFAULT '0.0000' COMMENT 'Amount Refunded',
+    `row_total` double NULL DEFAULT '0.0000' COMMENT 'Row Total',
+    PRIMARY KEY (`item_id`),
+    KEY `IDX_SALES_FLAT_ORDER_ITEM_ORDER_ID` (`order_id`),
+    KEY `IDX_SALES_FLAT_ORDER_ITEM_STORE_ID` (`store_id`),
+    CONSTRAINT `FK_SALES_FLAT_ORDER_ITEM_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_CATINV_STOCK_ITEM_PRD_ID_CAT_PRD_ENTT_ENTT_ID1` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`),
+    CONSTRAINT `FK_SALES_FLAT_ORDER_ITEM_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Item';
 
 
 CREATE TABLE `sales_order_address` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
-	`parent_id` varchar(60) DEFAULT NULL COMMENT 'Parent Id',
-	`region_id` int(11) DEFAULT NULL COMMENT 'Region Id',
-	`region` varchar(255) DEFAULT NULL COMMENT 'Region',
-	`lastname` varchar(255) DEFAULT NULL COMMENT 'Lastname',
-	`street` varchar(255) DEFAULT NULL COMMENT 'Street',
-	`city` varchar(255) DEFAULT NULL COMMENT 'City',
-	`telephone` varchar(255) DEFAULT NULL COMMENT 'Telephone',
-	`country_id` varchar(20) DEFAULT NULL COMMENT 'Country Id',
-	`firstname` varchar(255) DEFAULT NULL COMMENT 'Firstname',
-	`address_type` varchar(255) DEFAULT NULL COMMENT 'Address Type',
-	`country` varchar(255) DEFAULT NULL COMMENT 'Company',
-	`zip_code` varchar(20) NOT NULL COMMENT 'zip_code',
-	PRIMARY KEY (`entity_id`),
-	CONSTRAINT `FK_SALES_FLAT_ORDER_ADDRESS_PARENT_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`parent_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
+    `parent_id` varchar(60) DEFAULT NULL COMMENT 'Parent Id',
+    `region_id` int(11) DEFAULT NULL COMMENT 'Region Id',
+    `region` varchar(255) DEFAULT NULL COMMENT 'Region',
+    `lastname` varchar(255) DEFAULT NULL COMMENT 'Lastname',
+    `street` varchar(255) DEFAULT NULL COMMENT 'Street',
+    `city` varchar(255) DEFAULT NULL COMMENT 'City',
+    `telephone` varchar(255) DEFAULT NULL COMMENT 'Telephone',
+    `country_id` varchar(20) DEFAULT NULL COMMENT 'Country Id',
+    `firstname` varchar(255) DEFAULT NULL COMMENT 'Firstname',
+    `address_type` varchar(255) DEFAULT NULL COMMENT 'Address Type',
+    `country` varchar(255) DEFAULT NULL COMMENT 'Company',
+    `zip_code` varchar(20) NOT NULL COMMENT 'zip_code',
+    PRIMARY KEY (`entity_id`),
+    CONSTRAINT `FK_SALES_FLAT_ORDER_ADDRESS_PARENT_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`parent_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Address';
 
 
 CREATE TABLE `sales_order_status_history` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
-	`parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
-	`comment` text COMMENT 'Comment',
-	`status` varchar(32) DEFAULT NULL COMMENT 'Status',
-	`created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
-	`entity_name` varchar(32) DEFAULT NULL COMMENT 'Shows what entity history is bind to.',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_ORDER_STATUS_HISTORY_PARENT_ID` (`parent_id`),
-	KEY `IDX_SALES_FLAT_ORDER_STATUS_HISTORY_CREATED_AT` (`created_at`),
-	CONSTRAINT `FK_CE7C71E74CB74DDACED337CEE6753D5E` FOREIGN KEY (`parent_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
+    `parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
+    `comment` text COMMENT 'Comment',
+    `status` varchar(32) DEFAULT NULL COMMENT 'Status',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
+    `entity_name` varchar(32) DEFAULT NULL COMMENT 'Shows what entity history is bind to.',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_ORDER_STATUS_HISTORY_PARENT_ID` (`parent_id`),
+    KEY `IDX_SALES_FLAT_ORDER_STATUS_HISTORY_CREATED_AT` (`created_at`),
+    CONSTRAINT `FK_CE7C71E74CB74DDACED337CEE6753D5E` FOREIGN KEY (`parent_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Status History';
 
 
 CREATE TABLE `sales_order_payment` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
-	`parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
-	`amount_canceled` double DEFAULT NULL COMMENT 'Amount Canceled',
-	`amount_paid` double DEFAULT NULL COMMENT 'Amount Paid',
-	`amount_ordered` double DEFAULT NULL COMMENT 'Amount Ordered',
-	`shipping_amount` double DEFAULT NULL COMMENT 'Shipping Amount',
-	`base_amount_paid_online` double DEFAULT NULL COMMENT 'Base Amount Paid Online',
-	`base_amount_refunded_online` double DEFAULT NULL COMMENT 'Base Amount Refunded Online',
-	`shipping_refunded` double DEFAULT NULL COMMENT 'Shipping Refunded',
-	`method` varchar(255) DEFAULT NULL COMMENT 'Method',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_ORDER_PAYMENT_PARENT_ID` (`parent_id`),
-	CONSTRAINT `FK_SALES_FLAT_ORDER_PAYMENT_PARENT_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`parent_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
+    `parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
+    `amount_canceled` double DEFAULT NULL COMMENT 'Amount Canceled',
+    `amount_paid` double DEFAULT NULL COMMENT 'Amount Paid',
+    `amount_ordered` double DEFAULT NULL COMMENT 'Amount Ordered',
+    `shipping_amount` double DEFAULT NULL COMMENT 'Shipping Amount',
+    `base_amount_paid_online` double DEFAULT NULL COMMENT 'Base Amount Paid Online',
+    `base_amount_refunded_online` double DEFAULT NULL COMMENT 'Base Amount Refunded Online',
+    `shipping_refunded` double DEFAULT NULL COMMENT 'Shipping Refunded',
+    `method` varchar(255) DEFAULT NULL COMMENT 'Method',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_ORDER_PAYMENT_PARENT_ID` (`parent_id`),
+    CONSTRAINT `FK_SALES_FLAT_ORDER_PAYMENT_PARENT_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`parent_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Order Payment';
 
 
 CREATE TABLE `sales_payment_transaction` (
-	`transaction_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Transaction Id',
-	`payment_id` int(10) unsigned DEFAULT NULL COMMENT 'Parent Id',
-	`order_id` varchar(60) NOT NULL COMMENT 'Order Id',
-	`txn_id` varchar(100) DEFAULT NULL COMMENT 'Txn Id',
-	`txn_type` varchar(15) DEFAULT NULL COMMENT 'Txn Type',
-	`st` varchar(255) NOT NULL COMMENT 'status',
-	`additional_information` text COMMENT 'Additional Information',
-	`created_at` timestamp NULL DEFAULT NULL COMMENT 'Created At',
-	PRIMARY KEY (`transaction_id`),
-	UNIQUE KEY `UNQ_SALES_PAYMENT_TRANSACTION_ORDER_ID_PAYMENT_ID_TXN_ID` (`order_id`,`txn_id`,`payment_id`),
-	KEY `IDX_SALES_PAYMENT_TRANSACTION_ORDER_ID` (`order_id`),
-	CONSTRAINT `FK_DA51A10B2405B64A4DAEF77A64F0DAAD` FOREIGN KEY (`payment_id`) REFERENCES `sales_order_payment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALES_PAYMENT_TRANSACTION_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `transaction_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Transaction Id',
+    `payment_id` int(10) unsigned DEFAULT NULL COMMENT 'Parent Id',
+    `order_id` varchar(60) NOT NULL COMMENT 'Order Id',
+    `txn_id` varchar(100) DEFAULT NULL COMMENT 'Txn Id',
+    `txn_type` varchar(15) DEFAULT NULL COMMENT 'Txn Type',
+    `st` varchar(255) NOT NULL COMMENT 'status',
+    `additional_information` text COMMENT 'Additional Information',
+    `created_at` timestamp NULL DEFAULT NULL COMMENT 'Created At',
+    PRIMARY KEY (`transaction_id`),
+    UNIQUE KEY `UNQ_SALES_PAYMENT_TRANSACTION_ORDER_ID_PAYMENT_ID_TXN_ID` (`order_id`,`txn_id`,`payment_id`),
+    KEY `IDX_SALES_PAYMENT_TRANSACTION_ORDER_ID` (`order_id`),
+    CONSTRAINT `FK_DA51A10B2405B64A4DAEF77A64F0DAAD` FOREIGN KEY (`payment_id`) REFERENCES `sales_order_payment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALES_PAYMENT_TRANSACTION_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Payment Transaction';
 
 
 CREATE TABLE `sales_invoice` (
-	`entity_id` varchar(60) NOT NULL COMMENT 'Entity Id',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
-	`discount_amount` double DEFAULT NULL COMMENT 'Base Discount Amount',
-	`grand_total` double DEFAULT NULL COMMENT 'Grand Total',
-	`shipping_amount` double DEFAULT NULL COMMENT 'Shipping Amount',
-	`subtotal_incl_tax` double DEFAULT NULL COMMENT 'Subtotal Incl Tax',
-	`total_qty` int(10) DEFAULT NULL COMMENT 'Total Qty',
-	`subtotal` double DEFAULT NULL COMMENT 'Subtotal',
-	`billing_address_id` int(11) DEFAULT NULL COMMENT 'Billing Address Id',
-	`order_id` varchar(60) NOT NULL COMMENT 'Order Id',
-	`shipping_address_id` int(11) DEFAULT NULL COMMENT 'Shipping Address Id',
-	`created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
-	`updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_INVOICE_STORE_ID` (`store_id`),
-	KEY `IDX_SALES_FLAT_INVOICE_ORDER_ID` (`order_id`),
-	CONSTRAINT `FK_SALES_FLAT_INVOICE_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALES_FLAT_INVOICE_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
+    `entity_id` varchar(60) NOT NULL COMMENT 'Entity Id',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
+    `discount_amount` double DEFAULT NULL COMMENT 'Base Discount Amount',
+    `grand_total` double DEFAULT NULL COMMENT 'Grand Total',
+    `shipping_amount` double DEFAULT NULL COMMENT 'Shipping Amount',
+    `subtotal_incl_tax` double DEFAULT NULL COMMENT 'Subtotal Incl Tax',
+    `total_qty` int(10) DEFAULT NULL COMMENT 'Total Qty',
+    `subtotal` double DEFAULT NULL COMMENT 'Subtotal',
+    `billing_address_id` int(11) DEFAULT NULL COMMENT 'Billing Address Id',
+    `order_id` varchar(60) NOT NULL COMMENT 'Order Id',
+    `shipping_address_id` int(11) DEFAULT NULL COMMENT 'Shipping Address Id',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
+    `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_INVOICE_STORE_ID` (`store_id`),
+    KEY `IDX_SALES_FLAT_INVOICE_ORDER_ID` (`order_id`),
+    CONSTRAINT `FK_SALES_FLAT_INVOICE_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALES_FLAT_INVOICE_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Invoice';
 
 
 CREATE TABLE `sales_invoice_item` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
-	`parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
-	`tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
-	`discount_amount` double DEFAULT NULL COMMENT 'Discount Amount',
-	`row_total` double DEFAULT NULL COMMENT 'Row Total',
-	`price_incl_tax` double DEFAULT NULL COMMENT 'Price Incl Tax',
-	`qty` int(10) DEFAULT NULL COMMENT 'Qty',
-	`price` double DEFAULT NULL COMMENT 'Price',
-	`row_total_incl_tax` double DEFAULT NULL COMMENT 'Row Total Incl Tax',
-	`product_id` int(11) DEFAULT NULL COMMENT 'Product Id',
-	`name` varchar(255) DEFAULT NULL COMMENT 'Name',
-	`sku` varchar(255) DEFAULT NULL COMMENT 'Sku',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_INVOICE_ITEM_PARENT_ID` (`parent_id`),
-	CONSTRAINT `FK_SALES_FLAT_INVOICE_ITEM_PARENT_ID_SALES_FLAT_INVOICE_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `sales_invoice` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
+    `parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
+    `tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
+    `discount_amount` double DEFAULT NULL COMMENT 'Discount Amount',
+    `row_total` double DEFAULT NULL COMMENT 'Row Total',
+    `price_incl_tax` double DEFAULT NULL COMMENT 'Price Incl Tax',
+    `qty` int(10) DEFAULT NULL COMMENT 'Qty',
+    `price` double DEFAULT NULL COMMENT 'Price',
+    `row_total_incl_tax` double DEFAULT NULL COMMENT 'Row Total Incl Tax',
+    `product_id` int(11) DEFAULT NULL COMMENT 'Product Id',
+    `name` varchar(255) DEFAULT NULL COMMENT 'Name',
+    `sku` varchar(255) DEFAULT NULL COMMENT 'Sku',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_INVOICE_ITEM_PARENT_ID` (`parent_id`),
+    CONSTRAINT `FK_SALES_FLAT_INVOICE_ITEM_PARENT_ID_SALES_FLAT_INVOICE_ENTT_ID` FOREIGN KEY (`parent_id`) REFERENCES `sales_invoice` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Invoice Item';
 
 
 CREATE TABLE `sales_shipment` (
-	`entity_id` varchar(60) NOT NULL COMMENT 'Entity Id',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`total_weight` double DEFAULT NULL COMMENT 'Total Weight',
-	`total_qty` int(10) DEFAULT NULL COMMENT 'Total Qty',
-	`order_id` varchar(60) NOT NULL COMMENT 'Order Id',
-	`customer_id` int(11) DEFAULT NULL COMMENT 'Customer Id',
-	`shipping_address_id` int(11) DEFAULT NULL COMMENT 'Shipping Address Id',
-	`billing_address_id` int(11) DEFAULT NULL COMMENT 'Billing Address Id',
-	`created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
-	`updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_SHIPMENT_STORE_ID` (`store_id`),
-	KEY `IDX_SALES_FLAT_SHIPMENT_ORDER_ID` (`order_id`),
-	CONSTRAINT `FK_SALES_FLAT_SHIPMENT_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALES_FLAT_SHIPMENT_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
+    `entity_id` varchar(60) NOT NULL COMMENT 'Entity Id',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `total_weight` double DEFAULT NULL COMMENT 'Total Weight',
+    `total_qty` int(10) DEFAULT NULL COMMENT 'Total Qty',
+    `order_id` varchar(60) NOT NULL COMMENT 'Order Id',
+    `customer_id` int(11) DEFAULT NULL COMMENT 'Customer Id',
+    `shipping_address_id` int(11) DEFAULT NULL COMMENT 'Shipping Address Id',
+    `billing_address_id` int(11) DEFAULT NULL COMMENT 'Billing Address Id',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
+    `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_SHIPMENT_STORE_ID` (`store_id`),
+    KEY `IDX_SALES_FLAT_SHIPMENT_ORDER_ID` (`order_id`),
+    CONSTRAINT `FK_SALES_FLAT_SHIPMENT_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALES_FLAT_SHIPMENT_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Shipment';
 
 
 CREATE TABLE `sales_shipment_item` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
-	`parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
-	`row_total` double DEFAULT NULL COMMENT 'Row Total',
-	`price` double DEFAULT NULL COMMENT 'Price',
-	`weight` double DEFAULT NULL COMMENT 'Weight',
-	`qty` int(10) DEFAULT NULL COMMENT 'Qty',
-	`product_id` int(11) DEFAULT NULL COMMENT 'Product Id',
-	`name` varchar(255) DEFAULT NULL COMMENT 'Name',
-	`sku` varchar(255) DEFAULT NULL COMMENT 'Sku',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_SHIPMENT_ITEM_PARENT_ID` (`parent_id`),
-	CONSTRAINT `FK_3AECE5007D18F159231B87E8306FC02A` FOREIGN KEY (`parent_id`) REFERENCES `sales_shipment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
+    `parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
+    `row_total` double DEFAULT NULL COMMENT 'Row Total',
+    `price` double DEFAULT NULL COMMENT 'Price',
+    `weight` double DEFAULT NULL COMMENT 'Weight',
+    `qty` int(10) DEFAULT NULL COMMENT 'Qty',
+    `product_id` int(11) DEFAULT NULL COMMENT 'Product Id',
+    `name` varchar(255) DEFAULT NULL COMMENT 'Name',
+    `sku` varchar(255) DEFAULT NULL COMMENT 'Sku',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_SHIPMENT_ITEM_PARENT_ID` (`parent_id`),
+    CONSTRAINT `FK_3AECE5007D18F159231B87E8306FC02A` FOREIGN KEY (`parent_id`) REFERENCES `sales_shipment` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Shipment Item';
 
 
 CREATE TABLE `sales_creditmemo` (
-	`entity_id` varchar(60) NOT NULL COMMENT 'Entity Id',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`grand_total` double DEFAULT NULL COMMENT 'Grand Total',
-	`shipping_amount` double DEFAULT NULL COMMENT 'Shipping Amount',
-	`subtotal_incl_tax` double DEFAULT NULL COMMENT 'Subtotal Incl Tax',
-	`discount_amount` double DEFAULT NULL COMMENT 'Discount Amount',
-	`subtotal` double DEFAULT NULL COMMENT 'Subtotal',
-	`tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
-	`order_id` varchar(60) NOT NULL COMMENT 'Order Id',
-	`shipping_address_id` int(11) DEFAULT NULL COMMENT 'Shipping Address Id',
-	`billing_address_id` int(11) DEFAULT NULL COMMENT 'Billing Address Id',
-	`created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
-	`updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_CREDITMEMO_STORE_ID` (`store_id`),
-	KEY `IDX_SALES_FLAT_CREDITMEMO_ORDER_ID` (`order_id`),
-	CONSTRAINT `FK_SALES_FLAT_CREDITMEMO_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALES_FLAT_CREDITMEMO_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
+    `entity_id` varchar(60) NOT NULL COMMENT 'Entity Id',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `grand_total` double DEFAULT NULL COMMENT 'Grand Total',
+    `shipping_amount` double DEFAULT NULL COMMENT 'Shipping Amount',
+    `subtotal_incl_tax` double DEFAULT NULL COMMENT 'Subtotal Incl Tax',
+    `discount_amount` double DEFAULT NULL COMMENT 'Discount Amount',
+    `subtotal` double DEFAULT NULL COMMENT 'Subtotal',
+    `tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
+    `order_id` varchar(60) NOT NULL COMMENT 'Order Id',
+    `shipping_address_id` int(11) DEFAULT NULL COMMENT 'Shipping Address Id',
+    `billing_address_id` int(11) DEFAULT NULL COMMENT 'Billing Address Id',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Created At',
+    `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Updated At',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_CREDITMEMO_STORE_ID` (`store_id`),
+    KEY `IDX_SALES_FLAT_CREDITMEMO_ORDER_ID` (`order_id`),
+    CONSTRAINT `FK_SALES_FLAT_CREDITMEMO_ORDER_ID_SALES_FLAT_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALES_FLAT_CREDITMEMO_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Creditmemo';
 
 
 CREATE TABLE `sales_creditmemo_item` (
-	`entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
-	`parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
-	`tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
-	`discount_amount` double DEFAULT NULL COMMENT 'Discount Amount',
-	`row_total` double DEFAULT NULL COMMENT 'Row Total',
-	`price_incl_tax` double DEFAULT NULL COMMENT 'Price Incl Tax',
-	`qty` int(10) DEFAULT NULL COMMENT 'Qty',
-	`price` double DEFAULT NULL COMMENT 'Price',
-	`row_total_incl_tax` double DEFAULT NULL COMMENT 'Row Total Incl Tax',
-	`product_id` int(11) DEFAULT NULL COMMENT 'Product Id',
-	`sku` varchar(255) DEFAULT NULL COMMENT 'Sku',
-	`name` varchar(255) DEFAULT NULL COMMENT 'Name',
-	PRIMARY KEY (`entity_id`),
-	KEY `IDX_SALES_FLAT_CREDITMEMO_ITEM_PARENT_ID` (`parent_id`),
-	CONSTRAINT `FK_306DAC836C699F0B5E13BE486557AC8A` FOREIGN KEY (`parent_id`) REFERENCES `sales_creditmemo` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `entity_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Entity Id',
+    `parent_id` varchar(60) NOT NULL COMMENT 'Parent Id',
+    `tax_amount` double DEFAULT NULL COMMENT 'Tax Amount',
+    `discount_amount` double DEFAULT NULL COMMENT 'Discount Amount',
+    `row_total` double DEFAULT NULL COMMENT 'Row Total',
+    `price_incl_tax` double DEFAULT NULL COMMENT 'Price Incl Tax',
+    `qty` int(10) DEFAULT NULL COMMENT 'Qty',
+    `price` double DEFAULT NULL COMMENT 'Price',
+    `row_total_incl_tax` double DEFAULT NULL COMMENT 'Row Total Incl Tax',
+    `product_id` int(11) DEFAULT NULL COMMENT 'Product Id',
+    `sku` varchar(255) DEFAULT NULL COMMENT 'Sku',
+    `name` varchar(255) DEFAULT NULL COMMENT 'Name',
+    PRIMARY KEY (`entity_id`),
+    KEY `IDX_SALES_FLAT_CREDITMEMO_ITEM_PARENT_ID` (`parent_id`),
+    CONSTRAINT `FK_306DAC836C699F0B5E13BE486557AC8A` FOREIGN KEY (`parent_id`) REFERENCES `sales_creditmemo` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Flat Creditmemo Item';
 
 
 CREATE TABLE `cms_block` (
-	`block_id` smallint(6) NOT NULL AUTO_INCREMENT COMMENT 'Block ID',
-	`title` varchar(255) NOT NULL COMMENT 'Block Title',
-	`identifier` varchar(255) NOT NULL COMMENT 'Block String Identifier',
-	`content` mediumtext COMMENT 'Block Content',
-	`creation_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Block Creation Time',
-	`update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Block Modification Time',
-	`is_active` smallint(6) NOT NULL DEFAULT '1' COMMENT 'Is Block Active',
-	PRIMARY KEY (`block_id`)
+    `block_id` smallint(6) NOT NULL AUTO_INCREMENT COMMENT 'Block ID',
+    `title` varchar(255) NOT NULL COMMENT 'Block Title',
+    `identifier` varchar(255) NOT NULL COMMENT 'Block String Identifier',
+    `content` mediumtext COMMENT 'Block Content',
+    `creation_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Block Creation Time',
+    `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Block Modification Time',
+    `is_active` smallint(6) NOT NULL DEFAULT '1' COMMENT 'Is Block Active',
+    PRIMARY KEY (`block_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMS Block Table';
 
 
 CREATE TABLE `core_config_data` (
-	`config_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Config Id',
-	`scope` varchar(8) NOT NULL DEFAULT 'default' COMMENT 'Config Scope',
-	`scope_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Config Scope Id',
-	`path` varchar(255) NOT NULL DEFAULT 'general' COMMENT 'Config Path',
-	`value` text COMMENT 'Config Value',
-	PRIMARY KEY (`config_id`),
-	UNIQUE KEY `UNQ_CORE_CONFIG_DATA_SCOPE_SCOPE_ID_PATH` (`scope`,`scope_id`,`path`)
+    `config_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Config Id',
+    `scope` varchar(8) NOT NULL DEFAULT 'default' COMMENT 'Config Scope',
+    `scope_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Config Scope Id',
+    `path` varchar(255) NOT NULL DEFAULT 'general' COMMENT 'Config Path',
+    `value` text COMMENT 'Config Value',
+    PRIMARY KEY (`config_id`),
+    UNIQUE KEY `UNQ_CORE_CONFIG_DATA_SCOPE_SCOPE_ID_PATH` (`scope`,`scope_id`,`path`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Config Data';
 
 
 CREATE TABLE `log_customer` (
-	`log_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Log ID',
-	`customer_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Customer ID',
-	`login_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Login Time',
-	`logout_at` timestamp NULL DEFAULT NULL COMMENT 'Logout Time',
-	PRIMARY KEY (`log_id`)
+    `log_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Log ID',
+    `customer_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Customer ID',
+    `login_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Login Time',
+    `logout_at` timestamp NULL DEFAULT NULL COMMENT 'Logout Time',
+    PRIMARY KEY (`log_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Log Customers Table';
 
 
 CREATE TABLE `log_visitor` (
-	`visitor_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Visitor ID',
-	`customer_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Customer ID',
-	`session_id` varchar(64) DEFAULT NULL COMMENT 'Session ID',
-	`last_visit_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last Visit Time',
-	PRIMARY KEY (`visitor_id`)
+    `visitor_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Visitor ID',
+    `customer_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Customer ID',
+    `session_id` varchar(64) DEFAULT NULL COMMENT 'Session ID',
+    `last_visit_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Last Visit Time',
+    PRIMARY KEY (`visitor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Log Visitors Table';
 
 
 CREATE TABLE `sales_bestsellers_aggregated_daily` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`product_id` int(10) unsigned DEFAULT NULL COMMENT 'Product Id',
-	`product_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
-	`product_price` double NOT NULL DEFAULT '0.0000' COMMENT 'Product Price',
-	`qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_DAILY_PERIOD_STORE_ID_PRD_ID` (`period`,`store_id`,`product_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_DAILY_STORE_ID` (`store_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_DAILY_PRODUCT_ID` (`product_id`),
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_DAILY_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_DAILY_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `product_id` int(10) unsigned DEFAULT NULL COMMENT 'Product Id',
+    `product_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
+    `product_price` double NOT NULL DEFAULT '0.0000' COMMENT 'Product Price',
+    `qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_DAILY_PERIOD_STORE_ID_PRD_ID` (`period`,`store_id`,`product_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_DAILY_STORE_ID` (`store_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_DAILY_PRODUCT_ID` (`product_id`),
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_DAILY_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_DAILY_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Daily';
 
 
 CREATE TABLE `sales_bestsellers_aggregated_monthly` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`product_id` int(10) unsigned DEFAULT NULL COMMENT 'Product Id',
-	`product_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
-	`product_price` double NOT NULL DEFAULT '0.0000' COMMENT 'Product Price',
-	`qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_MONTHLY_PERIOD_STORE_ID_PRD_ID` (`period`,`store_id`,`product_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_ID` (`store_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_PRODUCT_ID` (`product_id`),
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_MONTHLY_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_MONTHLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `product_id` int(10) unsigned DEFAULT NULL COMMENT 'Product Id',
+    `product_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
+    `product_price` double NOT NULL DEFAULT '0.0000' COMMENT 'Product Price',
+    `qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_MONTHLY_PERIOD_STORE_ID_PRD_ID` (`period`,`store_id`,`product_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_ID` (`store_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_PRODUCT_ID` (`product_id`),
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_MONTHLY_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_MONTHLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Monthly';
 
 
 CREATE TABLE `sales_bestsellers_aggregated_yearly` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`product_id` int(10) unsigned DEFAULT NULL COMMENT 'Product Id',
-	`product_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
-	`product_price` double NOT NULL DEFAULT '0.0000' COMMENT 'Product Price',
-	`qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_YEARLY_PERIOD_STORE_ID_PRD_ID` (`period`,`store_id`,`product_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_YEARLY_STORE_ID` (`store_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_YEARLY_PRODUCT_ID` (`product_id`),
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_YEARLY_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_YEARLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `product_id` int(10) unsigned DEFAULT NULL COMMENT 'Product Id',
+    `product_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
+    `product_price` double NOT NULL DEFAULT '0.0000' COMMENT 'Product Price',
+    `qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_YEARLY_PERIOD_STORE_ID_PRD_ID` (`period`,`store_id`,`product_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_YEARLY_STORE_ID` (`store_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_YEARLY_PRODUCT_ID` (`product_id`),
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_YEARLY_STORE_ID_CORE_STORE_STORE_ID` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_YEARLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID` FOREIGN KEY (`product_id`) REFERENCES `product_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Yearly';
 
 
 CREATE TABLE `customer_bestbuy_aggregated_daily` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`customer_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
-	`address` varchar(255) DEFAULT NULL COMMENT 'Address',
-	`customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Price',
-	`qty_order` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	`paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_DAILY_PERIOD_STORE_ID_PRD_ID1` (`period`),
-	CONSTRAINT `FK_SALES_BESTSELLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID1` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `customer_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
+    `address` varchar(255) DEFAULT NULL COMMENT 'Address',
+    `customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Price',
+    `qty_order` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    `paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_DAILY_PERIOD_STORE_ID_PRD_ID1` (`period`),
+    CONSTRAINT `FK_SALES_BESTSELLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID1` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Daily';
 
 
 CREATE TABLE `customer_bestbuy_aggregated_monthly` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`customer_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
-	`address` varchar(255) DEFAULT NULL COMMENT 'Address',
-	`customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Price',
-	`qty_order` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	`paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_DAILY_PERIOD_STORE_ID_PRD_ID2` (`period`),
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_DAILY_PRD_ID_CAT_PRD_ENTT_ENTT_ID2` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `customer_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
+    `address` varchar(255) DEFAULT NULL COMMENT 'Address',
+    `customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Price',
+    `qty_order` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    `paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_DAILY_PERIOD_STORE_ID_PRD_ID2` (`period`),
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_DAILY_PRD_ID_CAT_PRD_ENTT_ENTT_ID2` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Daily';
 
 
 CREATE TABLE `customer_bestbuy_aggregated_yearly` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`customer_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
-	`address` varchar(255) DEFAULT NULL COMMENT 'Address',
-	`customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Price',
-	`qty_order` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	`paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_DAILY_PERIOD_STORE_ID_PRD_ID3` (`period`),
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_DAILY_PRD_ID_CAT_PRD_ENTT_ENTT_ID3` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `customer_name` varchar(255) DEFAULT NULL COMMENT 'Product Name',
+    `address` varchar(255) DEFAULT NULL COMMENT 'Address',
+    `customer_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Product Price',
+    `qty_order` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    `paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_DAILY_PERIOD_STORE_ID_PRD_ID3` (`period`),
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_DAILY_PRD_ID_CAT_PRD_ENTT_ENTT_ID3` FOREIGN KEY (`customer_id`) REFERENCES `customer_entity` (`entity_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Daily';
 
 
 CREATE TABLE `sales_revenuesellers_aggregated_daily` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	`paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_MONTHLY_PERIOD_STORE_ID_PRD_ID4` (`period`,`store_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_ID4` (`store_id`),
-	CONSTRAINT `FK_SALES_BESTSEL_MOTHLY_STORE_ID_CORE_STORE_STORE_ID4` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    `paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_MONTHLY_PERIOD_STORE_ID_PRD_ID4` (`period`,`store_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_ID4` (`store_id`),
+    CONSTRAINT `FK_SALES_BESTSEL_MOTHLY_STORE_ID_CORE_STORE_STORE_ID4` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Monthly';
 
 
 CREATE TABLE `sales_revenuesellers_aggregated_monthly` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	`paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_MONTHLY_PERIOD_STORE_ID_PRD_ID5` (`period`,`store_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_IDd` (`store_id`),
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_MONTHLY_RE_ID_CORE_STORE_STORE_ID5` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    `paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_MONTHLY_PERIOD_STORE_ID_PRD_ID5` (`period`,`store_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_IDd` (`store_id`),
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_MONTHLY_RE_ID_CORE_STORE_STORE_ID5` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Monthly';
 
 
 CREATE TABLE `sales_revenuesellers_aggregated_yearly` (
-	`id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
-	`period` date DEFAULT NULL COMMENT 'Period',
-	`store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
-	`qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
-	`paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
-	PRIMARY KEY (`id`),
-	UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_MONTHLY_PERIOD_STORE_ID_PRD_ID6` (`period`,`store_id`),
-	KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_ID6` (`store_id`),
-	CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_MLY_STORE_ID_CORE_STORE_STORE_ID6` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    `period` date DEFAULT NULL COMMENT 'Period',
+    `store_id` smallint(5) unsigned DEFAULT NULL COMMENT 'Store Id',
+    `qty_ordered` int(10) NOT NULL DEFAULT '0' COMMENT 'Qty Ordered',
+    `paid_order` double NOT NULL DEFAULT '0.0000' COMMENT 'Qty Ordered',
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `UNQ_SALES_BESTSELLERS_AGGRED_MONTHLY_PERIOD_STORE_ID_PRD_ID6` (`period`,`store_id`),
+    KEY `IDX_SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_ID6` (`store_id`),
+    CONSTRAINT `FK_SALES_BESTSELLERS_AGGRED_MLY_STORE_ID_CORE_STORE_STORE_ID6` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Sales Bestsellers Aggregated Monthly';
 
 
 CREATE TABLE `email_template` (
-	`template_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Template Id',
-	`template_code` varchar(150) NOT NULL COMMENT 'Template Code',
-	`template_text` text not null COMMENT 'Template Text',
-	`template_type` int(10) unsigned NOT NULL COMMENT 'Template Type',
-	`template_subject` varchar(200) NOT NULL COMMENT 'Template Subject',
-	`template_sender_email` varchar(200) NOT NULL COMMENT 'Template Sender Email',
-	`add_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Add at date',
-	PRIMARY KEY (`template_id`),
-	UNIQUE KEY `UNQ_EMAIL_TEMPLATE_TEMPLATE_CODE` (`template_code`),
-	KEY `IDX_EMAIL_TEMPLATE_ADD_AT` (`add_at`)
+    `template_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Template Id',
+    `template_code` varchar(150) NOT NULL COMMENT 'Template Code',
+    `template_text` text not null COMMENT 'Template Text',
+    `template_type` int(10) unsigned NOT NULL COMMENT 'Template Type',
+    `template_subject` varchar(200) NOT NULL COMMENT 'Template Subject',
+    `template_sender_email` varchar(200) NOT NULL COMMENT 'Template Sender Email',
+    `add_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Add at date',
+    PRIMARY KEY (`template_id`),
+    UNIQUE KEY `UNQ_EMAIL_TEMPLATE_TEMPLATE_CODE` (`template_code`),
+    KEY `IDX_EMAIL_TEMPLATE_ADD_AT` (`add_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Email Template';
 
 

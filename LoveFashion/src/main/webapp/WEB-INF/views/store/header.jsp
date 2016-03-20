@@ -112,43 +112,10 @@
                   <select id="select-language" class="flag" onchange="window.location.href=this.value">
                     <option title="English" class="language-0"
                       style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-english.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=english&amp;___from_store=jamaica">English</option>
-                    <option title="French" class="language-1"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-french.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=french&amp;___from_store=jamaica">French</option>
-                    <option title="Germany " class="language-2"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-germany.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=germany&amp;___from_store=jamaica">Germany</option>
-                    <option title="Argentina" class="language-3"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-argentina.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=argentina&amp;___from_store=jamaica">Argentina</option>
-                    <option title="Brazil" class="language-4"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-brazil.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=brazil&amp;___from_store=jamaica">Brazil</option>
-                    <option title="Cameroon" class="language-5"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-cameroon.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=cameroon&amp;___from_store=jamaica">Cameroon</option>
-                    <option title="Hungary " class="language-6"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-hungary.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=hungary&amp;___from_store=jamaica">Hungary</option>
-                    <option title="Spain" class="language-7"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-spain.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=spain&amp;___from_store=jamaica">Spain</option>
-                    <option title="Chile" class="language-8"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-chile.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=chile&amp;___from_store=jamaica">Chile</option>
-                    <option title="Jamaica" class="language-9"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-jamaica.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=jamaica&amp;___from_store=jamaica" selected="selected">Jamaica</option>
-                    <option title="Sweden" class="language-10"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-sweden.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=sweden&amp;___from_store=jamaica">Sweden</option>
+                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=english&amp;___from_store=jamaica" selected="selected">English</option>
                     <option title="Viet Nam" class="language-11"
                       style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-vietnam.jpg');"
                       value="http://demo.magentech.com/themes/sm_love_fashion/?___store=vietnam&amp;___from_store=jamaica">Viet Nam</option>
-                    <option title="Italia" class="language-12"
-                      style="background-image: url('http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/flags/flag-italia.jpg');"
-                      value="http://demo.magentech.com/themes/sm_love_fashion/?___store=italia&amp;___from_store=jamaica">Italia</option>
                   </select>
                 </div>
               </div>
