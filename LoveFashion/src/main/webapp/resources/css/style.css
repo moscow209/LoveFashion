@@ -503,3 +503,45 @@ A.awblog_current_comment {
 .inner-post-wrapper .postWrapper .like-social {
 	padding-top:30px;
 }
+
+.price_filter{
+    height: 14px;
+    background: url(../images/bg-filter-price.png) repeat-x left center;
+    margin: 10px 0;
+    overflow:hidden;
+}
+.price_filter .price-from ,
+.price_filter .price-to {
+    height: 14px;
+    width: 14px;
+    cursor: e-resize;
+    display: block;
+    margin-top: 0px;
+    background: #898989;
+    position:relative;
+}
+.price_filter .price-to {
+    cursor: w-resize;
+    margin-top: -14px;
+}
+#price-filter-max-display{
+    float: right;
+}
+
+.price_filter .price-from:before,
+.price_filter .price-to:before {
+    content: "";
+    display: inline-block;
+    height: 6px;
+    position: absolute;
+    top: 4px;
+    width: 1000px;
+    background:#c4c4c4;
+}
+
+.price_filter .price-from:before {
+    left: -1000px;
+}
+.price_filter .price-to:before {
+    right: -1000px;
+}
