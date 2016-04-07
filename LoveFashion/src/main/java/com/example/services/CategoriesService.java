@@ -21,4 +21,9 @@ public class CategoriesService implements ICategoriesService {
 		// TODO Auto-generated method stub
 		return categoriesRepository.getAllCategoriesByOrders();
 	}
+
+	public CategoryEntity getCategoryByName(String name) {
+		// TODO Auto-generated method stub
+		return categoriesRepository.getCategoryByName(name);
+	}
 }

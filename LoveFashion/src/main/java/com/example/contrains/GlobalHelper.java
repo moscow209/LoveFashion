@@ -17,4 +17,22 @@ public class GlobalHelper {
 		}
 		return stringBuffer.toString();
 	}
+	
+	public static String splitAbtributeFilter(String url, String abtribute){
+		String param = null;
+		if(url != null && url.indexOf(abtribute) != -1){
+			int pos = url.indexOf(abtribute);
+			if(url.indexOf(GlobalSetting.SPACE_CATEGORY) != -1){
+				param = url.substring(pos, url.indexOf(GlobalSetting.SPACE_CATEGORY)); 
+			} else{
+				if(url.indexOf(".html") != -1){
+					param = url.substring(pos, url.indexOf(".html"));
+				}
+			}
+		}
+		if(param != null){
+			param = param.replace(abtribute + "/", "");
+		}
+		return param;
+	}
 }

@@ -19,4 +19,12 @@ public class CategoriesRepository extends AbstractRepository<CategoryEntity>
 						+ "and includeInMenu = 1 order by parent_id, position asc");
 		return query.list();
 	}
+
+	public CategoryEntity getCategoryByName(String name) {
+		// TODO Auto-generated method stub
+		Query query = getSession().createQuery("from CategoryEntity where urlKey=:name");
+		query.setString("name", name);
+		return (CategoryEntity) query.uniqueResult();
+	}
+
 }

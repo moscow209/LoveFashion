@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -73,31 +73,31 @@
 
 <style type="text/css">
 @font-face {
-    font-family: "Roboto Condensed Regular";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Roboto Condensed Regular"), local("RobotoCondensed-Regular"),
-        url(/resources/font/Zd2E9abXLFGSr9G3YK2MsFzqCfRpIA3W6ypxnPISCPA.woff)
-        format("woff");
+	font-family: "Roboto Condensed Regular";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Roboto Condensed Regular"), local("RobotoCondensed-Regular"),
+		url(/resources/font/Zd2E9abXLFGSr9G3YK2MsFzqCfRpIA3W6ypxnPISCPA.woff)
+		format("woff");
 }
 
 body {
-    font-size: 12px;
-    font-family: Arial;
+	font-size: 12px;
+	font-family: Arial;
 }
 
 .right-content-header .detail-minicart .title-cart,.button,.respl-item .item-inner .item-image .item-price .regular-price .price,.respl-item .item-inner .item-image .item-price .old-price .price,.catalog-product-view #yt_main .page-title h1,.left-product-base .special-price .special-price,.left-product-base .regular-price .price,#yt_main .products-list .product-info .price,#yt_main .products-list .product-info .special-price .special-price,.yt-product-detail .yt-detail-right .price-box,.wrap-qty .qty-title,.yt-product-detail .yt-detail-right .product-name,.yt-product-detail .tab-product-detail .yt-tab-navi>li>a,.left-product-base .item-box-content .old-price .price,.respl-item .item-inner .item-image .item-price .minimal-price .price,.respl-item .item-inner .item-image .item-price .price-from .price,.respl-item .item-inner .item-image .item-price .price-to .price,#zoptions .price-box,#confirmbox .button.btn-cart>span,#btcancel,#btccart span,#btcshop span,.category-description .des-about,.promotional-popup .form-subscribe-header h2,.promotional-popup .btn-newsletter,.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu li a.sm_megamenu_head,#what-client-say .item-cus .name-client,.footer-title h2,.btn_slide,.a-few-words,.banner-center-wrapper,.w-title h2,.submit-login .submit-repl,.product-details .product-name a,.mini-cartpro .block-content .mini-products-list li.item .price,.mini-cartpro .block-content .mini-products-list li.item .qty-w .label-qty,.mini-cartpro .price-total,.sm_megamenu_head_item .sm_megamenu_title,.cart-collaterals .crosssell .product-details .price,.cart-collaterals .crosssell .product-details .special-price .special-price,#checkoutSteps .step-title>h2,#checkoutSteps .step-title>span,.fieldset .legend,#nav>li>a,.sm_quickview_handler,.block-layered-nav .currently ol li span.value,.price-wrapper-shopby .title-price>h2,#yt_main .products-list .item .price-label,.sm-deal-wrap .view-detail,#yt_left .block .block-title strong,#yt_right .block .block-title strong,.related-header .block-title strong,.block-right-nav .block-title strong,.home-products .block-title strong,.left-product-base .item-box-content .product-name a,.respl-item .item-info .item-title a,.sale-item,.new-product,.static-top-home .content-banner-top h2 a,.respl-tabs-wrap h2.cat-name-tab,.newletter-home .new-static>h2,.quick-info .item1,.quick-info .item2>span,.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .sm_megamenu_lv1 .sm_megamenu_head .sm_megamenu_title,.sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .more-view,.list-categories li a,.static-banner-center-homev1 .dt-static-homev1 .detail-homev1,.header-style-4 .btn-ver-menu .txt-btn,#yt_main .page-title h1,.respl-item .item-info .item-price .price,.left-product-base .item-box-content .old-price .price,.left-product-base .special-price
-    {
-    font-family: Roboto Condensed Regular, serif
+	{
+	font-family: Roboto Condensed Regular, serif
 }
 
 body.sm_lovefashion {
-    color: #666666;
-    background-color: #ffffff;
+	color: #666666;
+	background-color: #ffffff;
 }
 
 a {
-    color: #666666;
+	color: #666666;
 }
 </style>
 
@@ -120,19 +120,27 @@ a {
                       <strong><span>Shop By</span></strong>
                     </div>
                     <!-- <div class="currently">
-                      <p class="block-subtitle">Currently Shopping by:</p>
                       <ol>
-                        <li>
-                          <span class="value">Dresses</span> <a class="btn-remove icon-remove"
-                          href="http://demo.magentech.com/themes/sm_love_fashion/womens.html" title="Remove This Item"></a>
+                        <li>href="http://demo.magentech.com/themes/sm_love_fashion/mens//manufacturer/duresta.html" title="Remove This Item"></a>
+                        </li>
+                        <li>href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing.html" title="Remove This Item"></a>
                         </li>
                       </ol>
                       <div class="actions">
-                        <a href="http://demo.magentech.com/themes/sm_love_fashion/womens.html">Clear All</a>
+                        <a href="http://demo.magentech.com/themes/sm_love_fashion/mens.html">Clear All</a>
                       </div>
                     </div> -->
                     <div class="block-content">
                       <dl id="narrow-by-list">
+                        <dt class="Category odd">Category</dt>
+                        <dd class="odd">
+                          <ol>
+                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/coats-jackets/manufacturer/duresta.html">Coats &amp; Jackets</a></li>
+                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/blazers/manufacturer/duresta.html">Blazers </a></li>
+                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/jackets/manufacturer/duresta.html">Jackets </a></li>
+                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/raincoats/manufacturer/duresta.html">Raincoats </a></li>
+                          </ol>
+                        </dd>
                         <dt class="Price even">Price</dt>
                         <dd class="even">
                           <div class="price-wrapper-shopby">
@@ -140,146 +148,28 @@ a {
                               <h2>By Price</h2>
                             </div>
                             <div id="price-filter" class="price_filter">
-                              <span id="price-filter-min" class="price-from selected" title="Minimum value" style="left: 0px;"></span> <span id="price-filter-max" class="price-to"
-                                title="Maximum value" style="left: 236px;"></span>
+                              <span id="price-filter-min" class="price-from selected" title="Minimum value"></span> <span id="price-filter-max" class="price-to" title="Maximum value"></span>
                             </div>
                             <ul>
-                              <li><span class="sp-left"><span>$</span><span id="price-filter-min-display">
-                                <c:if test="${not empty min }">
-                                    ${min}
-                                </c:if>
-                                <c:if test="${empty min }">
-                                    0
-                                </c:if>
-                              </span></span> <span class="sp-right"><span>$</span><span
-                                  id="price-filter-max-display">
-                                  <c:if test="${not empty max }">
-                                    ${max}
-                                </c:if>
-                                <c:if test="${empty max }">
-                                    200
-                                </c:if>
-                              </span></span></li>
+                              <li><span class="sp-left"><span>$</span><span id="price-filter-min-display">415</span></span> <span class="sp-right"><span>$</span><span
+                                  id="price-filter-max-display">415</span></span></li>
                             </ul>
-                            <script type="text/javascript">
-                            function priceEvent(val) {
-                                if (val) {
-                                    var temp = "&price=" + min + "-" + max;
-                                    var url = window.location.href;
-                                    if(url.indexOf("price") != -1)
-                                        url = url.replace(temp, "&price=" + val);
-                                    else{
-                                        if(url.indexOf("?") != -1){
-                                        	url = url + "&price=" + val;
-                                        } else {
-                                        	url = url + "?&price=" + val;
-                                        }
-                                    }
-                                        
-                                    window.location.href = url;
-                                }
-                            }
-                            
-                            maxPrice = 200;
-                            minPrice = 0;
-                            timerSlider = null;
-                            min = 0;
-                            max = 200;
-                            <c:if test="${not empty min}">
-                               min = ${min};
-                            </c:if>
-                            <c:if test="${not empty max}">
-                               max = ${max};
-                            </c:if>
-                            new Control.Slider([$('price-filter-min'), $('price-filter-max') ], 'price-filter',{
-                                range : $R(minPrice, maxPrice),
-                                sliderValue : [min,max],
-                                values : $R(minPrice, maxPrice),
-                                restricted : true,
-                                onChange : function(val) {
-                                    if (val[0] != 125 || val[1] != 5568) {
-                                        if (timerSlider) {
-                                            clearTimeout(timerSlider);
-                                        }
-                                        timerSlider = setTimeout(priceEvent, 1000, val.join('-'));
-                                       
-                                    }
-                                },
-                                onSlide : function(val) {
-                                    $('price-filter-max-display').innerHTML = val[1];
-                                    $('price-filter-min-display').innerHTML = val[0];
-                                }
-                            });
-                            </script>
                           </div>
                         </dd>
-                        <c:if test="${manufacturers.size() > 0 }">
-                          <dt class="Size odd">Size</dt>
-                          <dd class="odd">
-                            <ol>
-                              
-                              <li title="size"><a <c:if test="${not empty listSize['XS']}">class="checked"</c:if> href="#">XS</a></li>
-                              <li title="size"><a <c:if test="${not empty listSize['S']}">class="checked"</c:if> href="#">S</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['M']}">class="checked"</c:if> href="#">M</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['L']}">class="checked"</c:if> href="#">L</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['XL']}">class="checked"</c:if> href="#">XL</a></li>
-                            </ol>
-                          </dd>
-                        </c:if>
-                        <dt class="Size odd">Size</dt>
+                        <dt class="Manufacturer odd">Manufacturer</dt>
                         <dd class="odd">
                           <ol>
-                            <li title="size"><a <c:if test="${not empty listSize['XS']}">class="checked"</c:if> href="#">XS</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['S']}">class="checked"</c:if> href="#">S</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['M']}">class="checked"</c:if> href="#">M</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['L']}">class="checked"</c:if> href="#">L</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['XL']}">class="checked"</c:if> href="#">XL</a></li>
-                          </ol>
-                        </dd>
-                        <dt class="Size odd">Size</dt>
-                        <dd class="odd">
-                          <ol>
-                            <li title="size"><a <c:if test="${not empty listSize['XS']}">class="checked"</c:if> href="#">XS</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['S']}">class="checked"</c:if> href="#">S</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['M']}">class="checked"</c:if> href="#">M</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['L']}">class="checked"</c:if> href="#">L</a></li>
-                            <li title="size"><a <c:if test="${not empty listSize['XL']}">class="checked"</c:if> href="#">XL</a></li>
+                            <li class="Duresta"><input class="check-shopby" type="checkbox" checked="checked" onclick="$(this).next().click()"> <a class="checked"
+                              onclick="$(this).previous().checked = false;" href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing.html">Duresta</a></li>
                           </ol>
                         </dd>
                         <dt class="Color last even">Color</dt>
                         <dd class="last even">
-                          <ol>
-                            <li class="Black" title="color"><a <c:if test="${not empty listColor['Black']}">class="checked"</c:if> href="javascript:void(0)">Black</a></li>
-                            <li class="Blue" title="color"><a <c:if test="${not empty listColor['Blue']}">class="checked"</c:if> href="javascript:void(0)">Blue</a></li>
-                            <li class="Red" title="color"><a <c:if test="${not empty listColor['Red']}">class="checked"</c:if> href="javascript:void(0)">Red</a></li>
-                            <li class="Yellow" title="color"><a <c:if test="${not empty listColor['Yellow']}">class="checked"</c:if> href="javascript:void(0)">Yellow</a></li>
-                            <li class="Orange" title="color"><a <c:if test="${not empty listColor['Orange']}">class="checked"</c:if> href="javascript:void(0)">Orange</a></li>
-                            <li class="Gray" title="color"><a <c:if test="${not empty listColor['Gray']}">class="checked"</c:if> href="javascript:void(0)">Gray</a></li>
-                            <li class="Green" title="color"><a <c:if test="${not empty listColor['Green']}">class="checked"</c:if> href="javascript:void(0)">Green</a></li>
-                            <li class="Purple" title="color"><a <c:if test="${not empty listColor['Purple']}">class="checked"</c:if> href="javascript:void(0)">Purple</a></li>
+                          <ol class="configurable-swatch-list">
+                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/color/black/manufacturer/duresta.html" class="swatch-link"> <span
+                                class="swatch-label"> </span>
+                            </a></li>
                           </ol>
-
-                          <script>
-                          jQuery(document).ready(function($) {
-                        	    $("#narrow-by-list ol li a").click(function() {
-                        	    	var url = window.location.href;
-                        	        $(this).toggleClass('checked');
-                        	        var q = $(this).parent().attr("title");
-                        	        var k = $(this).text();
-                        	        if($(this).hasClass("checked")){
-                        	        	  if(url.indexOf("?") == -1){
-                        	        		  url = url + "?" + q + "=" + k;
-                                          } else{
-                                              url = url + "&" + q + "=" + k;
-                                          }                        	    	  
-                                    } else {
-                                        var temp = "&" + q + "=" + k;
-                                        url = url.replace(temp, "");
-                                    }
-                        	        window.location.href = url;
-                        	    });
-                          });
-                          </script>
                         </dd>
                       </dl>
                     </div>
@@ -290,6 +180,131 @@ a {
                     <a title="Left Static Image" href="#"><img src="http://demo.magentech.com/themes/sm_love_fashion/media/wysiwyg/left-static-image.png" alt="Left Static Image"></a>
                   </div>
                 </div>
+                <p></p>
+                <div class="block left-products">
+                  <div class="block-title">
+                    <strong> <span>Best Sale</span>
+                    </strong>
+                  </div>
+                  <div class="block-content">
+                    <div class="left-product-base">
+                      <div class="list-items">
+                        <div class="item first ">
+                          <div class="item-inner">
+                            <div class="product-image">
+                              <a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jema-rumi-mire.html" title="Jema rumi mire" class="product-imgs"><img
+                                src="http://demo.magentech.com/themes/sm_love_fashion/media/catalog/product/cache/1/small_image/84x84/9df78eab33525d08d6e5fb8d27136e95/2/9/29_1_2.png"
+                                alt="Jema rumi mire"> </a>
+                            </div>
+                            <div class="item-box-content">
+                              <h2 class="product-name">
+                                <a href="http://demo.magentech.com/themes/sm_love_fashion/mens/jema-rumi-mire.html" title="Jema rumi mire"> Jema rumi mire </a>
+                              </h2>
+                              <div class="price-wrapper">
+                                <div class="price-block">
+                                  <div class="price-box">
+                                    <span class="regular-price" id="product-price-896_bugsleft"> <span class="price">$415.00</span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-review">
+                                <div class="ratings">
+                                  <div class="rating-box">
+                                    <div class="rating" style="width: 60%"></div>
+                                  </div>
+                                  <span class="amount"><a href="#"
+                                    onclick="var t = opener ? opener.window : window; t.location.href='http://demo.magentech.com/themes/sm_love_fashion/review/product/list/id/896/category/134/'; return false;">1
+                                      Review(s)</a></span> <span class="separator">|</span> <a class="link-add-review"
+                                    href="http://demo.magentech.com/themes/sm_love_fashion/review/product/list/id/896/category/134/#review-form">Add Review</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                          </div>
+                        </div>
+                        <div class="item  odd">
+                          <div class="item-inner">
+                            <div class="product-image">
+                              <a href="http://demo.magentech.com/themes/sm_love_fashion/catalog/product/view/id/909/s/kera-more-poza/category/134/" title="Kera more poza " class="product-imgs"><img
+                                src="http://demo.magentech.com/themes/sm_love_fashion/media/catalog/product/cache/1/small_image/84x84/9df78eab33525d08d6e5fb8d27136e95/6/_/6_1.png"
+                                alt="Kera more poza "> </a>
+                            </div>
+                            <div class="item-box-content">
+                              <h2 class="product-name">
+                                <a href="http://demo.magentech.com/themes/sm_love_fashion/catalog/product/view/id/909/s/kera-more-poza/category/134/" title="Kera more poza "> Kera more poza </a>
+                              </h2>
+                              <div class="price-wrapper">
+                                <div class="price-block">
+                                  <div class="price-box">
+                                    <p class="old-price">
+                                      <span class="price-label">Regular Price:</span> <span class="price" id="old-price-909_bugsleft"> $565.00 </span>
+                                    </p>
+                                    <p class="special-price">
+                                      <span class="price-label">Special Price</span> <span class="price" id="product-price-909_bugsleft"> $500.00 </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-review">
+                                <div class="ratings">
+                                  <div class="rating-box">
+                                    <div class="rating" style="width: 87%"></div>
+                                  </div>
+                                  <span class="amount"><a href="#"
+                                    onclick="var t = opener ? opener.window : window; t.location.href='http://demo.magentech.com/themes/sm_love_fashion/review/product/list/id/909/category/134/'; return false;">2
+                                      Review(s)</a></span> <span class="separator">|</span> <a class="link-add-review"
+                                    href="http://demo.magentech.com/themes/sm_love_fashion/review/product/list/id/909/category/134/#review-form">Add Review</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                          </div>
+                        </div>
+                        <div class="item  ">
+                          <div class="item-inner">
+                            <div class="product-image">
+                              <a href="http://demo.magentech.com/themes/sm_love_fashion/catalog/product/view/id/902/s/kesa-mirem-pikam/category/134/" title="Kesa mirem pikam " class="product-imgs"><img
+                                src="http://demo.magentech.com/themes/sm_love_fashion/media/catalog/product/cache/1/small_image/84x84/9df78eab33525d08d6e5fb8d27136e95/1/1/11_3.png"
+                                alt="Kesa mirem pikam "> </a>
+                            </div>
+                            <div class="item-box-content">
+                              <h2 class="product-name">
+                                <a href="http://demo.magentech.com/themes/sm_love_fashion/catalog/product/view/id/902/s/kesa-mirem-pikam/category/134/" title="Kesa mirem pikam "> Kesa mirem pikam
+                                </a>
+                              </h2>
+                              <div class="price-wrapper">
+                                <div class="price-block">
+                                  <div class="price-box">
+                                    <p class="old-price">
+                                      <span class="price-label">Regular Price:</span> <span class="price" id="old-price-902_bugsleft"> $550.00 </span>
+                                    </p>
+                                    <p class="special-price">
+                                      <span class="price-label">Special Price</span> <span class="price" id="product-price-902_bugsleft"> $500.00 </span>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-review">
+                                <div class="ratings">
+                                  <div class="rating-box">
+                                    <div class="rating" style="width: 87%"></div>
+                                  </div>
+                                  <span class="amount"><a href="#"
+                                    onclick="var t = opener ? opener.window : window; t.location.href='http://demo.magentech.com/themes/sm_love_fashion/review/product/list/id/902/category/134/'; return false;">1
+                                      Review(s)</a></span> <span class="separator">|</span> <a class="link-add-review"
+                                    href="http://demo.magentech.com/themes/sm_love_fashion/review/product/list/id/902/category/134/#review-form">Add Review</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p></p>
               </div>
             </div>
             <div id="yt_main" class="yt-main-right yt-main col-main col-lg-9 col-md-9 col-sm-8 col-xs-12">
@@ -302,7 +317,7 @@ a {
                   </div>
                 </div>
                 <div class="page-title category-title title-r title-visible">
-                  <h1>Lists</h1>
+                  <h1>Mens</h1>
                 </div>
                 <div id="ajax-errors" style="display: none;">
                   <ul class="messages">
@@ -313,220 +328,215 @@ a {
                     </li>
                   </ul>
                 </div>
-                <div id="loading" style="display: none; margin-bottom: 10px; text-align: center;">
+                <div id="loading" style="margin-bottom: 10px; text-align: center; display: none;">
                   <img class="v-middle" alt="" src="http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/images/loader-shopby.gif"> Loading, please wait...
                 </div>
                 <c:if test="${empty list}">
-                    <p>${message}<p>
+                  <p>${message}</p>
                 </c:if>
                 <c:if test="${not empty list}">
-                <div id="catalog-listing">
-                  <div class="category-products">
-                    <div class="toolbar-top">
-                      <div class="toolbar">
-                        <div class="toolbar-inner">
-                          <div class="sorter">
-                            <div class="view-mode-wrap">
-                              <p class="view-mode">
-                                <!--<label>View as:</label>-->
-                                <strong title="Grid" class="grid">Grid</strong>&nbsp; <a href="http://demo.magentech.com/themes/sm_love_fashion/womens.html?mode=list" title="List" class="list">List</a>&nbsp;
-                              </p>
-                            </div>
-                            <div class="limiter-wrap">
-                              <div class="limiter">
-                                <label>Show</label>
-                                <div class="select-new">
-                                  <div class="select-inner">
-                                    <div class="selector" style="width: 89px;">
-                                      <span style="width: 74px; -webkit-user-select: none;"> 12 </span><select onchange="" class="jqtransformdone">
-                                        <option value="#" selected="selected">12</option>
-                                        <option value="#">18</option>
-                                        <option value="#">24</option>
+                  <div id="catalog-listing">
+                    <div class="category-products">
+                      <div class="toolbar-top">
+                        <div class="toolbar">
+                          <div class="toolbar-inner">
+                            <div class="sorter">
+                              <div class="view-mode-wrap">
+                                <p class="view-mode">
+                                  <strong title="Grid" class="grid">Grid</strong>&nbsp; <a
+                                    href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?mode=list" title="List" class="list">List</a>&nbsp;
+                                </p>
+                              </div>
+                              <div class="limiter-wrap">
+                                <div class="limiter">
+                                  <label>Show</label>
+                                  <div class="select-new">
+                                    <div class="select-inner">
+                                      <select onchange="">
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?limit=12" selected="selected">12</option>
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?limit=18">18</option>
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?limit=24">24</option>
                                       </select>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="sort-by-wrap">
-                              <div class="sort-by">
-                                <label>Sort By</label>
-                                <div class="select-new">
-                                  <div class="select-inner">
-                                    <div class="selector" style="width: 135px;">
-                                      <span style="width: 120px; -webkit-user-select: none;"> Position </span><select onchange="" class="jqtransformdone">
-                                        <option value="#" selected="selected">Position</option>
-                                        <option value="#">Name</option>
-                                        <option value="#">Price</option>
+                              <div class="sort-by-wrap">
+                                <div class="sort-by">
+                                  <label>Sort By</label>
+                                  <div class="select-new">
+                                    <div class="select-inner">
+                                      <select onchange="">
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?dir=asc&amp;order=position" selected="selected">
+                                          Position</option>
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?dir=asc&amp;order=name">Name</option>
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?dir=asc&amp;order=price">Price</option>
                                       </select>
                                     </div>
                                   </div>
+                                  <a class="btn-sortby set-desc arrow-down"
+                                    href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?dir=desc&amp;order=position" title="Set Descending Direction">Desc</a>
                                 </div>
-                                <a class="btn-sortby set-desc arrow-down" href="#"
-                                  title="Set Descending Direction">Desc</a>
                               </div>
-                            </div>
-                            <div class="pagination-wrap">
-                              <div class="pagination">
-                                <div class="pages">
-                                  <ol>
-                                    <c:if test="${currentPage != 1}">
+                              <div class="pagination-wrap">
+                                <div class="pagination">
+                                  <div class="pages">
+                                    <ol>
+                                      <c:if test="${currentPage != 1}">
                                         <li><a class="previous i-previous" href="${url}&page=${currentPage - 1}" title="Previous">Prev</a></li>
-                                    </c:if>
-                                    <c:forEach var="item" begin="1" end="${totalPage}">
+                                      </c:if>
+                                      <c:forEach var="item" begin="1" end="${totalPage}">
                                         <c:if test="${currentPage == item}">
-                                            <li class="current"><a href="#" onclick="javascript:void(0);">${item}</a></li>
+                                          <li class="current"><a href="#" onclick="javascript:void(0);">${item}</a></li>
                                         </c:if>
                                         <c:if test="${currentPage != item}">
-                                            <li class=""><a href="${url}&page=${item}">${item}</a></li>
+                                          <li class=""><a href="${url}&page=${item}">${item}</a></li>
                                         </c:if>
-                                    </c:forEach>
-                                    <c:if test="${currentPage != page}">
+                                      </c:forEach>
+                                      <c:if test="${currentPage != page}">
                                         <li><a class="next" href="${url}&page=${currentPage + 1}" title="Previous">Next</a></li>
-                                    </c:if>
-                                  </ol>
+                                      </c:if>
+                                    </ol>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="products-grid">
-                      <div class="row">
-                        <c:set value="<%=new java.util.Date()%>" var="now"></c:set>
-                        <c:forEach var="item" items="${list}">
-                          <div class="item col-lg-4 col-md-4 col-sm-6 col-xs-6 respl-item">
-                            <div class="item-inner">
-                              <div class="w-image-box">
-                                <div class="item-image">
-                                  <div class="img-wrapper">
-                                    <a class="rspl-image" href="/detail/${item.entityId}" title="Kaze dama pisa "> 
-                                      <c:if test="${item.image.size() == 1}">
-                                        <img class="first_image" src="/resources/uploads/${item.image[0]}" height="270" width="270">
-                                        <img class="last_image" src="/resources/uploads/${item.image[0]}" height="270" width="270">
-                                      </c:if>
-                                      <c:if test="${item.image.size() > 1}">
-                                        <img class="first_image" src="/resources/uploads/${item.image[0]}" height="270" width="270">
-                                        <img class="last_image" src="/resources/uploads/${item.image[1]}" height="270" width="270">
-                                      </c:if>
-                                      
-                                    </a>
+                      <div class="products-grid">
+                        <div class="row">
+                          <c:set value="<%=new java.util.Date()%>" var="now"></c:set>
+                          <c:forEach var="item" items="${list}">
+                            <div class="item col-lg-4 col-md-4 col-sm-6 col-xs-6 respl-item">
+                              <div class="item-inner">
+                                <div class="w-image-box">
+                                  <div class="item-image">
+                                    <div class="img-wrapper">
+                                      <a class="rspl-image" href="/detail/${item.entityId}" title="Kaze dama pisa "> <c:if test="${item.image.size() == 1}">
+                                          <img class="first_image" src="/resources/uploads/${item.image[0]}" height="270" width="270">
+                                          <img class="last_image" src="/resources/uploads/${item.image[0]}" height="270" width="270">
+                                        </c:if> <c:if test="${item.image.size() > 1}">
+                                          <img class="first_image" src="/resources/uploads/${item.image[0]}" height="270" width="270">
+                                          <img class="last_image" src="/resources/uploads/${item.image[1]}" height="270" width="270">
+                                        </c:if>
+
+                                      </a>
+                                    </div>
+                                    <a class="sm_quickview_handler" title="Quick View" href="#">Quick View</a>
                                   </div>
-                                  <a class="sm_quickview_handler" title="Quick View" href="#">Quick View</a>
-                                </div>
-                                <c:if test="${item.sale == 1}">
-                                    <c:if test="${now.getTime() - item.specialToDate.getTime() <= 0
+                                  <c:if test="${item.sale == 1}">
+                                    <c:if
+                                      test="${now.getTime() - item.specialToDate.getTime() <= 0
                                                 && now.getTime() - item.specialFromDate.getTime() >= 0}">
-                                        <div class="sale-item">Sale</div>
+                                      <div class="sale-item">Sale</div>
                                     </c:if>
-                                </c:if>
-                                <c:if test="${item.isNew == 1}">
+                                  </c:if>
+                                  <c:if test="${item.isNew == 1}">
                                     <c:if test="${now.getTime() - item.newsToDate.getTime() <= 0
                                                 && item.newsFromDate.getTime() - now.getTime() <= 0}">
                                       <div class="new-product">New</div>
                                     </c:if>
-                                </c:if>
-                              </div>
-                              <div class="item-info">
-                                <div class="item-title ">
-                                  <a href="/detail/${item.entityId}">${item.name}</a>
+                                  </c:if>
                                 </div>
-                                <div class="item-price special-box">
-                                  <div class="price-box">
-                                    <p class="special-price">
-                                      <span class="price-label">Regular Price:</span> <span class="price" id="old-price-912"> $<fmt:formatNumber type="number"
-                                          pattern="0.000" value="${item.price}" />
-                                      </span>
-                                    </p>
-                                    <c:if test="${item.sale == 1}">
-                                      <c:if test="${now.getTime() - item.specialToDate.getTime() <= 0
+                                <div class="item-info">
+                                  <div class="item-title ">
+                                    <a href="/detail/${item.entityId}">${item.name}</a>
+                                  </div>
+                                  <div class="item-price special-box">
+                                    <div class="price-box">
+                                      <p class="special-price">
+                                        <span class="price-label">Regular Price:</span> <span class="price" id="old-price-912"> $<fmt:formatNumber type="number" pattern="0.000"
+                                            value="${item.price}" />
+                                        </span>
+                                      </p>
+                                      <c:if test="${item.sale == 1}">
+                                        <c:if
+                                          test="${now.getTime() - item.specialToDate.getTime() <= 0
                                                 && item.specialFromDate.getTime() - now.getTime() <= 0}">
-                                        <p class="old-price">
-                                            <span class="price-label">Special Price</span> <span class="price" id="product-price-912">$<fmt:formatNumber type="number"
-                                            pattern="0.000" value="${item.specialPrice}" /></span>
-                                        </p>
+                                          <p class="old-price">
+                                            <span class="price-label">Special Price</span> <span class="price" id="product-price-912">$<fmt:formatNumber type="number" pattern="0.000"
+                                                value="${item.specialPrice}" /></span>
+                                          </p>
+                                        </c:if>
                                       </c:if>
-                                    </c:if>
+                                    </div>
                                   </div>
-                                </div>
-                                <div class="item-addto-wrap">
-                                  <div class="button-action item-addcart">
-                                    <a class="button btn-cart" title="Add to Cart" href="javascript:void(0);"> Add to Cart </a> 
-                                    <a class="link-compare" href="#" title="Add to Compare"> Add to Compare </a>
-                                    <a class="link-wishlist" href="#">Add to Wishlist</a>
-                                    <input type="hidden" value="${item.sku}">
+                                  <div class="item-addto-wrap">
+                                    <div class="button-action item-addcart">
+                                      <a class="button btn-cart" title="Add to Cart" href="javascript:void(0);"> Add to Cart </a> <a class="link-compare" href="#" title="Add to Compare"> Add to
+                                        Compare </a> <a class="link-wishlist" href="#">Add to Wishlist</a> <input type="hidden" value="${item.sku}">
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </c:forEach>
+                          </c:forEach>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="toolbar-bottom">
-                    <div class="toolbar">
-                      <div class="toolbar-inner">
-                        <div class="sorter">
-                          <div class="view-mode-wrap">
-                            <p class="view-mode">
-                              <!--<label>View as:</label>-->
-                              <strong title="Grid" class="grid">Grid</strong>&nbsp; <a href="http://demo.magentech.com/themes/sm_love_fashion/womens.html?mode=list" title="List" class="list">List</a>&nbsp;
-                            </p>
-                          </div>
-                          <div class="limiter-wrap">
-                            <div class="limiter">
-                              <label>Show</label>
-                              <div class="select-new">
-                                <div class="select-inner">
-                                  <div class="selector" style="width: 89px;">
-                                    <span style="width: 74px; -webkit-user-select: none;"> 12 </span><select onchange="" class="jqtransformdone">
-                                      <option value="#" selected="selected">12</option>
-                                      <option value="#">18</option>
-                                      <option value="#">24</option>
-                                    </select>
+                      <div class="toolbar-bottom">
+                        <div class="toolbar">
+                          <div class="toolbar-inner">
+                            <div class="sorter">
+                              <div class="view-mode-wrap">
+                                <p class="view-mode">
+                                  <!--<label>View as:</label>-->
+                                  <strong title="Grid" class="grid">Grid</strong>&nbsp; <a
+                                    href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?mode=list" title="List" class="list">List</a>&nbsp;
+                                </p>
+                              </div>
+                              <div class="limiter-wrap">
+                                <div class="limiter">
+                                  <label>Show</label>
+                                  <div class="select-new">
+                                    <div class="select-inner">
+                                      <select onchange="">
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?limit=12" selected="selected">12</option>
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?limit=18">18</option>
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?limit=24">24</option>
+                                      </select>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                          <div class="sort-by-wrap">
-                            <div class="sort-by">
-                              <label>Sort By</label>
-                              <div class="select-new">
-                                <div class="select-inner">
-                                  <div class="selector" style="width: 135px;">
-                                    <span style="width: 120px; -webkit-user-select: none;"> Position </span><select onchange="" class="jqtransformdone">
-                                      <option value="#">Position</option>
-                                      <option value="#">Name</option>
-                                      <option value="#">Price</option>
-                                    </select>
+                              <div class="sort-by-wrap">
+                                <div class="sort-by">
+                                  <label>Sort By</label>
+                                  <div class="select-new">
+                                    <div class="select-inner">
+                                      <select onchange="">
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?dir=asc&amp;order=position" selected="selected">
+                                          Position</option>
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?dir=asc&amp;order=name">Name</option>
+                                        <option value="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?dir=asc&amp;order=price">Price</option>
+                                      </select>
+                                    </div>
                                   </div>
+                                  <a class="btn-sortby set-desc arrow-down"
+                                    href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/manufacturer/duresta.html?dir=desc&amp;order=position" title="Set Descending Direction">Desc</a>
                                 </div>
                               </div>
-                              <a class="btn-sortby set-desc arrow-down" href="#" title="Set Descending Direction">Desc</a>
-                            </div>
-                          </div>
-                          <div class="pagination-wrap">
-                            <div class="pagination">
-                              <div class="pages">
-                                <ol>
-                                  <c:if test="${currentPage != 1}">
+                              <div class="pagination-wrap">
+                                <div class="pagination">
+                                  <div class="pages">
+                                    <ol>
+                                      <c:if test="${currentPage != 1}">
                                         <li><a class="previous i-previous" href="${url}&page=${currentPage - 1}" title="Previous">Prev</a></li>
-                                    </c:if>
-                                    <c:forEach var="item" begin="1" end="${totalPage}">
+                                      </c:if>
+                                      <c:forEach var="item" begin="1" end="${totalPage}">
                                         <c:if test="${currentPage == item}">
-                                            <li class="current"><a href="#" onclick="javascript:void(0);">${item}</a></li>
+                                          <li class="current"><a href="#" onclick="javascript:void(0);">${item}</a></li>
                                         </c:if>
                                         <c:if test="${currentPage != item}">
-                                            <li class=""><a href="${url}&page=${item}">${item}</a></li>
+                                          <li class=""><a href="${url}&page=${item}">${item}</a></li>
                                         </c:if>
-                                    </c:forEach>
-                                    <c:if test="${currentPage != page}">
+                                      </c:forEach>
+                                      <c:if test="${currentPage != page}">
                                         <li><a class="next" href="${url}&page=${currentPage + 1}" title="Previous">Next</a></li>
-                                    </c:if>
-                                </ol>
+                                      </c:if>
+                                    </ol>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -534,38 +544,38 @@ a {
                       </div>
                     </div>
                   </div>
-                </div>
                 </c:if>
-              </div>
-              <div id="map-popup" class="map-popup" style="display: none;">
-                <a href="#" class="map-popup-close" id="map-popup-close">x</a>
-                <div class="map-popup-arrow"></div>
-                <div class="map-popup-heading">
-                  <h2 id="map-popup-heading"></h2>
-                </div>
-                <div class="map-popup-content" id="map-popup-content">
-                  <div class="map-popup-checkout">
-                    <form action="" method="POST" id="product_addtocart_form_from_popup">
-                      <input type="hidden" name="product" class="product_id" value="" id="map-popup-product-id">
-                      <div class="additional-addtocart-box"></div>
-                      <button type="button" title="Add to Cart" class="button btn-cart" id="map-popup-button">
-                        <span><span>Add to Cart</span></span>
-                      </button>
-                    </form>
+                <div id="map-popup" class="map-popup" style="display: none;">
+                  <a href="#" class="map-popup-close" id="map-popup-close">x</a>
+                  <div class="map-popup-arrow"></div>
+                  <div class="map-popup-heading">
+                    <h2 id="map-popup-heading"></h2>
                   </div>
-                  <div class="map-popup-msrp" id="map-popup-msrp-box">
-                    <strong>Price:</strong> <span style="text-decoration: line-through;" id="map-popup-msrp"></span>
+                  <div class="map-popup-content" id="map-popup-content">
+                    <div class="map-popup-checkout">
+                      <form action="" method="POST" id="product_addtocart_form_from_popup">
+                        <input type="hidden" name="product" class="product_id" value="" id="map-popup-product-id">
+                        <div class="additional-addtocart-box"></div>
+                        <button type="button" title="Add to Cart" class="button btn-cart" id="map-popup-button">
+                          <span><span>Add to Cart</span></span>
+                        </button>
+                      </form>
+                    </div>
+                    <div class="map-popup-msrp" id="map-popup-msrp-box">
+                      <strong>Price:</strong> <span style="text-decoration: line-through;" id="map-popup-msrp"></span>
+                    </div>
+                    <div class="map-popup-price" id="map-popup-price-box">
+                      <strong>Actual Price:</strong> <span id="map-popup-price"></span>
+                    </div>
                   </div>
-                  <div class="map-popup-price" id="map-popup-price-box">
-                    <strong>Actual Price:</strong> <span id="map-popup-price"></span>
+                  <div class="map-popup-text" id="map-popup-text">
+                    Our price is lower than the manufacturer's "minimum advertised price." As a result, we cannot show you the price in catalog or the product page. <br> <br> You have no
+                    obligation to purchase the product once you know the price. You can simply remove the item from your cart.
                   </div>
-                <div class="map-popup-text" id="map-popup-text">
-                  Our price is lower than the manufacturer's "minimum advertised price." As a result, we cannot show you the price in catalog or the product page. <br> <br> You have no
-                  obligation to purchase the product once you know the price. You can simply remove the item from your cart.
-                </div>
-                <div class="map-popup-text" id="map-popup-text-what-this">
-                  Our price is lower than the manufacturer's "minimum advertised price." As a result, we cannot show you the price in catalog or the product page. <br> <br> You have no
-                  obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                  <div class="map-popup-text" id="map-popup-text-what-this">
+                    Our price is lower than the manufacturer's "minimum advertised price." As a result, we cannot show you the price in catalog or the product page. <br> <br> You have no
+                    obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                  </div>
                 </div>
               </div>
             </div>
@@ -573,115 +583,10 @@ a {
         </div>
       </div>
     </div>
+    <!-- END: Content -->
+    <!-- BEGIN: Footer -->
+    <jsp:include page="footer.jsp"></jsp:include>
+    <!-- END: Footer -->
   </div>
-  <!-- END: Content -->
-  <!-- BEGIN: Footer -->
-  <jsp:include page="footer.jsp"></jsp:include>
-  <!-- END: Footer -->
-  </div>
-  <script type="text/javascript">
-      var iprocess='<div id="loadmask"><p class="loader">' + 
-         '<img alt="Loading..." src="http://demo.magentech.com/themes/sm_love_fashion/skin/frontend/sm_lovefashion/default/sm/cartpro/images/ajax-loader-tr.gif"><br>Please wait...</p></div>';
-  
-      $jsmart(document).ready(function($) {
-          $('.btn-cart').click(function(){
-              /*  $("#fancybox-wrap-clone").css("display", "none");
-               $("#process").html(iprocess);
-               $("#process").css("display", "block");
-               $("#options").css("display", "block");
-               fixcenter(); */
-               var sku = $(this).parent().find("input").val();
-               var jsonp = '{"sku": "' + sku + '"}'; 
-               $.ajax({
-                   type : "POST",
-                   contentType : "application/json",
-                   url : "/cartpro/index/add",
-                   data : jsonp,
-                   dataType : 'json',
-                   timeout : 10000,
-                   success : function(data) {
-                       console.log("SUCCESS: ", data);
-                       updateCartView(data);
-                       alert("Added product in cart");
-                   },
-                   error : function(e) {
-                       console.log("ERROR: ", e);
-                   },
-                   done : function(e) {
-                       console.log("DONE");
-                   }
-               });
-           });
-          
-          function updateCartView(data){
-               if(data.index != -1){
-                   $('.bottom-cart .price').text("$" + data.total + ",000");
-                   $('.price-total-w .price').text("$" + data.total + ",000");
-                   $('#minicart-sidebar li:eq(' + data.index + ') .qty-w .qty-b').text(data.qty);
-               } else{
-                   var item = $('#minicart-sidebar li').size();
-                   var isOdd = false;
-                   if(item % 2 == 0){
-                       isOdd = true;
-                   }
-                   var html = "<li class='item last";
-                   if(isOdd){
-                       html = html + " odd'>";
-                   } else {
-                       html = html + " even'>";
-                   }
-                   var n = $('#minicart-sidebar li').length;
-                   html = html + '<div class="product-details" style="margin-bottom: 20px;"><p class="product-name">';
-                   html = html + '<a title="' + data.name + '" href="#">' + data.name + '</a>';
-                   html = html + '<a href="javascript:void(0)" title="Remove  This  Item" onclick="showClick(' + n + ')" class="btn-remove">Remove</a></p></div>';
-                   html = html + '<span class="price">$' + data.price + ',000</span>' + '<span class="qty-w"> <span class="label-qty">Qty: </span><span class="qty-b">';
-                   html = html + data.qty + '</span></span></li>';
-                   $('#minicart-sidebar').append(html);
-                   $('.cart-icon .amount-i').text(data.item);
-                   $('.bottom-cart .price').text("$" + data.total + ",000");
-                   $('.price-total-w .price').text("$" + data.total + ",000");
-                   n = $('#minicart-sidebar li').length;
-                   if (n > 0) {
-                       $('.mini-cartpro  .block-title').addClass('hv_btnCart');
-                   }
-               }
-           };
-      });
-
-
-      function showClick(index){
-    	  var result = confirm("Are  you  sure  you  would  like  to  remove  this  item  from  the  shopping  cart?");
-          if(result){
-              jQuery('#minicart-sidebar li:eq(' + index + ')').remove();
-              jQuery.ajax({
-                  type : "POST",
-                  url : "/cartpro/index/delete/" + index,
-                  timeout : 10000,
-                  success : function(data) {
-                      if(data.indexOf("-") != -1){
-                          var splits = data.split("-");
-                          jQuery('.cart-icon .amount-i').text(splits[1]);
-                          var format = splits[0].split(".");
-                          jQuery('.bottom-cart .price').text("$" + format[0] + ",000");
-                          jQuery('.price-total-w .price').text("$" + format[0] + ",000");
-                          var n = jQuery('#minicart-sidebar li').length;
-                          if (n <= 0) {
-                        	  jQuery('.mini-cartpro  .block-title').removeClass('hv_btnCart');
-                          }
-                      }
-                  },
-                  error : function(e) {
-                      console.log("ERROR: ", e);
-                  },
-                  done : function(e) {
-                      console.log("DONE");
-                  }
-              });
-          } else{
-              return false;                  
-          }
-      };
-
-  </script>
 </body>
 </html>
