@@ -545,3 +545,6 @@ A.awblog_current_comment {
 .price_filter .price-to:before {
     right: -1000px;
 }
+.sp-right{
+    float:right;
+}

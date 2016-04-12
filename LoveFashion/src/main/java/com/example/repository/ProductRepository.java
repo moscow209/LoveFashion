@@ -49,7 +49,7 @@ public class ProductRepository extends AbstractRepository<GeneralEntity>
 		if (cate.getParentId() == null) {
 			query.setString("path", cate.getEntityId() + "/%");
 		} else {
-			query.setString("path", "%/" + cate.getEntityId() + "/%");
+			query.setString("path", "%/" + cate.getEntityId());
 		}
 		if (color != null && "".equals(color)) {
 			query.setParameterList("colors",

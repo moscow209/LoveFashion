@@ -36,8 +36,7 @@ public class ProductService implements IProductService {
 		GeneralEntity general = null;
 		for (int i = 0; i < results.size(); i++) {
 			general = results.get(i).getGeneralEntity();
-			products.add(convertToModel(results.get(i), general,
-					general.getProductGalleryEntities()));
+			products.add(convertToModel(results.get(i), general, general.getProductGalleryEntities()));
 		}
 		return products;
 	}

@@ -2,6 +2,7 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri='http://www.springframework.org/tags' prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -100,7 +101,6 @@ a {
 	color: #666666;
 }
 </style>
-
 </head>
 <body id="bd" class="sm_lovefashion">
   <div id="yt_wrapper">
@@ -117,7 +117,7 @@ a {
                 <div id="layered-navigation">
                   <div class="block block-layered-nav">
                     <div class="block-title">
-                      <strong><span>Shop By</span></strong>
+                      <strong><span><spring:message code="list.title.e1"></spring:message></span></strong>
                     </div>
                     <!-- <div class="currently">
                       <ol>
@@ -132,27 +132,42 @@ a {
                     </div> -->
                     <div class="block-content">
                       <dl id="narrow-by-list">
-                        <dt class="Category odd">Category</dt>
-                        <dd class="odd">
-                          <ol>
-                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/coats-jackets/manufacturer/duresta.html">Coats &amp; Jackets</a></li>
-                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/blazers/manufacturer/duresta.html">Blazers </a></li>
-                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/jackets/manufacturer/duresta.html">Jackets </a></li>
-                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/raincoats/manufacturer/duresta.html">Raincoats </a></li>
-                          </ol>
-                        </dd>
+                        <c:if test="${cats.size() > 0}">
+                            <dt class="Category odd"><spring:message code="list.title.cats"></spring:message></dt>
+                            <dd class="odd">
+                                <ol>
+                                    <c:forEach var="item" items="${cats}">
+                                        <c:if test="${pageContext.response.locale == 'en'}">
+                                            <li><a href="#">${item.nameEn}</a></li>
+                                        </c:if>
+                                        <c:if test="${pageContext.response.locale == 'vi'}">
+                                            <li><a href="#">${item.name}</a></li>
+                                        </c:if>
+                                    </c:forEach>
+                                </ol>
+                            </dd>
+                        </c:if>
                         <dt class="Price even">Price</dt>
                         <dd class="even">
                           <div class="price-wrapper-shopby">
                             <div class="title-price">
-                              <h2>By Price</h2>
+                              <h2><spring:message code="list.title.price"></spring:message></h2>
                             </div>
                             <div id="price-filter" class="price_filter">
-                              <span id="price-filter-min" class="price-from selected" title="Minimum value"></span> <span id="price-filter-max" class="price-to" title="Maximum value"></span>
+                              <span id="price-filter-min" class="price-from selected" title="Minimum value"></span>
+                              <span id="price-filter-max" class="price-to" title="Maximum value"></span>
                             </div>
                             <ul>
-                              <li><span class="sp-left"><span>$</span><span id="price-filter-min-display">415</span></span> <span class="sp-right"><span>$</span><span
-                                  id="price-filter-max-display">415</span></span></li>
+                              <li>
+                                <span class="sp-left">
+                                    <span>$</span>
+                                    <span id="price-filter-min-display">0</span>
+                                </span>
+                                <span class="sp-right">
+                                    <span>$</span>
+                                    <span id="price-filter-max-display">415</span>
+                                </span>
+                              </li>
                             </ul>
                           </div>
                         </dd>

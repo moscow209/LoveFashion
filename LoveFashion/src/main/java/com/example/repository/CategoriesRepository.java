@@ -27,4 +27,12 @@ public class CategoriesRepository extends AbstractRepository<CategoryEntity>
 		return (CategoryEntity) query.uniqueResult();
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<CategoryEntity> getSubCategory(Integer parent) {
+		// TODO Auto-generated method stub
+		Query query = getSession().createQuery("from CategoryEntity where parentId=:parent");
+		query.setInteger("parent", parent);
+		return query.list();
+	}
+
 }

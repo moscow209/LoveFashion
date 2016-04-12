@@ -11,16 +11,6 @@ public class GlobalSetting {
 	
 	public static final String SPACE_CATEGORY = "/";
 	
-	public static final String CATE_FILTER = "cate";
-	
-	public static final String PAGE_FILTER = "page";
-	
-	public static final String COLOR_FILTER = "color";
-	
-	public static final String SIZE_FILTER = "size";
-	
-	public static final String MANU_FILTER = "manufacturer";
-	
 	public static final String SPACE_ATTR = ",";
 	
 	public static final String SPACE_PRICE = "-";

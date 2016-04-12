@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 
-import com.example.contrains.GlobalHelper;
 import com.example.contrains.GlobalSetting;
 import com.example.dto.ProductModel;
 import com.example.entity.CategoryEntity;
@@ -37,21 +35,53 @@ public class ProductController {
 	@Autowired
 	private ViewResolver viewResolver;
 
-	@RequestMapping(value = "/category/{id}/**", method = RequestMethod.GET)
-	public String showListProduct(@PathVariable("id") Integer id, HttpServletRequest request,
+	@RequestMapping(value = "/list/{cat}", method = RequestMethod.GET)
+	public String showListProduct(HttpServletRequest request, @PathVariable("cat") String cat,
 			@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
-			Locale locale, Model listing, Model layer) {
-		String url = request.getRequestURI().toString();
-		String cat = GlobalHelper.splitAbtributeFilter(url, GlobalSetting.CATE_FILTER);
-		String manu = GlobalHelper.splitAbtributeFilter(url, GlobalSetting.MANU_FILTER);
-		String color = GlobalHelper.splitAbtributeFilter(url, GlobalSetting.COLOR_FILTER);
-		String size = GlobalHelper.splitAbtributeFilter(url, GlobalSetting.SIZE_FILTER);
-		String price = GlobalHelper.splitAbtributeFilter(url, GlobalSetting.CATE_FILTER);
+			@RequestParam(value = "color", required = false) String color,
+			@RequestParam(value = "size", required = false) String size,
+			@RequestParam(value = "price", required = false) String price,
+			Locale locale, Model model) {
 		int start = (page - 1) * GlobalSetting.ITEM_PER_PAGE;
 		CategoryEntity cate = cateService.getCategoryByName(cat);
 		if(cate != null){
-			List<ProductModel> list = productService.getListProductByCate(cate, color, size, manu, price, start);
-			long total = productService.countProductByCate(cate, color, size, manu, price);
+			List<ProductModel> list = productService.getListProductByCate(cate, color, size, null, price, start);
+			long total = productService.countProductByCate(cate, color, size, null, price);
+			int totalPage = (int) (total / GlobalSetting.ITEM_PER_PAGE);
+			if (total > GlobalSetting.ITEM_PER_PAGE
+					&& total % GlobalSetting.ITEM_PER_PAGE != 0) {
+				totalPage = totalPage + 1;
+			}
+			List<String> skus = getListSkuProduct(list);
+			List<String> colors = productService.getListColorByCate(skus);
+			List<String> sizes = productService.getListSizeByCate(skus);
+			List<String> manufacturers = productService.getListManufacturerByCate(skus);
+			List<CategoryEntity> cats = cateService.getSubCategory(cate.getEntityId());
+			model.addAttribute("list", list);
+			model.addAttribute("totalPage", totalPage);
+			model.addAttribute("currentPage", page);
+			model.addAttribute("colors", colors);
+			model.addAttribute("sizes", sizes);
+			model.addAttribute("brands", manufacturers);
+			model.addAttribute("cats", cats);
+			return "/store/list";
+		}
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "/list/{cat}/{brand}", method = RequestMethod.GET)
+	public String showListProduct(HttpServletRequest request, @PathVariable("cat") String cat,
+			@PathVariable("brand") String brand,
+			@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
+			@RequestParam(value = "color", required = false) String color,
+			@RequestParam(value = "size", required = false) String size,
+			@RequestParam(value = "price", required = false) String price,
+			Locale locale, Model listing, Model layer) {
+		int start = (page - 1) * GlobalSetting.ITEM_PER_PAGE;
+		CategoryEntity cate = cateService.getCategoryByName(cat);
+		if(cate != null){
+			List<ProductModel> list = productService.getListProductByCate(cate, color, size, brand, price, start);
+			long total = productService.countProductByCate(cate, color, size, brand, price);
 			int totalPage = (int) (total / GlobalSetting.ITEM_PER_PAGE);
 			if (total > GlobalSetting.ITEM_PER_PAGE
 					&& total % GlobalSetting.ITEM_PER_PAGE != 0) {
@@ -72,7 +102,8 @@ public class ProductController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "/category/{id}/**", method = RequestMethod.POST)
+
+	/*@RequestMapping(value = "/category/{id}/**", method = RequestMethod.POST)
 	public @ResponseBody String filterProuduct(@PathVariable("id") Integer id,
 			HttpServletRequest request,
 			@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
@@ -112,7 +143,7 @@ public class ProductController {
 		}
 		return "redirect:/";
 		
-	}
+	}*/
 
 	private String render(String nameView, Model model,
 			HttpServletRequest request, Locale locale){
