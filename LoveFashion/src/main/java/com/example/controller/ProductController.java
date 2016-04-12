@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 
+import com.example.contrains.GlobalHelper;
 import com.example.contrains.GlobalSetting;
 import com.example.dto.ProductModel;
 import com.example.entity.CategoryEntity;
@@ -45,6 +46,9 @@ public class ProductController {
 		int start = (page - 1) * GlobalSetting.ITEM_PER_PAGE;
 		CategoryEntity cate = cateService.getCategoryByName(cat);
 		if(cate != null){
+			color = GlobalHelper.preHandlerParam(color);
+			size = GlobalHelper.preHandlerParam(size);
+			price = GlobalHelper.handlerPrice(price);
 			List<ProductModel> list = productService.getListProductByCate(cate, color, size, null, price, start);
 			long total = productService.countProductByCate(cate, color, size, null, price);
 			int totalPage = (int) (total / GlobalSetting.ITEM_PER_PAGE);
@@ -64,6 +68,9 @@ public class ProductController {
 			model.addAttribute("sizes", sizes);
 			model.addAttribute("brands", manufacturers);
 			model.addAttribute("cats", cats);
+			model.addAttribute("color", color);
+			model.addAttribute("size", size);
+			model.addAttribute("price", price);
 			return "/store/list";
 		}
 		return "redirect:/";
@@ -76,10 +83,13 @@ public class ProductController {
 			@RequestParam(value = "color", required = false) String color,
 			@RequestParam(value = "size", required = false) String size,
 			@RequestParam(value = "price", required = false) String price,
-			Locale locale, Model listing, Model layer) {
+			Locale locale, Model model) {
 		int start = (page - 1) * GlobalSetting.ITEM_PER_PAGE;
 		CategoryEntity cate = cateService.getCategoryByName(cat);
 		if(cate != null){
+			color = GlobalHelper.preHandlerParam(color);
+			size = GlobalHelper.preHandlerParam(size);
+			price = GlobalHelper.handlerPrice(price);
 			List<ProductModel> list = productService.getListProductByCate(cate, color, size, brand, price, start);
 			long total = productService.countProductByCate(cate, color, size, brand, price);
 			int totalPage = (int) (total / GlobalSetting.ITEM_PER_PAGE);
@@ -90,13 +100,16 @@ public class ProductController {
 			List<String> skus = getListSkuProduct(list);
 			List<String> colors = productService.getListColorByCate(skus);
 			List<String> sizes = productService.getListSizeByCate(skus);
-			List<String> manufacturers = productService.getListManufacturerByCate(skus);
-			listing.addAttribute("list", list);
-			listing.addAttribute("totalPage", totalPage);
-			listing.addAttribute("currentPage", page);
-			layer.addAttribute("colors", colors);
-			layer.addAttribute("sizes", sizes);
-			layer.addAttribute("manufacturers", manufacturers);
+			List<CategoryEntity> cats = cateService.getSubCategory(cate.getEntityId());
+			model.addAttribute("list", list);
+			model.addAttribute("totalPage", totalPage);
+			model.addAttribute("currentPage", page);
+			model.addAttribute("colors", colors);
+			model.addAttribute("sizes", sizes);
+			model.addAttribute("cats", cats);
+			model.addAttribute("color", color);
+			model.addAttribute("size", size);
+			model.addAttribute("price", price);
 			return "/store/list";
 		}
 		return "redirect:/";

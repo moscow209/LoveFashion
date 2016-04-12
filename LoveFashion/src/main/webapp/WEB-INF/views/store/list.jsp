@@ -132,7 +132,7 @@ a {
                     </div> -->
                     <div class="block-content">
                       <dl id="narrow-by-list">
-                        <c:if test="${cats.size() > 0}">
+                        <c:if test="${not empty cats && cats.size() > 0}">
                             <dt class="Category odd"><spring:message code="list.title.cats"></spring:message></dt>
                             <dd class="odd">
                                 <ol>

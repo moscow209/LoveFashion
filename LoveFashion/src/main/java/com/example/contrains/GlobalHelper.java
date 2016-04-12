@@ -2,6 +2,7 @@ package com.example.contrains;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Pattern;
 
 public class GlobalHelper {
 
@@ -17,10 +18,31 @@ public class GlobalHelper {
 		}
 		return stringBuffer.toString();
 	}
-	
-	public static String preProcessParam(String param){
-		if(param == null)
+
+	public static String handlerPrice(String price){
+		if(price == null){
 			return null;
-		return param.trim().replaceAll(" ", "");
+		}
+		price = price.trim().replaceAll(" ", "");
+		int index = price.indexOf(GlobalSetting.SPACE_PRICE);
+		if(index != 1){
+			Pattern pattern = Pattern.compile(GlobalSetting.NUMBER_PATTERN);
+			String[] split = price.split(GlobalSetting.SPACE_PRICE);
+			if(split.length == 2){
+				if(pattern.matcher(split[0]).matches()
+						&& pattern.matcher(split[1]).matches()){
+					return price;
+				}
+			}
+		}
+		return null;
+	}
+	
+	public static String preHandlerParam(String param){
+		if(param == null){
+			return null;
+		}
+		param = param.trim().replaceAll(" ", "");
+		return param;
 	}
 }
