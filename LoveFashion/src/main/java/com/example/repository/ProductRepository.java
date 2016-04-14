@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class ProductRepository extends AbstractRepository<GeneralEntity>
 		implements IProductRepository {
 
 	private StringBuilder builderQuery(String color, String size, String manu,
-			String price) {
+			String price, String order, String dir) {
 		StringBuilder builder = new StringBuilder(
 				"select param from product_entity pe "
 						+ "inner join category_product cp "
@@ -38,6 +39,14 @@ public class ProductRepository extends AbstractRepository<GeneralEntity>
 		if (price != null && "".equals(price)) {
 			if (price.split(GlobalSetting.SPACE_PRICE).length == 2) {
 				builder.append(" and pe.price >=:min and pe.price <=:max");
+			}
+		}
+		if(order != null && 
+				Arrays.asList(GlobalSetting.FILTER_ORDER).contains(order)){
+			builder.append(" order by " + order);
+			if(dir != null && 
+				Arrays.asList(GlobalSetting.FILTER_DIR).contains(dir)){
+				builder.append(" " + dir);
 			}
 		}
 		return builder;
@@ -75,22 +84,23 @@ public class ProductRepository extends AbstractRepository<GeneralEntity>
 
 	@SuppressWarnings("unchecked")
 	public List<ProductEntity> getListProductByCate(CategoryEntity cate,
-			String color, String size, String manu, String price, Integer start) {
+			String color, String size, String manu, String price,
+			Integer start, Integer limit, String dir, String order) {
 		// TODO Auto-generated method stub
-		String builder = builderQuery(color, size, manu, price).toString()
+		String builder = builderQuery(color, size, manu, price, order, dir).toString()
 				.replace("param", "pe.*");
 		SQLQuery query = createQuery(cate, builder, color, size, manu, price);
 		query.setString("type", "parent");
 		query.addEntity(ProductEntity.class);
 		query.setFirstResult(start);
-		query.setMaxResults(GlobalSetting.ITEM_PER_PAGE);
+		query.setMaxResults(limit);
 		return query.list();
 	}
 
 	public long countProductByCate(CategoryEntity cate, String color,
-			String size, String manu, String price) {
+			String size, String manu, String price, String dir, String order) {
 		// TODO Auto-generated method stub
-		String builder = builderQuery(color, size, manu, price).toString()
+		String builder = builderQuery(color, size, manu, price, order, dir).toString()
 				.replace("param", "count(*) as count");
 		SQLQuery query = createQuery(cate, builder, color, size, manu, price);
 		query.setString("type", "parent");

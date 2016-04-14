@@ -37,6 +37,7 @@ public class ProductEntity implements java.io.Serializable {
 	private String color;
 	private String size;
 	private Integer manufacturer;
+	private Integer postion;
 	private Set<InventoryStockItem> inventoryStockItems = new HashSet<InventoryStockItem>(0);
 	private Set<CategoryEntity> categoryEntities = new HashSet<CategoryEntity>(0);
 	private Set<ProductEntity> productEntitiesForParentId = new HashSet<ProductEntity>(0);
@@ -180,6 +181,15 @@ public class ProductEntity implements java.io.Serializable {
 
 	public void setManufacturer(Integer manufacturer) {
 		this.manufacturer = manufacturer;
+	}
+
+	@Column(name = "position")
+	public Integer getPostion() {
+		return postion;
+	}
+
+	public void setPostion(Integer postion) {
+		this.postion = postion;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "productEntity")

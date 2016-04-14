@@ -11,6 +11,7 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,6 +43,10 @@ public class ProductController {
 			@RequestParam(value = "color", required = false) String color,
 			@RequestParam(value = "size", required = false) String size,
 			@RequestParam(value = "price", required = false) String price,
+			@RequestParam(value = "dir", required = false, defaultValue = "asc") String dir,
+			@RequestParam(value = "order", required = false, defaultValue = "position") String order,
+			@RequestParam(value = "mode", required = false, defaultValue = "grid") String mode,
+			@RequestParam(value = "limit", required = false, defaultValue = "12") Integer limit,
 			Locale locale, Model model) {
 		int start = (page - 1) * GlobalSetting.ITEM_PER_PAGE;
 		CategoryEntity cate = cateService.getCategoryByName(cat);
@@ -61,6 +66,8 @@ public class ProductController {
 			List<String> sizes = productService.getListSizeByCate(skus);
 			List<String> manufacturers = productService.getListManufacturerByCate(skus);
 			List<CategoryEntity> cats = cateService.getSubCategory(cate.getEntityId());
+			if(price != null)
+				model.addAttribute("price", price.split(GlobalSetting.SPACE_PRICE));
 			model.addAttribute("list", list);
 			model.addAttribute("totalPage", totalPage);
 			model.addAttribute("currentPage", page);
@@ -70,7 +77,6 @@ public class ProductController {
 			model.addAttribute("cats", cats);
 			model.addAttribute("color", color);
 			model.addAttribute("size", size);
-			model.addAttribute("price", price);
 			return "/store/list";
 		}
 		return "redirect:/";

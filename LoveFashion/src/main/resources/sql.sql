@@ -219,6 +219,7 @@ CREATE TABLE `product_entity` (
     `color` varchar(255) DEFAULT NULL COMMENT 'color_value',
     `size` varchar(255) DEFAULT NULL COMMENT 'size_value',
     `manufacturer` int(11) DEFAULT NULL COMMENT 'manufacturer',
+    `position` int(11) DEFAULT NULL COMMENT 'position',
     PRIMARY KEY (`entity_id`),
     KEY `IDX_CATALOG_PRODUCT_ENTITY_SKU` (`sku`),
     KEY `IDX_CATALOG_PRODUCT_FLAT_1_COLOR` (`color`),

@@ -18,5 +18,9 @@ public class GlobalSetting {
 	public static final String SPACE_ATTR = ",";
 	
 	public static final String SPACE_PRICE = "-";
+	
+	public static final String[] FILTER_ORDER = {"position", "name", "price"};
+	
+	public static final String[] FILTER_DIR = {"asc", "desc"};
 
 }

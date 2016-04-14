@@ -159,33 +159,67 @@ a {
                             </div>
                             <ul>
                               <li>
-                                <span class="sp-left">
-                                    <span>$</span>
-                                    <span id="price-filter-min-display">0</span>
-                                </span>
-                                <span class="sp-right">
-                                    <span>$</span>
-                                    <span id="price-filter-max-display">415</span>
-                                </span>
+                                <c:if test="${empty price}">
+                                    <span class="sp-left">
+                                        <span>$</span>
+                                        <span id="price-filter-min-display">0</span>
+                                    </span>
+                                    <span class="sp-right">
+                                        <span>$</span>
+                                        <span id="price-filter-max-display">415</span>
+                                    </span>
+                                </c:if>
+                                <c:if test="${not empty price}">
+                                    <span class="sp-left">
+                                        <span>$</span>
+                                        <span id="price-filter-min-display">${price[0]}</span>
+                                    </span>
+                                    <span class="sp-right">
+                                        <span>$</span>
+                                        <span id="price-filter-max-display">${price[1]}</span>
+                                    </span>
+                                </c:if>
                               </li>
                             </ul>
                           </div>
                         </dd>
-                        <dt class="Manufacturer odd">Manufacturer</dt>
-                        <dd class="odd">
-                          <ol>
-                            <li class="Duresta"><input class="check-shopby" type="checkbox" checked="checked" onclick="$(this).next().click()"> <a class="checked"
-                              onclick="$(this).previous().checked = false;" href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing.html">Duresta</a></li>
-                          </ol>
-                        </dd>
-                        <dt class="Color last even">Color</dt>
-                        <dd class="last even">
-                          <ol class="configurable-swatch-list">
-                            <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/color/black/manufacturer/duresta.html" class="swatch-link"> <span
-                                class="swatch-label"> </span>
-                            </a></li>
-                          </ol>
-                        </dd>
+                        <c:if test="${not empty brands}">
+                            <dt class="Manufacturer odd"><spring:message code="list.title.brand"></spring:message></dt>
+                            <dd class="odd">
+                                <ol>
+                                    <c:forEach var="item" items="${brands}">
+                                       <li><input class="check-shopby" type="checkbox" onclick="$(this).next().click()">
+                                            <a class="checked" onclick="$(this).previous().checked = false;" href="#">${item}</a>
+                                       </li>                                        
+                                    </c:forEach>
+                                </ol>
+                            </dd>
+                        </c:if>
+                        <c:if test="${not empty colors}">
+                            <dt class="Color last even"><spring:message code="list.title.color"></spring:message></dt>
+                            <dd class="even">
+                                <ol class="configurable-swatch-list">
+                                    <c:forEach var="item" items="${colors}">
+                                        <li><a href="http://demo.magentech.com/themes/sm_love_fashion/mens//cat/clothing/color/black/manufacturer/duresta.html" class="swatch-link">
+                                            <span class="swatch-label">${item}</span>
+                                            </a>
+                                        </li>
+                                    </c:forEach>
+                                </ol>
+                            </dd>
+                        </c:if>
+                        <c:if test="${not empty sizes}">
+                            <dt class="Size"><spring:message code="list.title.size"></spring:message></dt>
+                            <dd class="last odd">
+                                <ol>
+                                    <c:forEach var="item" items="${sizes}">
+                                       <li><input class="check-shopby" type="checkbox" onclick="$(this).next().click()">
+                                            <a class="checked" onclick="$(this).previous().checked = false;" href="#">${item}</a>
+                                       </li>                                        
+                                    </c:forEach>
+                                </ol>
+                            </dd>
+                        </c:if>
                       </dl>
                     </div>
                   </div>
